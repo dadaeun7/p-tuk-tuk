@@ -1,0 +1,28 @@
+# 1. 빌드 결과물 (Build Output)
+# Spring
+/target/
+# React/Node
+/node_modules/
+/build/
+/dist/
+
+# 2. IDE & OS Files
+.DS_Store
+.idea/
+*.iml
+.vscode/
+
+# 3. 민감 정보 및 로컬 설정 (CRITICAL SECURITY)
+# 환경 변수 파일 (React, Docker, General)
+*.env
+*.env.local
+*.env.development
+*.env.production
+
+# Spring 로컬 설정 파일
+application-local.yml
+docker-compose.override.yml
+
+# 4. 로그 및 임시 파일
+*.log
+/temp/

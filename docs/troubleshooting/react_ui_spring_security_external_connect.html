@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발일지 사건 파일: 9월 주요 이슈</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .timeline-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .timeline-item.active {
+            background-color: #059669; /* Green */
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item.active .timeline-phase {
+            color: white;
+        }
+        .timeline-item:not(.active):hover {
+            background-color: #d1fae5; /* Light Green */
+            transform: translateY(-2px);
+        }
+        .content-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+        .text-error { color: #dc3545; }
+        .text-warning { color: #ffc107; }
+        .text-success { color: #10b981; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">사건 파일: 9월 개발일지 주요 이슈</h1>
+            <p class="mt-2 text-lg text-slate-600">React UI, Spring Security, 외부 연동 관련 9월 트러블슈팅 기록.</p>
+        </header>
+
+        <nav id="timeline-nav" class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-12">
+        </nav>
+
+        <div id="content-area">
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineNav = document.getElementById('timeline-nav');
+            const contentArea = document.getElementById('content-area');
+            let currentPhaseIndex = 0;
+
+            const caseFiles = [
+                {
+                    phase: "2025-09-01~05",
+                    title: "React UI & TS 인덱스 에러",
+                    icon: "🖥️",
+                    content: {
+                        symptom: "Table 기반 드롭박스 구현 시 <span class='text-error'>thead/tbody에 스타일이 미적용</span>되는 문제 발생. 또한, <span class='text-error'>TypeScript에서 string 인덱스 접근 시 에러</span> 발생.",
+                        hypothesis: "CSS 선택자 우선순위 문제와 TypeScript의 타입 정의 미비.",
+                        investigation: [
+                            "table 기반 드롭박스 구현 중 thead/tbody 스타일 문제 분석",
+                            "ref/marginTop을 통한 컴포넌트 크기 계산 시도",
+                            "TS string 인덱스 타입 문제 해결 시도"
+                        ],
+                        breakthrough: "스타일 문제는 <span class='text-success'>CSS 선택자 구체화</span>로 해결. TypeScript string 인덱스 접근 에러는 타입 정의에 <span class='text-success'>인덱스 시그니처 정의를 추가</span>하여 해결."
+                    }
+                },
+                {
+                    phase: "2025-09-11~12",
+                    title: "JWT 및 Router 인증 지속 불가",
+                    icon: "🔒",
+                    content: {
+                        symptom: "JWT 인증 후 `/auth/me`에서 <span class='text-error'>principal이 null로 매핑</span>되는 문제와, Redis에서 Refresh 토큰 삭제 후에도 <span class='text-error'>401 에러가 지속</span>되는 문제 발생.",
+                        hypothesis: "인증 로딩 단계 누락 또는 Refresh 토큰 검증 로직의 결함.",
+                        investigation: [
+                            "ProtectedRoute redirect 동작 분석 및 Router `<Routes>` 에러 대응",
+                            "JWT 인증 관련 Redis refresh 토큰 삭제 후 401 지속 현상 확인",
+                            "TS `string|null` 타입 처리 및 `@Builder.Default` 기본값 처리 검토"
+                        ],
+                        breakthrough: "Refresh 토큰 삭제 후 인증 불가 문제는 <span class='text-success'>로딩 처리 단계를 추가</span>하고 <span class='text-success'>Refresh 검증 로직을 점검</span>하여 해결. `@Builder.Default`를 활용하여 기본값 처리도 안정화."
+                    }
+                },
+                {
+                    phase: "2025-09-15",
+                    title: "외부 서비스 연동 중단 (Gmail)",
+                    icon: "📧",
+                    content: {
+                        symptom: "Gmail 가져오기 기능이 특정 시점인 <span class='text-error'>8월 15일 이후로 동작하지 않음</span> 확인. 네이버 메일 서버와의 연동 상태 점검 필요.",
+                        hypothesis: "Gmail/네이버 메일 서비스 측의 인증 정책 변경 또는 보안 설정 이슈.",
+                        investigation: [
+                            "동작 중단 시점 파악 및 연동 상태 점검"
+                        ],
+                        breakthrough: "문제 해결을 위해 <span class='text-success'>IMAP/POP 인증 정책 변경 가능성을 확인</span>하고, <span class='text-success'>구글 계정 보안 로그를 점검</span>해야 함을 결론 내림."
+                    }
+                },
+                {
+                    phase: "2025-09-17",
+                    title: "비동기 처리 시 데이터 안전성",
+                    icon: "⚙️",
+                    content: {
+                        symptom: "Order Item 처리 로직 설계 중, `category=null`일 때 <span class='text-error'>`GENERAL` 카테고리로 저장될 위험</span> 발생.",
+                        hypothesis: "비동기 처리 과정에서 데이터 유효성 검사 및 분리 로직 미흡.",
+                        investigation: [
+                            "OrderItemDto 리스트 처리 로직 설계",
+                            "동기/비동기 단계 분리 검토"
+                        ],
+                        breakthrough: "데이터 안전성 확보를 위해, `null` 값은 즉시 처리하지 않고 <span class='text-success'>비동기 큐에 저장 후 후처리</span>하는 방식으로 분리하고, <span class='text-success'>별도의 서비스 레이어 구현</span>을 고려하여 데이터 무결성을 유지하기로 함."
+                    }
+                }
+            ];
+
+            function render() {
+                // 타임라인 렌더링
+                timelineNav.innerHTML = '';
+                caseFiles.forEach((file, index) => {
+                    const item = document.createElement('div');
+                    item.className = `timeline-item flex-1 p-3 md:p-4 rounded-lg shadow-md bg-white border border-slate-200 text-center ${index === currentPhaseIndex ? 'active' : ''}`;
+                    item.dataset.index = index;
+                    item.innerHTML = `
+                        <div class="text-3xl mb-1">${file.icon}</div>
+                        <div class="font-bold text-sm md:text-base">${file.title}</div>
+                        <div class="timeline-phase text-xs text-slate-500">${file.phase}</div>
+                    `;
+                    timelineNav.appendChild(item);
+                });
+
+                // 콘텐츠 렌더링
+                const file = caseFiles[currentPhaseIndex];
+                contentArea.innerHTML = '';
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'content-fade-in bg-white p-6 md:p-8 rounded-lg shadow-lg border border-slate-200';
+                
+                let investigationItems = file.content.investigation
+                    .map(item => `<li class="flex items-start"><span class="mr-2 text-blue-500">•</span><span>${item}</span></li>`)
+                    .join('');
+
+                contentDiv.innerHTML = `
+                    <h2 class="text-2xl font-bold mb-4 text-slate-900">${file.icon} ${file.title}</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-semibold text-lg text-red-600 mb-2">증상</h3>
+                            <p class="text-slate-700">${file.content.symptom}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-yellow-600 mb-2">초기 가설 / 시도</h3>
+                            <p class="text-slate-700">${file.content.hypothesis}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-blue-600 mb-2">수사 및 단서 (시행착오 포함)</h3>
+                            <ul class="space-y-2 text-slate-700">${investigationItems}</ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-green-600 mb-2">결정적 돌파구 / 해결책</h3>
+                            <p class="text-slate-700 font-medium">${file.content.breakthrough}</p>
+                        </div>
+                    </div>
+                `;
+                contentArea.appendChild(contentDiv);
+            }
+            
+            timelineNav.addEventListener('click', (e) => {
+                const target = e.target.closest('.timeline-item');
+                if (target && target.dataset.index) {
+                    currentPhaseIndex = parseInt(target.dataset.index, 10);
+                    render();
+                }
+            });
+
+            // 초기 렌더링
+            render();
+        });
+    </script>
+
+</body>
+</html>

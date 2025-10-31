@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발일지 사건 파일: 이메일 인증 트러블슈팅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .timeline-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .timeline-item.active {
+            background-color: #1e40af; /* Deep Blue */
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item.active .timeline-phase {
+            color: white;
+        }
+        .timeline-item:not(.active):hover {
+            background-color: #bfdbfe; /* Light Blue */
+            transform: translateY(-2px);
+        }
+        .content-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+        .text-error { color: #dc3545; }
+        .text-warning { color: #ffc107; }
+        .text-success { color: #10b981; }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">사건 파일: 이메일 인증 기능 개발</h1>
+            <p class="mt-2 text-lg text-slate-600">Spring + React 환경에서 겪었던 주요 기능 구현 및 트러블슈팅 기록.</p>
+        </header>
+
+        <nav id="timeline-nav" class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-12">
+        </nav>
+
+        <div id="content-area">
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineNav = document.getElementById('timeline-nav');
+            const contentArea = document.getElementById('content-area');
+            let currentPhaseIndex = 0;
+
+            const caseFiles = [
+                {
+                    phase: "2025-08-13",
+                    title: "GET/POST 및 403 인증 오류",
+                    icon: "🌐",
+                    content: {
+                        symptom: "React `fetch`에서 <span class='text-error'>GET 요청에 `body`를 포함</span>하여 `TypeError` 발생. 또한, Spring Security 설정 후 <span class='text-error'>403 Forbidden 에러</span> 발생.",
+                        hypothesis: "GET 요청의 오용 및 Spring Security의 경로 인증 문제.",
+                        investigation: [
+                            "React `fetch` 사용 시 GET 방식에 body 사용법 확인 (오류 발생)",
+                            "`Accept`, `Content-Type` 헤더 정리 및 JSON 응답 설계 (`ok` 값)",
+                            "Spring `SecurityConfig` 중 `authorizeHttpRequests` 설정 확인"
+                        ],
+                        breakthrough: "GET 요청 오류는 <span class='text-success'>POST 방식과 `@RequestBody` 사용</span>으로 해결. 403 에러는 Tomcat이 `/error`로 내부 포워드 시 경로 인증이 막혀 발생하는 것임을 파악하고 `requestMatches(\"/error\").permitAll()`을 <span class='text-success'>Spring Security</span>에 추가하여 해결."
+                    }
+                },
+                {
+                    phase: "2025-08-14",
+                    title: "비동기 메일 송신 및 Null 에러",
+                    icon: "📧",
+                    content: {
+                        symptom: "이메일 인증 요청 시 <span class='text-warning'>응답 속도가 14초</span>로 매우 느림. 또한, 이메일 정규식 관련 문제로 Spring Mail Sender에서 <span class='text-error'>Email Null 발생</span>.",
+                        hypothesis: "메일 전송의 동기적 처리와 클라이언트 유효성 검사 미비.",
+                        investigation: [
+                            "Spring에 `@Async` 적용 시도 및 `@Configuration + @EnableAsync` 설정 확인",
+                            "SMTP 연결 시간 측정 로깅",
+                            "React에서 `email` 정규식 확인 및 API 호출 조건 점검"
+                        ],
+                        breakthrough: "Spring Service에 <span class='text-success'>`@Async`를 적용하여 비동기 메일 전송</span>으로 화면 반응 속도를 1초로 개선. Email Null 문제는 React의 `useState` 변수를 추출하여 `o`로 끝나는 등 불완전한 상태에서는 <span class='text-success'>API 호출을 방지</span>하도록 처리하여 해결."
+                    }
+                },
+                {
+                    phase: "2025-08-17",
+                    title: "React 타이머와 중복 렌더링/요청",
+                    icon: "⏱️",
+                    content: {
+                        symptom: "카운트 다운 타이머가 <span class='text-error'>10초 이상 한 번에 깎이는 현상</span> 발생. 또한, `StrictMode`/`HMR` 영향으로 컴포넌트 2개 생성 시 <span class='text-error'>동시에 두 컴포넌트에서 같은 요청을 발사</span>하는 문제 발생.",
+                        hypothesis: "`setInterval`의 클로저 문제 및 렌더링 시 API 호출 구조.",
+                        investigation: [
+                            "`setInterval` 기반 카운트다운 이슈 분석 (중복 interval/클로저/StrictMode)",
+                            "렌더 시 즉시 호출되는 구조 확인: `const api = reqCommonFunc(...)`",
+                            "`debugger`, `console.trace`를 이용한 호출 추적"
+                        ],
+                        breakthrough: "타이머 이슈는 <span class='text-success'>`useEffect([]) + cleanup` 엄수 및 함수형 업데이트(setState(prev=>...))</span>로 Stale Closure 방지하여 해결. 중복 요청은 API 호출을 렌더 본문에서 제거하고 <span class='text-success'>`useCallback` 패턴 확립 및 버튼 연타 가드(pending)</span>를 통해 이벤트 기반으로 전환하여 해결."
+                    }
+                },
+                {
+                    phase: "2025-08-26",
+                    title: "Docker Redis 연결 및 로컬 충돌",
+                    icon: "🐳",
+                    content: {
+                        symptom: "Spring Boot 앱이 Docker로 실행 중인 Redis에 연결 실패하고, <span class='text-error'>`RedisConnectionFailureException`</span> 및 `ERR Client sent AUTH, but no password is set` 예외 발생.",
+                        hypothesis: "Spring 설정 문제 또는 로컬 환경 Redis 서버와의 충돌.",
+                        investigation: [
+                            "`StringRedisTemplate.opsForValue().set()`으로 연결 테스트",
+                            "`docker exec -it redis redis-cli monitor` 명령으로 실시간 로그 추적",
+                            "`application.yml`에 `spring.redis.password` 설정 누락 여부 점검",
+                            "로컬 PC에서 실행 중인 `redis-server.exe` 프로세스 확인"
+                        ],
+                        breakthrough: "초기에는 Spring이 <span class='text-error'>Docker Redis가 아닌 로컬 Redis</span>에 연결되어 문제가 발생했음을 확인. 관리자 권한 PowerShell에서 <span class='text-success'>로컬 `redis-server.exe` 프로세스를 종료</span>하고, `application.yml`에 <span class='text-success'>비밀번호를 추가</span>하여 Docker Redis에 정상 연결 성공."
+                    }
+                },
+                {
+                    phase: "2025-08-30",
+                    title: "Spring Security 403 로그인 오류",
+                    icon: "🔑",
+                    content: {
+                        symptom: "로그인 요청 시 <span class='text-error'>403 Forbidden</span> 에러가 발생하여 로그인 기능 구현 불가.",
+                        hypothesis: "Spring Security 설정에서 로그인 엔드포인트의 접근 권한 누락.",
+                        investigation: [
+                            "Spring Security의 `anyRequest().authenticated()` 의미 분석",
+                            "로그인 요청 URL과 HTTP 메서드 확인",
+                            "Security Filter Chain의 인증/인가 순서 추적"
+                        ],
+                        breakthrough: "문제는 Spring Security가 기본적으로 모든 요청에 인증을 요구(`authenticated()`)했기 때문. 로그인 엔드포인트(`e.g. /api/auth/login`)를 <span class='text-success'>`permitAll()`</span>로 명시적으로 허용하여 403 문제를 해결."
+                    }
+                }
+            ];
+
+            function render() {
+                // 타임라인 렌더링
+                timelineNav.innerHTML = '';
+                caseFiles.forEach((file, index) => {
+                    const item = document.createElement('div');
+                    item.className = `timeline-item flex-1 p-3 md:p-4 rounded-lg shadow-md bg-white border border-slate-200 text-center ${index === currentPhaseIndex ? 'active' : ''}`;
+                    item.dataset.index = index;
+                    item.innerHTML = `
+                        <div class="text-3xl mb-1">${file.icon}</div>
+                        <div class="font-bold text-sm md:text-base">${file.title}</div>
+                        <div class="timeline-phase text-xs text-slate-500">${file.phase}</div>
+                    `;
+                    timelineNav.appendChild(item);
+                });
+
+                // 콘텐츠 렌더링
+                const file = caseFiles[currentPhaseIndex];
+                contentArea.innerHTML = '';
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'content-fade-in bg-white p-6 md:p-8 rounded-lg shadow-lg border border-slate-200';
+                
+                let investigationItems = file.content.investigation
+                    .map(item => `<li class="flex items-start"><span class="mr-2 text-blue-500">•</span><span>${item}</span></li>`)
+                    .join('');
+
+                contentDiv.innerHTML = `
+                    <h2 class="text-2xl font-bold mb-4 text-slate-900">${file.icon} ${file.title}</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-semibold text-lg text-red-600 mb-2">증상</h3>
+                            <p class="text-slate-700">${file.content.symptom}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-yellow-600 mb-2">초기 가설 / 시도</h3>
+                            <p class="text-slate-700">${file.content.hypothesis}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-blue-600 mb-2">수사 및 단서 (시행착오 포함)</h3>
+                            <ul class="space-y-2 text-slate-700">${investigationItems}</ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-green-600 mb-2">결정적 돌파구 / 해결책</h3>
+                            <p class="text-slate-700 font-medium">${file.content.breakthrough}</p>
+                        </div>
+                    </div>
+                `;
+                contentArea.appendChild(contentDiv);
+            }
+            
+            timelineNav.addEventListener('click', (e) => {
+                const target = e.target.closest('.timeline-item');
+                if (target && target.dataset.index) {
+                    currentPhaseIndex = parseInt(target.dataset.index, 10);
+                    render();
+                }
+            });
+
+            // 초기 렌더링
+            render();
+        });
+    </script>
+
+</body>
+</html>

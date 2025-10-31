@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google 계정 연동: 트러블슈팅 해결기</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Cool Slate -->
+    <!-- Application Structure Plan: 인터랙티브 타임라인/사건 파일 형태의 SPA를 설계했습니다. 사용자는 디버깅 단계를 시간순으로 클릭하며 따라갈 수 있습니다. 이 구조는 정적인 리포트를 문제 해결의 흥미로운 이야기로 전환하며, 사용자가 한 번에 하나의 문제(증상, 가설, 해결)에 집중할 수 있게 하여 긴 문서보다 이해하기 쉽습니다. '탐정 사건 파일'이라는 메타포는 사용자 참여를 높이고 분석 과정을 강조합니다. -->
+    <!-- Visualization & Content Choices: 이 리포트는 정량적 데이터가 없는 텍스트 기반이므로, 전통적인 차트는 사용하지 않았습니다. 대신, 인터랙티브한 콘텐츠 표시에 집중했습니다. 핵심 개념들은 '단서'로 강조됩니다. 복잡한 아키텍처 충돌 및 해결책은 스타일링된 블록 내에서 'Before/After' 스타일의 코드 스니펫을 사용하여 제시됩니다. 이 접근 방식은 데이터 시각화보다는 디버깅의 논리적 흐름을 설명하는 데 우선순위를 두어 기술적 세부 사항을 명확하고 영향력 있게 만듭니다. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .timeline-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .timeline-item.active {
+            background-color: #3b82f6;
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item.active .timeline-phase {
+            color: white;
+        }
+        .timeline-item:not(.active):hover {
+            background-color: #dbeafe;
+            transform: translateY(-2px);
+        }
+        .content-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">사건 파일: Google 계정 연동 미스터리</h1>
+            <p class="mt-2 text-lg text-slate-600">실패에서 성공까지, 며칠에 걸친 트러블슈팅 여정.</p>
+        </header>
+
+        <!-- 인터랙티브 타임라인 내비게이션 -->
+        <nav id="timeline-nav" class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-12">
+            <!-- 타임라인 아이템이 JS에 의해 여기에 주입됩니다 -->
+        </nav>
+
+        <!-- 동적 콘텐츠 표시 영역 -->
+        <div id="content-area">
+            <!-- 선택된 단계의 콘텐츠가 JS에 의해 여기에 주입됩니다 -->
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineNav = document.getElementById('timeline-nav');
+            const contentArea = document.getElementById('content-area');
+            let currentPhaseIndex = 0;
+
+            const caseFiles = [
+                {
+                    phase: "1단계",
+                    title: "보이지 않는 리다이렉션",
+                    icon: "👻",
+                    content: {
+                        symptom: "프론트엔드에서 백엔드 API 호출 시, 브라우저 네트워크 탭에는 최종적으로 `404 Not Found`가 기록되었으나, 실제로는 백엔드가 `302 Found` 응답으로 `/login?error` 경로로 리다이렉션시키는 현상이 먼저 발생.",
+                        hypothesis: "단순한 URL 경로 오타 또는 `permitAll()` 설정 누락.",
+                        investigation: [
+                            "`curl`을 이용한 백엔드 API 직접 호출 테스트를 통해 프론트엔드 환경 변수를 배제.",
+                            "`curl` 테스트 결과, `STATELESS` 설정에도 불구하고 `JSESSIONID` 쿠키가 생성되고 `/login?error`로 리다이렉션되는 것을 확인. 이는 JWT 인증이 실패하고 Spring Security의 기본 세션 기반 인증 로직이 동작하고 있음을 의미.",
+                            "`JwtAuthenticationFilter`의 로그를 심층 분석한 결과, 필터 자체는 'Authentication successful' 로그를 남겼음.",
+                        ],
+                        breakthrough: "인증 필터는 성공했으나, 그 *직후*에 알 수 없는 이유로 인증 정보가 유실되어 최종적으로 인증 실패로 처리되고 있음을 파악. 문제의 원인은 단순 경로 문제가 아닌, **Spring Security의 복잡한 내부 동작**에 있음을 확신하고 심층 디버깅으로 전환."
+                    }
+                },
+                {
+                    phase: "2단계",
+                    title: "아키텍처 충돌",
+                    icon: "⚔️",
+                    content: {
+                        symptom: "Spring Security 필터 체인에서 요청이 차단되어, 프론트엔드에서 CORS, URL 파싱 오류 등 2차적인 문제가 발생.",
+                        hypothesis: "JWT 기반의 `STATELESS` 아키텍처와, Spring Security의 기본 `oauth2Login()` 설정이 충돌하고 있을 가능성.",
+                        investigation: [
+                            "'소셜 로그인'과 '계정 연동'은 목적이 다른 별개의 흐름임을 명확히 정의.",
+                            "'계정 연동'은 JWT 토큰을 가진 사용자가 직접 만든 API를 호출하는 흐름이므로, Spring의 자동 `.oauth2Login()`과 경로가 겹치지 않도록 분리해야 함을 파악.",
+                            "`SecurityConfig`를 수정하여 `.oauth2Login()`의 콜백 URI를 `/oauth2/callback/*`으로 변경하고, 커스텀 '계정 연동' 컨트롤러의 경로는 `permitAll()`로 열어두어 경로 충돌을 해결.",
+                        ],
+                        breakthrough: "**두 기능의 엔드포인트를 명확히 분리**하여 아키텍처 충돌을 해결. 이로써 요청은 드디어 백엔드 컨트롤러를 향해 출발할 수 있게 됨."
+                    }
+                },
+                {
+                    phase: "3단계",
+                    title: "Google과의 소통 실패",
+                    icon: "🔑",
+                    content: {
+                        symptom: "경로 충돌 해결 후, Google로부터 `400 redirect_uri_mismatch` 또는 `401 Unauthorized` 오류를 받음.",
+                        hypothesis: "우리 앱이 Google에 전달하는 정보(Scope, Redirect URI)와, Google Cloud Console에 등록된 정보가 일치하지 않음.",
+                        investigation: [
+                            "**단서 #1 (`redirect_uri_mismatch`):** React의 중첩 라우터 구조로 인해 실제 콜백 URI가 예상과 달랐음을 발견. **Google Cloud Console**, **백엔드의 URL 생성 로직**, **백엔드의 토큰 교환 로직** 세 곳의 URI를 모두 통일하여 해결.",
+                            "**단서 #2 (`401 Unauthorized`):** 가장 교묘한 원인. 토큰 자체는 유효했지만, **요청한 권한(Scope)과 다른 API를 호출**하고 있었음. 'Gmail 읽기' 권한 토큰으로 '사용자 정보' API를 호출하려고 시도하여 발생.",
+                        ],
+                        breakthrough: "`GoogleAuthorizationCodeFlow` Bean 생성 시, 필요한 모든 Scope(`GMAIL_READONLY`, `USERINFO_PROFILE` 등)를 명시적으로 포함하여, 올바른 '열쇠 꾸러미'를 요청하도록 수정."
+                    }
+                },
+                {
+                    phase: "4단계",
+                    title: "스스로 파괴되는 토큰",
+                    icon: "⏳",
+                    content: {
+                        symptom: "모든 설정을 완료했음에도, 백엔드에서 `IllegalStateException: ... does not support refreshing the access token.` 라는 최종 에러 발생.",
+                        hypothesis: "Google로부터 받은 Access Token과 Refresh Token을 올바르게 관리하지 못하고 있음.",
+                        investigation: [
+                            "기존 코드는 `code`를 `tokenResponse`로 교환한 뒤, `accessToken`만 사용하여 불완전한 `Credential` 객체를 수동으로 생성하고 있었음. 이 과정에서 가장 중요한 `refreshToken`이 유실됨.",
+                            "Google API 라이브러리가 만료된 `accessToken`을 갱신하려고 할 때, `refreshToken`이 없어서 예외를 발생시킨 것임.",
+                        ],
+                        breakthrough: "**`GoogleAuthorizationCodeFlow`의 내장 기능을 적극적으로 활용**하여 문제를 해결. `createAndStoreCredential()`과 `setDataStoreFactory()`를 통해 `Credential`의 영속성과 자동 갱신 문제를 해결."
+                    }
+                },
+                {
+                    phase: "해결",
+                    title: "사건 종결",
+                    icon: "✅",
+                    content: {
+                        symptom: "완벽하게 동작하는 Google 계정 연동 기능.",
+                        hypothesis: "체계적인 진단을 통해 프론트엔드 라우팅부터 백엔드 보안, 외부 API의 토큰 관리까지 이어지는 복합적인 문제를 해결함.",
+                        investigation: [
+                            "**최종 솔루션:** `GoogleAuthorizationCodeFlow`를 중심으로, 권한(Scope) 설정, `redirect_uri` 중앙 관리, `Credential`의 영속성 관리까지 이어지는 전체 OAuth 2.0 흐름을 Google의 권장 방식에 맞게 재구성하여 모든 문제를 해결.",
+                        ],
+                        breakthrough: "이 경험은 **체계적인 디버깅 능력**, **Spring Security에 대한 깊은 이해**, **외부 API 연동 능력**, 그리고 복잡한 문제를 해결해내는 개발자로서의 **끈기와 집요함**을 증명하는 중요한 자산이 됨."
+                    }
+                }
+            ];
+
+            function render() {
+                // 타임라인 렌더링
+                timelineNav.innerHTML = '';
+                caseFiles.forEach((file, index) => {
+                    const item = document.createElement('div');
+                    item.className = `timeline-item flex-1 p-3 md:p-4 rounded-lg shadow-md bg-white border border-slate-200 text-center ${index === currentPhaseIndex ? 'active' : ''}`;
+                    item.dataset.index = index;
+                    item.innerHTML = `
+                        <div class="text-3xl mb-1">${file.icon}</div>
+                        <div class="font-bold text-sm md:text-base">${file.title}</div>
+                        <div class="timeline-phase text-xs text-slate-500">${file.phase}</div>
+                    `;
+                    timelineNav.appendChild(item);
+                });
+
+                // 콘텐츠 렌더링
+                const file = caseFiles[currentPhaseIndex];
+                contentArea.innerHTML = '';
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'content-fade-in bg-white p-6 md:p-8 rounded-lg shadow-lg border border-slate-200';
+                
+                let investigationItems = file.content.investigation
+                    .map(item => `<li class="flex items-start"><span class="mr-2 text-blue-500">-</span><span>${item}</span></li>`)
+                    .join('');
+
+                contentDiv.innerHTML = `
+                    <h2 class="text-2xl font-bold mb-4 text-slate-900">${file.icon} ${file.title}</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-semibold text-lg text-red-600 mb-2">증상</h3>
+                            <p class="text-slate-700">${file.content.symptom}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-yellow-600 mb-2">초기 가설</h3>
+                            <p class="text-slate-700">${file.content.hypothesis}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-blue-600 mb-2">수사 및 단서</h3>
+                            <ul class="space-y-2 text-slate-700">${investigationItems}</ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-green-600 mb-2">결정적 돌파구 / 결론</h3>
+                            <p class="text-slate-700 font-medium">${file.content.breakthrough}</p>
+                        </div>
+                    </div>
+                `;
+                contentArea.appendChild(contentDiv);
+            }
+            
+            timelineNav.addEventListener('click', (e) => {
+                const target = e.target.closest('.timeline-item');
+                if (target && target.dataset.index) {
+                    currentPhaseIndex = parseInt(target.dataset.index, 10);
+                    render();
+                }
+            });
+
+            // 초기 렌더링
+            render();
+        });
+    </script>
+
+</body>
+</html>

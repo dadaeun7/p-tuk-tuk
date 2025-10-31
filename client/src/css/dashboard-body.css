@@ -1,0 +1,9 @@
+.location-waste-wrap .rule-wrap:hover {
+    transform: translateY(-0.3rem);
+    transition: .2s ease-in-out;
+}
+
+.my-waste-wrap .up-down-result:hover {
+    background-color: rgba(140, 140, 140, .25);
+    transition: .2s ease-in-out;
+}

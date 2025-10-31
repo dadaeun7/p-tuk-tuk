@@ -1,0 +1,4 @@
+.dash-board-select-date-item:hover {
+    color: rgba(96, 213, 87, 0.5);
+    transition: all .3s;
+}

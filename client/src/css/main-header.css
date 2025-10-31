@@ -1,0 +1,38 @@
+.main-header {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  top: 0;
+  z-index: 1000;
+  padding: 20px 40px;
+}
+
+.tuktuk-logo-bk {
+  filter: grayscale(100%) brightness(0);
+}
+
+.main-header-left,
+.main-header-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.main-header-login {
+  cursor: pointer;
+}
+
+.main-header-join {
+  padding: 7px 20px;
+  background: linear-gradient(#87e0dd, #7cdb7a);
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+}

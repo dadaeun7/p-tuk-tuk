@@ -1,0 +1,77 @@
+.main-body-bottom {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 0 3%;
+  gap: 5px;
+  white-space: pre-line;
+  color: #122a31
+}
+
+/* how to recommand of title parent*/
+
+/* how to recommand of title text*/
+.main-body-bottom-header-text {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* how to recommand of card group parent*/
+.main-body-bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  width: 101%;
+  gap: 20px;
+}
+
+/* how to recommand of card*/
+.main-body-bottom-content>* {
+  width: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*glass effect - start*/
+  background: rgba(255, 255, 255, 0.35);
+  /* 반투명 흰색 */
+  backdrop-filter: blur(30px);
+  /* 배경 블러 */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari 지원용 */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  /*glass effect - end*/
+}
+
+.main-body-bottom-content>*:hover {
+  margin-top: -1rem;
+  transition: all .3s ease-in-out;
+}
+
+/* how to recommand of card title parent*/
+.main-body-bottom-content>*>*:nth-child(1) {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+/* how to recommand of card title text*/
+.main-body-bottom>*:nth-child(2)>*>*>div {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* how to recommand of card description*/
+.main-body-bottom>*:nth-child(2)>*>*:nth-child(2) {
+  line-height: 1.45;
+  font-size: 1.1rem;
+}

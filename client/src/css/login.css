@@ -1,0 +1,130 @@
+.user-login {
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 60px 40px 60px;
+  color: #2a2a2a;
+
+  /*glass effect - start*/
+  background: rgba(255, 255, 255, 0.45);
+  /* 반투명 흰색 */
+  backdrop-filter: blur(20px);
+  /* 배경 블러 */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari 지원용 */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  /*glass effect - end*/
+}
+
+.user-login-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.user-login>* {
+  margin-bottom: 25px;
+}
+
+.user-login-header-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.user-login-header-sub {
+  font-size: 16px;
+}
+
+.user-login-body {
+  margin-bottom: 45px;
+}
+
+.user-login-body-id,
+.user-login-body-pwd {
+  padding: 12px 70px 12px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.user-login-body-email-wrap,
+.user-login-body-pwd-wrap {
+  border: 0.5px solid transparent;
+  background: linear-gradient(white, white),
+    linear-gradient(90deg,
+      rgba(168, 223, 255, 0.8) 0%,
+      rgba(96, 213, 87, 0.8) 85%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-login-check {
+  margin-bottom: 20px;
+}
+
+.user-login-check-id-save-wrap,
+.user-login-check-auto-login-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.user-login-btn {
+  font-weight: 600;
+  background: linear-gradient(90deg,
+      rgba(168, 223, 255, 0.5) 0%,
+      rgba(96, 213, 87, 0.5) 85%);
+  padding: 13px 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.user-login-check {
+  display: flex;
+}
+
+.user-login-intergration-title {
+  margin-bottom: 17px;
+  opacity: 0.8;
+  padding-bottom: 0.3rem;
+  border-bottom: solid 1px #f1f1f1;
+  color: #dfdfdf;
+}
+
+.user-login-intergration-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 0.9rem;
+
+}
+
+.user-login-intergration-list>* {
+  width: 3rem;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+}

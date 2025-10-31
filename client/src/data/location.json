@@ -1,0 +1,3712 @@
+[
+    {
+        "search_keyword": "서울특별시 강남구 배출일자",
+        "region": "서울특별시 강남구",
+        "source": {
+            "title": "쓰레기 배출 안내 - 강남구청",
+            "url": "https://www.gangnam.go.kr/board/waste/6/view.do?mid=ID02_011109"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물",
+                "rules": {
+                    "생활_쓰레기_배출시간": "월요일~금요일, 오후 8시~다음날 오전 5시",
+                    "배출_장소": "반드시 내 집 앞에 내놓아야 함"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "단독주택": "월, 수, 금요일 (요일별 수거 품목은 다를 수 있음)",
+                    "공동주택(아파트)": "화, 목, 토요일 (요일별 수거 품목은 다를 수 있음). "
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 강동구 배출일자",
+        "region": "서울특별시 강동구",
+        "source": {
+            "title": "검색 결과 없음",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품(폐비닐, 투명 폐페트병 제외)",
+                "rules": {
+                    "배출_요일": "월, 화, 수, 금, 토",
+                    "배출_시간": "20:00 ~ 익일 04:00",
+                    "주의사항": "일요일과 공휴일은 수거하지 않습니다."
+                }
+            },
+            {
+                "residence_type": "재활용품(폐비닐, 투명 폐페트병)",
+                "rules": {
+                    "배출_요일": "목요일",
+                    "배출_시간": "20:00 ~ 익일 04:00",
+                    "주의사항": "목요일은 폐비닐 및 투명 폐페트병만 배출해야 하며, 다른 재활용품은 배출할 수 없습니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 강북구 배출일자",
+        "region": "서울특별시 강북구",
+        "source": {
+            "title": "일반쓰레기 배출안내 | 강북구청",
+            "url": "https://www.gangbuk.go.kr:18000/portal/main/contents.do?menuNo=200843"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "배출_요일_시간": "일요일 ~ 금요일 18:00 – 24:00",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날 저녁",
+                    "배출_장소": "내 대문 앞, 내 점포 앞, 내 건물 앞"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 강서구 배출일자",
+        "region": "서울특별시 강서구",
+        "source": {
+            "title": "일반 생활쓰레기 배출방법 - 강서구청",
+            "url": "https://www.gangseo.seoul.kr/env/env010401"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "가정 (일반/음식물)",
+                "rules": {
+                    "배출_일시": "주 5일 (일, 월, 화, 수, 목) 18시~24시까지",
+                    "배출_금지일": "금요일, 토요일"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "동별 주 5일 요일제 (동별 문의 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 관악구 배출일자",
+        "region": "서울특별시 관악구",
+        "source": {
+            "title": "생활쓰레기 배출 - 관악구청",
+            "url": "https://www.gwanak.go.kr/site/gwanak/07/10703010100002016051206.jsp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기",
+                "rules": {
+                    "배출_시간": "18:00부터 24:00까지",
+                    "배출_요일": "일요일, 월요일, 화요일, 수요일, 목요일, 금요일 (매일)",
+                    "배출_장소": "내 집 앞에 배출"
+                }
+            },
+            {
+                "residence_type": "재활용품(아파트 외)",
+                "rules": {
+                    "배출_요일": "매일(토요일 제외),  단, 2021.12.25.부터 ‘폐비닐’과 ‘투명페트병’은 각각 분리하여 목요일에만 배출",
+                    "배출_방법": "투명 봉투에 분리 배출",
+                    "배출_장소": "내 집앞, 내 점포앞 (분리수거대 설치 건물은 분리수거대에 배출)",
+                    "배출_시간": "주거지역 18:00 ~ 24:00, 가로변 지역 22:00 ~ 다음날 새벽 01:00"
+                }
+            },
+            {
+                "residence_type": "재활용품(아파트)",
+                "rules": {
+                    "배출_방법": "배출주기, 시간, 장소, 방법 등은 아파트 별로 상이함(관리사무소 등에 문의)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 광진구 배출일자",
+        "region": "서울특별시 광진구",
+        "source": {
+            "title": "2025년 8월 휴일 쓰레기 배출 일정 | 서울특별시 광진구 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/a45eb46b-177c-40e8-b571-43f8c2ae8a3d"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "생활쓰레기_배출요일": "주 6일 (일~금)",
+                    "배출_개시_시간": "오후 6시부터 가능 (2025년 1월 1일 기준)",
+                    "배출_금지일": "공휴일 전일과 토요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 구로구 배출일자",
+        "region": "서울특별시 구로구",
+        "source": {
+            "title": "검색 결과 없음",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "배출_요일": "단독주택: 월, 수, 금요일 배출, 공동주택: 화, 목, 토요일 배출",
+                    "배출_시간": "당일 오후 8시 ~ 자정 사이"
+                }
+            },
+            {
+                "residence_type": "음식물",
+                "rules": {
+                    "배출_요일": "요일과 상관없이 매일 배출 가능"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 금천구 배출일자",
+        "region": "서울특별시 금천구",
+        "source": {
+            "title": "생활폐기물 배출은 이렇게 - 금천구청",
+            "url": "https://www.geumcheon.go.kr/portal/contents.do?key=812"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 (매일수거제)",
+                "rules": {
+                    "배출_시간": "토요일을 제외한 요일 18:00 ~ 24:00 사이에 배출",
+                    "주요_도로_상가지역": "22:00~그 다음날 01:00까지",
+                    "공휴일_수거": "2024년부터 공휴일 미수거. 공휴일 전날 배출 금지."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 노원구 배출일자",
+        "region": "서울특별시 노원구",
+        "source": {
+            "title": "생활쓰레기 분리배출 안내 - 노원구청",
+            "url": "https://webzine.nowon.kr/enewspaper/articleview.php?aid=3421"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "18:00 ~ 24:00 (가로변건물: 22:00 ~ 01:00)",
+                    "배출_장소": "내 집·내 점포 앞",
+                    "일반봉투_배출요일_그룹1": "월·수·금 (월계1,2,3동, 공릉2동, 하계2동 등)",
+                    "일반봉투_배출요일_그룹2": "일·화·목 (공릉1동 일부, 하계1동, 중계본동 등)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "배출요일이 동별로 다름 (문의 ☎2116-3809)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 도봉구 배출일자",
+        "region": "서울특별시 도봉구",
+        "source": {
+            "title": "생활폐기물 배출안내 - 도봉구청",
+            "url": "https://www.dobong.go.kr/subsite/waste/Contents.asp?code=10007357"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "수거_일시": "매일수거",
+                    "배출_시간": "18:00 ~ 24:00",
+                    "배출_장소": "내 집·내 점포 앞",
+                    "배출_금지일": "공휴일 전일과 토요일 (공휴일과 일요일은 미수거)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 동대문구 배출일자",
+        "region": "서울특별시 동대문구",
+        "source": {
+            "title": "쓰레기배출및수거 - 동대문구청",
+            "url": "https://www.ddm.go.kr/www/contents.do?key=858"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용",
+                "rules": {
+                    "배출_요일": "동별 격일제 (월, 수, 금 그룹 또는 일, 화, 목 그룹)",
+                    "배출_시간": "정보 미기재 (구청 공지사항 또는 문의 필요)",
+                    "배출_금지일": "토요일 및 공휴일 전날 중 일부는 미수거일로 지정됨 (별도 일정 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 동작구 배출일자",
+        "region": "서울특별시 동작구",
+        "source": {
+            "title": "3·1절 법정 공휴일 쓰레기 배출 안내 | 서울특별시 동작구 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/a03fbb70-3272-496a-9ae3-a5b2e6df9bd7"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "배출가능 기간에는 17:00~22:00 사이 배출",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날 저녁 배출 금지",
+                    "배출_장소": "내 집 앞 (공동주택은 내부 지정장소)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 마포구 배출일자",
+        "region": "서울특별시 마포구",
+        "source": {
+            "title": "마포구 생활폐기물 배출 안내 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/b122e29e-89fe-4948-8db5-affa4eeaf25c"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/혼합재활용품",
+                "rules": {
+                    "배출_요일": "주 5일 (일요일 ~ 목요일)",
+                    "배출_금지일": "금요일, 토요일",
+                    "배출_시간_겨울": "11월~3월: 18:00 ~ 24:00",
+                    "배출_시간_여름": "4월~10월: 19:00 ~ 24:00"
+                }
+            },
+            {
+                "residence_type": "재활용품 (투명페트병, 비닐)",
+                "rules": {
+                    "배출_요일": "수요일에만 별도 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 서대문구 배출일자",
+        "region": "서울특별시 서대문구",
+        "source": {
+            "title": "서대문구청 종합민원 > 대형폐기물 신고 > 배출절차",
+            "url": "https://www.sdm.go.kr/civil/print/waste.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용",
+                "rules": {
+                    "수거_체계": "동별로 수거 요일 상이",
+                    "동별_예시1": "충현동, 천연동 등: 매일 순차 수거",
+                    "동별_예시2": "홍제동 등: 월, 수, 금 순차 수거",
+                    "동별_예시3": "남가좌동 등: 월, 화, 목 순차 수거",
+                    "배출_원칙": "문전수거가 원칙이며, 동별 배출 요일 및 시간을 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 서초구 배출일자",
+        "region": "서울특별시 서초구",
+        "source": {
+            "title": "7월 1일부터 생활폐기물 배출시간이 변경됩니다",
+            "url": "https://seocho.newstool.co.kr/view.php?eid=8687&aid=8689"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기, 재활용품",
+                "rules": {
+                    "배출_요일": "지역별 격일 배출 (일·화·목 그룹 또는 월·수·금 그룹)",
+                    "배출_시간": "배출요일 18:00 ~ 익일 01:00까지",
+                    "가로변_지역_시간": "배출요일 22:00 ~ 익일 01:00 사이"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "배출_요일": "매일",
+                    "배출_금지일": "공휴일 전날 및 토요일은 모든 쓰레기 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 성동구 배출일자",
+        "region": "서울특별시 성동구",
+        "source": {
+            "title": "일반 쓰레기 배출 방법 (PDF)",
+            "url": "https://www.gwell-homes.com/nboard/upload/notice/2021/org-notice_guest_2021060716425788_118.pdf"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물 (일부 동)",
+                "rules": {
+                    "배출_요일": "월, 수, 금",
+                    "배출_시간": "저녁 8시 ~ 밤 12시",
+                    "배출_금지일": "토요일 및 공휴일 전날 (일요일, 공휴일 미수거)"
+                }
+            },
+            {
+                "residence_type": "재활용품 (투명페트병, 폐비닐)",
+                "rules": {
+                    "배출_요일": "목요일에만 별도 배출 (2023년 4월 기준)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 성북구 배출일자",
+        "region": "서울특별시 성북구",
+        "source": {
+            "title": "[알림] 생활쓰레기 배출요일 및 수거시간 변경 안내 - 성북소리",
+            "url": "https://sb.newstool.co.kr/view.php?eid=8936&aid=15825"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용",
+                "rules": {
+                    "배출_요일": "지역(동)별 배출일 상이",
+                    "배출_시간": "지역(동)별 배출일 18:00 ~ 20:00 (변경됨)",
+                    "배출_장소": "내 집·내 점포 앞 (공동주택 등은 지정 장소)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 송파구 배출일자",
+        "region": "서울특별시 송파구",
+        "source": {
+            "title": "2024 공휴일 생활폐기물 미수거 안내 | 서울특별시 송파구 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/06d227a7-829a-4581-8b0b-41ffaa605590"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용",
+                "rules": {
+                    "공휴일_규정": "공휴일 전날 저녁은 배출 금지",
+                    "평일_배출_정보": "평일의 상세 배출 요일/시간은 추가 검색 또는 구청 홈페이지 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 양천구 배출일자",
+        "region": "서울특별시 양천구",
+        "source": {
+            "title": "2024년 10월 공휴일에 따른 생활폐기물 배출 안내 | 서울특별시 양천구 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/7bfa8fd2-d33c-4e66-8f3f-820ac5f320d9"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용",
+                "rules": {
+                    "배출_요일_그룹1": "월, 수, 금 배출지역",
+                    "배출_요일_그룹2": "화, 목, 일 배출지역",
+                    "배출_금지일": "공휴일 전날 (동별 배출 요일에 따라 적용됨)",
+                    "공동주택_예외": "공동주택 자체 계약에 의한 재활용품 수거는 제외"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 영등포구 배출일자",
+        "region": "서울특별시 영등포구",
+        "source": {
+            "title": "재활용분리배출 - 영등포구청",
+            "url": "https://www.ydp.go.kr/www/contents.do?key=2733"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00 사이",
+                    "배출_금지일": "토요일, 공휴일 배출 금지"
+                }
+            },
+            {
+                "residence_type": "투명 페트병/비닐류 (단독주택, 상가)",
+                "rules": {
+                    "배출_요일": "매주 목요일 별도 배출 의무화"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 용산구 배출일자",
+        "region": "서울특별시 용산구",
+        "source": {
+            "title": "무단투기 폐기물 수거 현장 분리수거만 잘해도 충분합니다! - 용산구소식",
+            "url": "https://www.yongsannews.com/vol552/sub_html002.html"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 재활용품",
+                "rules": {
+                    "배출_요일": "일요일 ~ 목요일 (주 5일)",
+                    "배출_금지일": "금요일, 토요일",
+                    "배출_시간_골목길": "18:00 ~ 24:00",
+                    "배출_시간_도로변": "22:00 ~ 01:00"
+                }
+            },
+            {
+                "residence_type": "재활용품 (무색페트병/비닐류)",
+                "rules": {
+                    "배출_요일": "매주 목요일 (단독주택, 연립, 상가만 해당)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 은평구 배출일자",
+        "region": "서울특별시 은평구",
+        "source": {
+            "title": "은평구 대형폐기물 처리 시스템",
+            "url": "https://ai-waste.ep.go.kr/infos"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 음식물 쓰레기",
+                "rules": {
+                    "배출_요일": "단독주택: 월·수·금요일, 공동주택: 화·목·토요일, 음식물 쓰레기: 거주 형태와 상관없이 매일 수거 (읍면 지역은 주 2회)"
+                }
+            },
+            {
+                "residence_type": "대형폐기물",
+                "rules": {
+                    "수거_요일": "동별 월/수/금 또는 화/목/토 (신청 시 지정일 다음날부터 4~5일 이내 수거)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 종로구 배출일자",
+        "region": "서울특별시 종로구",
+        "source": {
+            "title": "[이코노믹포스트] 종로구, `재활용품 요일별 분리 배출제` 시행",
+            "url": "http://www.economicpost.co.kr/38237"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 음식물 쓰레기",
+                "rules": {
+                    "배출_요일": "동별 격일제 (월·수·금 지역과 일·화·목 지역으로 나뉨)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "투명페트병/비닐": "매주 목요일 또는 금요일",
+                    "그_외_재활용품": "투명페트병/비닐 배출 요일 외의 요일 (유색페트병, 플라스틱류, 유리병류, 캔류 등)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 중구 배출일자",
+        "region": "서울특별시 중구",
+        "source": {
+            "title": "서울 중구, 매월 마지막 주 수요일 '쓰레기 배출 금지' - 문화일보",
+            "url": "https://www.munhwa.com/article/11485269"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "배출_금지일": "매월 마지막 주 수요일 ('쓰레기 배출 금지의 날') 지정 시행 (2025년 2월 기준)",
+                    "정규_배출_정보": "정규 배출 요일 및 시간은 검색 결과에서 명확히 확인되지 않음. 구청 홈페이지 확인 필요."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "서울특별시 중랑구 배출일자",
+        "region": "서울특별시 중랑구",
+        "source": {
+            "title": "서울특별시중랑구 폐기물관리 조례 시행규칙 | U-LEX 법률 우주",
+            "url": "https://www.ulex.co.kr/%EB%B2%95%EB%A5%A율/763928-2080956-%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%EC%A4%91%EB%9E%91%EA%B5%AC%ED%8F%90%EA%B8%B0"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "종량제폐기물 (일반/음식물)",
+                "rules": {
+                    "배출_시간": "매일 20:00부터 익일 05:00 사이 (재활용품 배출은 제외)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "매주 화·금요일 (일부 동은 일반쓰레기 배출일과 동일하게 조정됨)",
+                    "배출_시간": "전일 20:00부터 익일 10:00 사이"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 강서구 배출일자",
+        "region": "부산광역시 강서구",
+        "source": {
+            "title": "부산 강서구, 금․토요일 쓰레기 배출 않기 캠페인 펼쳐",
+            "url": "https://www.busan.com/view/busan/view.php?code=2024111415434614795"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "단독주택, 상가 등",
+                "rules": {
+                    "종량제/음식물쓰레기": "화, 목, 일요일 배출",
+                    "재활용품": "월, 수요일 배출",
+                    "배출_시간": "17:00 ~ 19:00",
+                    "배출_금지일": "금요일, 토요일"
+                }
+            },
+            {
+                "residence_type": "공동주택",
+                "rules": {
+                    "종량제/음식물쓰레기": "화, 목, 일요일 수거 (자체 지정 장소 배출)",
+                    "재활용품": "월, 수요일 수거"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 금정구 배출일자",
+        "region": "부산광역시 금정구",
+        "source": {
+            "title": "( 음식물 쓰레기 ) | 부산광역시 금정구청",
+            "url": "https://www.geumjeong.go.kr/index.geumj?menuCd=DOM_000000133008000000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "음식물쓰레기 (단독주택용)",
+                "rules": {
+                    "배출_요일": "지정요일 (일, 화, 목요일)",
+                    "배출_시간": "19:00 ~ 22:00"
+                }
+            },
+            {
+                "residence_type": "일반 쓰레기 / 재활용품",
+                "rules": {
+                    "배출_요일": "음식물 쓰레기 정보만 명확히 확인됨. 일반 쓰레기/재활용품 배출 요일은 구청 홈페이지를 통해 별도 확인 필요."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 기장군 배출일자",
+        "region": "부산광역시 기장군",
+        "source": {
+            "title": "생활쓰레기 배출 안내 - 기장군도시관리공단",
+            "url": "https://www.gijangcmc.or.kr/recycling/02_guide/03_guide.asp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "기장/철마 지역 (예시)",
+                "rules": {
+                    "종량제/음식물": "일, 수, 금요일",
+                    "재활용품": "월, 목요일",
+                    "불연성_쓰레기": "매월 첫째 주 목요일"
+                }
+            },
+            {
+                "residence_type": "장안/일광/정관 지역 (예시)",
+                "rules": {
+                    "종량제/음식물": "수, 금요일",
+                    "재활용품": "화, 목요일",
+                    "불연성_쓰레기": "매월 첫째 주 금요일"
+                }
+            },
+            {
+                "residence_type": "공통",
+                "rules": {
+                    "배출_금지일": "금요일, 토요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 남구 배출일자",
+        "region": "부산광역시 남구",
+        "source": {
+            "title": "대형폐기물 인터넷 배출 신청 > 안내 > 부산 남구청",
+            "url": "https://www.bsnamgu.go.kr/index.namgu?menuCd=DOM_000000125001019001"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 음식물 쓰레기 / 재활용품",
+                "rules": {
+                    "배출_요일": "일반쓰레기(일, 화, 목) / 재활용품(월(종이류, 의류, 비닐류, 스티로폼, 소형 폐가전), 수(플라스틱류, 유리병, 캔, 고철, 투명페트병), 불에 타지 않는 일반쓰레기(도자기류, 깨진유리 등), 불연성 마대, 연탄재))"
+                }
+            },
+            {
+                "residence_type": "대형폐기물",
+                "rules": {
+                    "수거_일시": "접수 순서에 따라 당일 또는 익일 수거 (일요일 제외)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 동구 배출일자",
+        "region": "부산광역시 동구",
+        "source": {
+            "title": "안내사항의 상세보기 < 동구소식 < 정보공개 < 부산광역시 동구청",
+            "url": "https://www.bsdonggu.go.kr/board/view.donggu?boardId=BBS_0000023&menuCd=DOM_000000103001001000&paging=ok&startPage=841&dataSid=52096"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 재활용품 / 음식물",
+                "rules": {
+                    "배출_시간": "밤 9시부터 자정(12시)까지",
+                    "배출_장소": "대문 앞 또는 업소 1층 출입구",
+                    "배출_요일_가연성_일반": "월요일",
+                    "배출_요일_재활용품": "화요일 (PET, 캔, 플라스틱, 비닐, 형광등)",
+                    "배출_요일_음식물": "일요일 (단, 음식물은 별도 수거 요일이 있을 수 있으므로 구청 확인 권장)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 동래구 배출일자",
+        "region": "부산광역시 동래구",
+        "source": {
+            "title": "동래구 생활쓰레기 배출 요일 및 시간 안내",
+            "url": "https://www.dongnae.go.kr/index.dongnae?menuCd=DOM_000000702002002000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 음식물 쓰레기",
+                "rules": {
+                    "배출_시간": "19:00 ~ 22:00",
+                    "배출_요일": "일반 쓰레기: 월·수·금 / 음식물 쓰레기: 매일",
+                    "재활용품": "동별 지정 요일에 배출 (요일은 동별 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 부산진구 배출일자",
+        "region": "부산광역시 부산진구",
+        "source": {
+            "title": "부산진구청 > 쓰레기 배출 안내",
+            "url": "https://www.busanjin.go.kr/index.busanjin?menuCd=DOM_000000202001004000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 음식물 쓰레기",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00 (토요일은 18:00 ~ 24:00)",
+                    "배출_요일": "월요일 ~ 토요일 (주 6일) 배출 가능",
+                    "배출_금지일": "공휴일 전날은 배출 금지 (단, 명절 등 연휴는 별도 공지 확인)",
+                    "재활용품": "수요일 (종이, 유리), 목요일 (플라스틱, 캔, 고철 등), 일요일 (폐비닐, 스티로폼, 폐형광등)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 북구 배출일자",
+        "region": "부산광역시 북구",
+        "source": {
+            "title": "2024년 추석 연휴 쓰레기 수거 중단 안내 | 부산광역시 북구",
+            "url": "https://www.welfarehello.com/community/hometownNews/398e4f5a-3375-4081-80fc-52317112003c"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물",
+                "rules": {
+                    "배출_시간": "일반적으로 20:00 ~ 24:00 사이 (평일 기준)",
+                    "배출_금지일": "토요일, 공휴일 전날은 배출 금지"
+                }
+            },
+            {
+                "residence_type": "재활용품/기타",
+                "rules": {
+                    "배출_요일": "목요일(도자기, 유리, 타일, 거울, 뚝배기 등 불연성 쓰레기), 목요일 제외(병, 비닐, 종이, 스티로폼, 의류 등)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 사상구 배출일자",
+        "region": "부산광역시 사상구",
+        "source": {
+            "title": "사상구청 > 분야별 정보 > 청소 및 환경 > 쓰레기 배출안내",
+            "url": "https://www.sasang.go.kr/index.sasang?menuCd=DOM_000000201004001000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 재활용품",
+                "rules": {
+                    "배출_시간": "매일 19:00 ~ 22:00",
+                    "배출_요일": "월, 수, 금",
+                    "음식물_쓰레기": "매일 (전용 용기 사용)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 사하구 배출일자",
+        "region": "부산광역시 사하구",
+        "source": {
+            "title": "사하구청 > 청소/환경 > 쓰레기 배출안내",
+            "url": "https://www.saha.go.kr/www/contents.do?key=218"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 음식물 쓰레기",
+                "rules": {
+                    "배출_시간": "19:00 ~ 24:00",
+                    "배출_금지일": "공휴일 전날, 토요일 (공휴일과 일요일 미수거)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "동별로 월·목요일 또는 화·금요일 격일제 시행"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 서구 배출일자",
+        "region": "부산광역시 서구",
+        "source": {
+            "title": "부산 서구, 생활쓰레기 상습 무단투기지역 '클린하우스' 설치·운영 - 부산일보",
+            "url": "https://www.busan.com/view/busan/view.php?code=2024031917202307849"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "배출_요일": "일반쓰레기는 (일,월,수요일), 음식물 쓰레기는 (일,수요일), 연탄재 (월요일), 불연성 쓰레기 (목요일)이나 지역에 따라 다를 수 있으므로 거주지 동 행정복지센터에서 확인 필요 "
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "화요일 저녁: 재활용품(캔, 고철, 병, 종이, 의류, 스티로폼, 비닐류) 지역에 따라 다를 수 있으므로 거주지 동 행정복지센터에서 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 수영구 배출일자",
+        "region": "부산광역시 수영구",
+        "source": {
+            "title": "생활폐기물 배출안내 | 부산광역시 수영구청",
+            "url": "https://www.suyeong.go.kr/lll/index.suyeong?menuCd=DOM_000000205001000000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "일·화·목요일",
+                    "배출_시간": "20:00 ~ 23:00 (음식물은 19:00 ~ 22:00)",
+                    "배출_금지일": "금요일, 토요일"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "월요일, 수요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 연제구 배출일자",
+        "region": "부산광역시 연제구",
+        "source": {
+            "title": "연제구청 > 생활정보 > 쓰레기배출안내",
+            "url": "https://www.yeonje.go.kr/index.yeonje?menuCd=DOM_000000402001001000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 재활용품 / 음식물 쓰레기",
+                "rules": {
+                    "배출_요일": "동별 격일제 (A지역: 일·화·목 / B지역: 월·수·금)",
+                    "배출_시간": "20:00 ~ 24:00 (익일 05:00까지 수거)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 영도구 배출일자",
+        "region": "부산광역시 영도구",
+        "source": {
+            "title": "부산 영도구청 > 생활폐기물 배출 안내",
+            "url": "https://www.yeongdo.go.kr/www/contents.do?key=279"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 음식물 쓰레기",
+                "rules": {
+                    "배출_요일": "매일 (주 6일) 배출 가능",
+                    "배출_시간": "19:00 ~ 24:00",
+                    "배출_금지일": "공휴일 전날은 배출 금지 (일요일은 미수거)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "매주 수요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 중구 배출일자",
+        "region": "부산광역시 중구",
+        "source": {
+            "title": "부산 중구 생활쓰레기 배출 요령 안내",
+            "url": "https://www.bsjunggu.go.kr/board/view.bsjunggu?boardId=BBS_0000001&menuCd=DOM_000000102002002000&dataSid=42701"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00",
+                    "배출_금지일": "토요일 및 공휴일 전날 배출 금지",
+                    "배출_요일": "동별 격일제 시행 (A지역: 월·수·금 / B지역: 일·화·목)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "부산광역시 해운대구 배출일자",
+        "region": "부산광역시 해운대구",
+        "source": {
+            "title": "해운대구청 생활쓰레기 배출 안내",
+            "url": "https://www.haeundae.go.kr/waste/contents.do?mId=0402010000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기/재활용품",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00 (야간 배출)",
+                    "배출_금지일": "토요일 및 공휴일 전날은 배출 금지",
+                    "배출_요일_일반": "동별 격일제 (A지역: 일·화·목, B지역: 월·수·금)",
+                    "배출_요일_음식물": "매일 배출 가능 (공동주택은 RFID 종량기 사용)",
+                    "배출_요일_재활용": "동별 격일제 (일반쓰레기 배출일과 동일)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 군위군 배출일자",
+        "region": "대구광역시 군위군",
+        "source": {
+            "title": "군위군청 생활폐기물 배출 안내",
+            "url": "https://www.gunwi.go.kr/env/contents.do?mId=0201010000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_요일": "동네별 배출 요일 상이 (읍/면/리 단위 확인 필요)",
+                    "배출_시간": "수거 전날 일몰 후부터 다음날 수거 시작 시까지",
+                    "배출_금지일": "일요일 저녁 및 공휴일 전날 저녁은 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 남구 배출일자",
+        "region": "대구광역시 남구",
+        "source": {
+            "title": "대구 남구청 생활폐기물 배출안내",
+            "url": "https://www.nam.daegu.kr/waste/index.php?pCode=SCC000000201"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00",
+                    "배출_요일": "월요일~금요일 (토요일 저녁 및 공휴일 전날 배출 금지)",
+                    "음식물_쓰레기": "전용 수거용기에 납부칩 부착 후 배출 (주 5일)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 달서구 배출일자",
+        "region": "대구광역시 달서구",
+        "source": {
+            "title": "달서구청 청소행정 > 쓰레기 배출 안내",
+            "url": "https://www.dalseo.daegu.kr/clean/index.do?menu_id=00000494"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "일몰 후 ~ 24:00",
+                    "배출_요일": "일·화·목요일 (3회 수거)",
+                    "배출_금지일": "월요일, 수요일, 금요일 저녁 및 토요일 저녁 배출 금지",
+                    "음식물_쓰레기": "전용 용기에 납부칩 부착 후 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 달성군 배출일자",
+        "region": "대구광역시 달성군",
+        "source": {
+            "title": "달성군청 생활폐기물 배출 안내",
+            "url": "https://www.dalseong.daegu.kr/index.do?menu_id=00002166"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "배출_시간": "18:00 ~ 24:00 (수거 전날)",
+                    "배출_요일": "읍·면별 배출 요일 상이 (군청 공지 확인 필요)",
+                    "배출_금지일": "토요일 저녁, 공휴일 전날 저녁 배출 금지"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "수거_체계": "RFID 개별 계량장비 설치 지역은 상시 배출",
+                    "기타_지역": "읍·면별 주 3회 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 동구 배출일자",
+        "region": "대구광역시 동구",
+        "source": {
+            "title": "대구 동구청 생활폐기물 배출안내",
+            "url": "https://www.dong.daegu.kr/main/page.htm?mnu_uid=294&"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00",
+                    "배출_요일": "월, 수, 금 (격일제)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "화, 목, 일 (격일제)"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "배출_요일": "매일 (RFID 개별 계량장비 설치 지역)",
+                    "배출_금지일": "토요일 저녁, 공휴일 저녁 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 북구 배출일자",
+        "region": "대구광역시 북구",
+        "source": {
+            "title": "대구 북구청 > 생활쓰레기 배출 요일 안내",
+            "url": "https://www.buk.daegu.kr/pages/main/page.html?menu_id=141&menu_sub_id=45&menu_cls_id=1&menu_sub_id=45&menu_cls_id=1"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00",
+                    "배출_요일": "격일제 (A지역: 월·수·금 / B지역: 일·화·목)",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날 저녁 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 서구 배출일자",
+        "region": "대구광역시 서구",
+        "source": {
+            "title": "대구 서구청 > 생활폐기물 배출안내",
+            "url": "https://www.seo.daegu.kr/clean/index.do?menu_id=00000109"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 재활용품",
+                "rules": {
+                    "배출_시간": "18:00 ~ 24:00",
+                    "배출_요일": "월·수·금요일 (주 3회 수거)",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날 저녁 배출 금지"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "수거_체계": "RFID 방식(계량)으로 상시 배출 (납부칩 방식 지역은 별도 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 수성구 배출일자",
+        "region": "대구광역시 수성구",
+        "source": {
+            "title": "대구 수성구청 > 생활쓰레기 배출 요일 및 시간",
+            "url": "https://www.suseong.kr/index.do?menu_id=00005796"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "배출_시간": "일몰 후 ~ 24:00",
+                    "배출_요일": "동별 격일제 (A지역: 일·화·목, B지역: 월·수·금)",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날 저녁 배출 금지"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "수거_체계": "RFID 종량기 지역은 상시 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대구광역시 중구 배출일자",
+        "region": "대구광역시 중구",
+        "source": {
+            "title": "대구 중구청 > 생활쓰레기 배출안내",
+            "url": "https://www.jung.daegu.kr/pages/main/page.html?menu_uid=309&"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "배출_시간": "20:00 ~ 24:00",
+                    "배출_요일": "동별 격일제 (A지역: 일·화·목, B지역: 월·수·금)",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날 저녁 배출 금지"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "수거_체계": "RFID 종량기 지역은 상시 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 강화군 배출일자",
+        "region": "인천광역시 강화군",
+        "source": {
+            "title": "재활용쓰레기 | 강화군청>분야별정보>환경위생>생활쓰레기",
+            "url": "https://www.ganghwa.go.kr/open_content/main/part/clean/detritus_recycle.jsp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "생활쓰레기 배출일시 (별도 확인 필요)",
+                    "배출_장소": "일정 장소"
+                }
+            },
+            {
+                "residence_type": "재활용쓰레기",
+                "rules": {
+                    "수거_일정": "매주 화·금요일 수거 (해당 읍·면에서 수거)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 계양구 배출일자",
+        "region": "인천광역시 계양구",
+        "source": {
+            "title": "인천계양구 생활쓰레기 배출요일 변경",
+            "url": "http://www.mediaic.co.kr/news/articleView.html?idxno=28732"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 / 음식물쓰레기",
+                "rules": {
+                    "배출_요일": "주 6회 배출 (토요일 배출 제외)",
+                    "배출_시간": "정보 미기재 (변경 공지 확인 필요)"
+                }
+            },
+            {
+                "residence_type": "재활용쓰레기",
+                "rules": {
+                    "배출_요일_그룹1": "일·화·목요일 (효성1·2동, 계산2·3동, 작전1동 등)",
+                    "배출_요일_그룹2": "월·수·금요일 (계산1·4동, 작전2동, 계양1·3동 등)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 미추홀구 배출일자",
+        "region": "인천광역시 미추홀구",
+        "source": {
+            "title": "미추홀구, 5월1일부터 폐기물 배출 요일 확대 - 인천in",
+            "url": "https://www.incheonin.com/news/articleView.html?idxno=87579"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기 (일반)",
+                "rules": {
+                    "배출_요일": "토요일을 제외한 모든 요일 (주 5일)",
+                    "배출_시간": "정보 미기재 (구청 안내 확인 필요)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일_그룹1": "월요일·수요일·금요일 (숭의2·4동, 용현3·5동, 학익1동, 관교동 등)",
+                    "배출_요일_그룹2": "화요일·목요일·일요일 (나머지 동)",
+                    "배출_횟수": "주 3회로 확대"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "배출_요일": "기존과 같이 요일 관계없이 배출 가능"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 남동구 배출일자",
+        "region": "인천광역시 남동구",
+        "source": {
+            "title": "올바른 생활 폐기물 배출방법 안내 | 인천광역시 남동구 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/304e5e16-ef11-483c-b8e2-d8a71a2abe0b"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 / 불연성 폐기물",
+                "rules": {
+                    "배출_요일": "주 5회 (일, 월, 화, 수, 목)",
+                    "배출_시간": "배출요일 17:00 ~ 24:00"
+                }
+            },
+            {
+                "residence_type": "재활용 가능자원",
+                "rules": {
+                    "배출_요일": "주 3회 (일, 화, 목)",
+                    "배출_시간": "배출요일 17:00 ~ 24:00"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 동구 배출일자",
+        "region": "인천광역시 동구",
+        "source": {
+            "title": "재활용 | 인천동구청>분야별정보>청소/환경>쓰레기/재활용 - 인천광역시 동구청",
+            "url": "https://www.icdonggu.go.kr/main/area/clean/waste_recycle.jsp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "매주 일요일, 화요일, 목요일",
+                    "배출_시간": "저녁 8시부터 12시까지"
+                }
+            },
+            {
+                "residence_type": "일반/음식물 쓰레기",
+                "rules": {
+                    "배출_요일": "일반 쓰레기는 (일,화,목요일), 음식물 쓰레기는 거주하는 동이나 아파트의 배출 지침 확인필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 부평구 배출일자",
+        "region": "인천광역시 부평구",
+        "source": {
+            "title": "대형폐기물 | 인천광역시 부평구청",
+            "url": "https://www.icbp.go.kr/main/life/clean/remove.jsp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_요일": "동별 지정 요일 확인 필요",
+                    "배출_시간": "배출 요령 참고 (정보 미기재)"
+                }
+            },
+            {
+                "residence_type": "대형폐기물",
+                "rules": {
+                    "수거_주기": "2일에 한 번씩 순차적으로 수거",
+                    "휴무일": "토요일(첫째주, 셋째주), 일요일, 명절연휴 3일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 서구 배출일자",
+        "region": "인천광역시 서구",
+        "source": {
+            "title": "생활쓰레기 배출 - 인천광역시 서구청",
+            "url": "https://www.seo.incheon.kr/open_content/main/part/clean/detritus.jsp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반)",
+                "rules": {
+                    "배출_요일": "월, 화, 수, 목, 금, 토 (주 6일)",
+                    "배출_시간": "수거 전일 20:00 ~ 24:00"
+                }
+            },
+            {
+                "residence_type": "재활용 가능 폐기물 / 음식물류 폐기물",
+                "rules": {
+                    "배출_횟수": "주 3회 (월·수·금 또는 화·목·토 지역별 구분)",
+                    "배출_시간": "수거 전일 20:00 ~ 24:00"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 연수구 배출일자",
+        "region": "인천광역시 연수구",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "배출_요일": "토요일을 제외한 모든 요일 배출이 가능한 지역이 많지만, 자세한 요일은 동별로 확인 필요."
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "월·수·금 배출 동: 연수동, 동춘동, 송도2·3동... 등 | 일·화·목 배출 동: 옥련동, 선학동, 송도1·4·5동... 등 "
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 옹진군 배출일자",
+        "region": "인천광역시 옹진군",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "배출_요일": "일반적인 쓰레기는 주 4회 이상 배출이 가능하지만, 재활용품은 지역마다 배출 요일이 다르므로 이를 확인 필요",
+                    "배출_시간": "보통 20시부터 다음 날 오전 2시까지이며, 재활용품 배출 요일은 지역에 따라 다르므로 군청 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "인천광역시 중구 배출일자",
+        "region": "인천광역시 중구",
+        "source": {
+            "title": "쓰레기배출요령 - 인천광역시 중구청",
+            "url": "https://www.icjg.go.kr/krpt04"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반생활 폐기물",
+                "rules": {
+                    "배출_요일": "월, 화, 수, 목, 금, 일 (주 6일)",
+                    "배출_금지일": "토요일 배출 금지",
+                    "배출_시간": "당일 20:00 ~ 익일 02:00"
+                }
+            },
+            {
+                "residence_type": "재활용품 / 음식물류 폐기물",
+                "rules": {
+                    "배출_요일_그룹1": "일, 화, 목 (신포, 동인천, 개항, 운서 등)",
+                    "배출_요일_그룹2": "월, 수, 금 (신흥, 율목, 영종동, 연안, 도원, 용유 등)",
+                    "배출_시간": "당일 20:00 ~ 익일 02:00"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "광주광역시 광산구 배출일자",
+        "region": "광주광역시 광산구",
+        "source": {
+            "title": "생활폐기물 수집·운반 - 광산구시설관리공단",
+            "url": "https://www.gsfmc.or.kr/html/03030100"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물 쓰레기",
+                "rules": {
+                    "배출_시간": "당일 20:00 ~ 익일 6:00까지",
+                    "배출_요일": "월 ~ 토 수거 (일요일 미수거)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "동별 격일제 (월/목 그룹과 화/금 그룹, 수/토 그룹으로 나뉨)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "광주광역시 남구 배출일자",
+        "region": "광주광역시 남구",
+        "source": {
+            "title": "광주 남구, 재활용 자원 '품목별 요일제 수거' 시행 - 남도일보",
+            "url": "https://www.namdonews.com/news/articleView.html?idxno=670089"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "단독주택 및 상가 (재활용품)",
+                "rules": {
+                    "배출_체계": "품목별 요일제 수거 시행 (공동주택은 수시 배출)",
+                    "월·수요일": "플라스틱, 종이",
+                    "화·목요일": "스티로폼, 비닐",
+                    "금요일": "투명 페트병, 종이팩",
+                    "토요일": "고철, 캔, 유리병"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "광주광역시 동구 배출일자",
+        "region": "광주광역시 동구",
+        "source": {
+            "title": "음식물쓰레기 분리배출 안내 | 광주광역시 동구 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/600ddd4b-a7d8-42cd-81ff-df71913ee2f0"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "배출_시간": "20:00 ~ 다음날 5:00",
+                    "수거_요일": "월~토요일 수거 (일요일 및 공휴일 미수거)"
+                }
+            },
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "배출_시간": "대부분 수거일 전날 20:00 ~ 당일 2:00까지",
+                    "배출_요일": "지역별로 배출 요일이 다르므로 반드시 거주하는 동의 배출 요일을 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "광주광역시 북구 배출일자",
+        "region": "광주광역시 북구",
+        "source": {
+            "title": "우리동네 생활폐기물 수거일정 안내 | 광주광역시 북구 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/fadde327-3841-41b9-af39-724f323f1251"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기 (종량제)",
+                "rules": {
+                    "수거_주기": "주 3회 수거 (월, 수, 금 또는 화, 목, 토)",
+                    "배출_시간": "수거 요일 전날 20:00 ~ 다음날 6:00"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_주기": "주 2회 수거 (월, 목 / 수, 토 / 화, 금 중 동별 지정)",
+                    "배출_시간": "수거 요일 전날 20:00 ~ 다음날 6:00"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "광주광역시 서구 배출일자",
+        "region": "광주광역시 서구",
+        "source": {
+            "title": "쓰레기봉투 및 납부필증 | 광주광역시 서구청",
+            "url": "https://www.seogu.gwangju.kr/menu.es?mid=a10308030200"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용",
+                "rules": {
+                    "배출_시간": "저녁 8시 ~ 다음 날 새벽 6시 (토요일, 공휴일 전날 제외)",
+                    "재활용품_시범_운영": "풍암동, 화정 2동 등 일부 지역에서 재활용품 품목별 요일별 수거제 시범 운영 중"
+                }
+            },
+            {
+                "residence_type": "일반 쓰레기 배출 요일",
+                "rules": {
+                    "월요일_배출_지역": "양동, 양3동, 광천동 등",
+                    "화요일_배출_지역": "농성1동, 농성2동, 화정1동 등",
+                    "수요일_배출_지역": "상무1동, 치평동 등"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대전광역시 대덕구 배출일자",
+        "region": "대전광역시 대덕구",
+        "source": {
+            "title": "생활폐기물배출신고 | 대전광역시 대덕구청",
+            "url": "https://www.daedeok.go.kr/dpt/goContents.do?link=/dpt/dpt06/DPT06050202&menuId=DPT06050202"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "수거일 전날 19:00 ~ 24:00 (추정)",
+                    "배출_요일": "동별 지정 요일 확인 필요"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_주기": "주 2회 수거",
+                    "배출_시간": "수거일 전날 저녁 7시 이후 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대전광역시 동구 배출일자",
+        "region": "대전광역시 동구",
+        "source": {
+            "title": "재활용품배출요령",
+            "url": "https://www.wsu.ac.kr/board/download.jsp?file=WzFd7JOw66CI6riwIOuwsOy2nOyalOuguSDtmY3rs7TrrLgucGRm&ek=e86f165785c9cdfab6dff0b2019b94b2&id=52771"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 (음식물쓰레기 포함)",
+                "rules": {
+                    "배출_요일": "매일 (토요일 제외)",
+                    "배출_시간": "밤 8시 ~ 다음날 오전 4시"
+                }
+            },
+            {
+                "residence_type": "재활용품 / 대형폐기물",
+                "rules": {
+                    "배출_요일": "동별 수거 요일 전일 (동별 확인 필요)",
+                    "배출_시간": "밤 8시 이후 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대전광역시 서구 배출일자",
+        "region": "대전광역시 서구",
+        "source": {
+            "title": "대전 서구, 2023년 재활용품 배출 달력 배포 - 밥상뉴스",
+            "url": "http://www.bsnews.kr/news/articleView.html?idxno=54972"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_주기": "동별 주 2회 정해진 날 배출 (별도 달력 확인 필요)"
+                }
+            },
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "일요일 제외, 전날 20:00 ~ 당일 02:00"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대전광역시 유성구 배출일자",
+        "region": "대전광역시 유성구",
+        "source": {
+            "title": "대전광역시 유성구 폐기물관리 및 수수료 등의 부과·징수에 관한 조례 - U-LEX",
+            "url": "https://www.ulex.co.kr/%EB%B2%95%EB%A5%A0/1906715-2052841-%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C%EC%9C%A0%EC%84%B1%EA%B5%AC%ED%8F%90"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "일몰 후 ~ 익일 04:00 (추정)",
+                    "배출_금지일": "토요일 20:00 ~ 일요일 04:00 사이 배출 금지",
+                    "배출_요일": "구청장이 지정하는 요일, 장소에 따라 배출 (동별 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "대전광역시 중구 배출일자",
+        "region": "대전광역시 중구",
+        "source": {
+            "title": "생활쓰레기배출 > 쓰레기배출요령 > 환경/생활 > 분야별정보 - 대전광역시 중구청",
+            "url": "https://www.djjunggu.go.kr/kr/sub06_05_09_02.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "평일 일몰 후 ~ 일출 전 (저녁 19:00 ~ 익일 04:00)",
+                    "배출_금지일": "일요일은 모든 쓰레기 미수거. 토요일 해뜬 후부터 일요일 해질 때까지 배출 금지."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 중구 배출일자",
+        "region": "울산광역시 중구",
+        "source": {
+            "title": "울산 중구 재활용품 배출 요령",
+            "url": "https://www.welfarehello.com/community/hometownNews/9b23a7e5-3c70-4025-bafa-082aa0d5500a"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "일요일 ~ 목요일 (주 5일)",
+                    "배출_시간": "밤 8시 ~ 밤 12시 (익일 오전 수거)",
+                    "배출_금지일": "금요일, 토요일"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일_품목별": "일요일(일반 재활용), 월요일(비닐류), 화요일(투명페트병), 수·목요일(일반 재활용)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 남구 배출일자",
+        "region": "울산광역시 남구",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "배출_요일": " 일요일과 공휴일을 제외한 매일 생활 쓰레기를 수거하며, 배출 시간은 수거 전날 일몰 후부터 수거일 새벽 3시까지."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 동구 배출일자",
+        "region": "울산광역시 동구",
+        "source": {
+            "title": "울산 동구, 생활쓰레기 배출일자 변경 안내 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/99bdf4c8-0733-4067-b438-41eaf3161c14"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 / 재활용품 / 음식물",
+                "rules": {
+                    "수거_일정": "주 5회 수거 (월 ~ 금요일)",
+                    "배출_시간": "수거일 전날 저녁 8시 ~ 자정 (밤 12시)",
+                    "배출_금지일": "금요일, 토요일 배출 금지",
+                    "음식물_특이사항": "하절기(7월~8월)에는 음식물쓰레기를 매일 수거 (일요일/공휴일 제외)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 북구 배출일자",
+        "region": "울산광역시 북구",
+        "source": {
+            "title": "울산광역시 북구청 > 생활쓰레기",
+            "url": "https://www.bukgu.ulsan.kr/lay1/S1T192C208/contents.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "일요일 ~ 목요일 (주 5일)",
+                    "배출_시간": "일몰 후 ~ 밤 12시까지",
+                    "배출_금지일": "금요일, 토요일 배출 금지"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기 (동별 상이)",
+                "rules": {
+                    "예시_배출_요일": "일부 동 (농소1,2,3동 등): 일·화·목 / 화봉, 연암동 등: 월·수·목 (2025년 기준)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 울주군 범서읍 배출일자",
+        "region": "울산광역시 울주군 (범서읍 포함)",
+        "source": {
+            "title": "울산 울주군 지역 생활 쓰레기 수거일 변경",
+            "url": "http://www.ulsan-news.com/m/view.php?idx=44695"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기 (군 공통)",
+                "rules": {
+                    "수거_주기": "주 5일 (월요일 ~ 금요일 수거)",
+                    "배출_시간": "수거 전날 (일요일 ~ 목요일) 오후 8시 ~ 익일 오전 2시",
+                    "배출_금지일": "금요일 오전 2시 ~ 일요일 오후 8시"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_일정": "읍·면 동일 주 3회 (화, 목, 금요일 수거)",
+                    "배출_시간": "월, 수, 목요일 저녁 8시 ~ 새벽 2시"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 울주군 언양읍 배출일자",
+        "region": "울산광역시 울주군 언양읍",
+        "source": {
+            "title": "울주군 지역 공통 규정 적용",
+            "url": "http://www.ulsan-news.com/m/view.php?idx=44695"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "수거 전날 (일요일 ~ 목요일)",
+                    "배출_시간": "오후 8시 ~ 익일 오전 2시"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 울주군 온산읍 배출일자",
+        "region": "울산광역시 울주군 온산읍",
+        "source": {
+            "title": "울주군 지역 공통 규정 적용",
+            "url": "http://www.ulsan-news.com/m/view.php?idx=44695"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "수거 전날 (일요일 ~ 목요일)",
+                    "배출_시간": "오후 8시 ~ 익일 오전 2시"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 울주군 온양읍 배출일자",
+        "region": "울산광역시 울주군 온양읍",
+        "source": {
+            "title": "종이팩& 폐건전지 교환하기, 올바른 분리배출법 - 온양읍 행정복지센터",
+            "url": "https://www.welfarehello.com/community/hometownNews/fd151089-4b3e-4f53-9039-0de7e1313799"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "수거 전날 (일요일 ~ 목요일) (울주군 공통)",
+                    "배출_시간": "오후 8시 ~ 익일 오전 2시"
+                }
+            },
+            {
+                "residence_type": "재활용품 (품목별 요일제)",
+                "rules": {
+                    "월요일": "비닐류, 종이류, 의류, 유리병 (개별 분리)",
+                    "화요일": "투명 페트류만",
+                    "목요일": "플라스틱, 고철, 캔 종류만"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 울주군 서생면 배출일자",
+        "region": "울산광역시 울주군 서생면",
+        "source": {
+            "title": "울주군 지역 공통 규정 적용",
+            "url": "http://www.ulsan-news.com/m/view.php?idx=44695"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "수거 전날 (일요일 ~ 목요일)",
+                    "배출_시간": "오후 8시 ~ 익일 오전 2시"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "울산광역시 울주군 청량읍 배출일자",
+        "region": "울산광역시 울주군 청량읍",
+        "source": {
+            "title": "울주군, 2020년 달라지는 쓰레기 배출 - 부울경뉴스",
+            "url": "http://www.bulgungnews.com/news/articleView.html?idxno=560607"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "수거_주기": "주 5회 수거 (월요일 ~ 금요일)",
+                    "배출_시간": "수거 전날 (일요일 ~ 목요일) 20시 ~ 02시"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 원주시 배출일자",
+        "region": "강원특별자치도 원주시",
+        "source": {
+            "title": "폐기물 배출요령 - 원주시청",
+            "url": "https://www.wonju.go.kr/www/contents.do?key=543"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 / 음식물쓰레기",
+                "rules": {
+                    "배출_요일": "월요일 ~ 토요일 (주 6일)",
+                    "배출_시간": "수거일 전날 밤 배출 (낮 시간대 및 토요일 배출 금지)"
+                }
+            },
+            {
+                "residence_type": "재활용품 (동지역, 문막읍 시내, 지정면 기업도시)",
+                "rules": {
+                    "월요일·목요일": "종이류, 종이팩류, 스티로폼",
+                    "화요일·금요일": "투명페트병, 플라스틱류, 캔, 고철류, 유리병, 폐비닐류"
+                }
+            },
+            {
+                "residence_type": "재활용품 (읍·면지역)",
+                "rules": {
+                    "배출_요일": "수요일과 토요일 재활용품 전부 수거"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 춘천시 배출일자",
+        "region": "강원특별자치도 춘천시",
+        "source": {
+            "title": "내년부터 재활용품 요일별 배출제 도입 - 시민언론 <춘천사람들>",
+            "url": "https://www.chunsa.kr/news/articleView.html?idxno=52741"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기",
+                "rules": {
+                    "배출_시간": "배출 해당요일 일몰 후부터 자정(밤 12시)까지",
+                    "배출_금지일": "공휴일 전날 배출 금지"
+                }
+            },
+            {
+                "residence_type": "재활용품 (요일별 배출제)",
+                "rules": {
+                    "월·금요일": "병류와 고철류",
+                    "화·목·일요일": "플라스틱류와 비닐류",
+                    "수요일": "투명페트병과 종이류",
+                    "배출_금지일": "토요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 태백시 배출일자",
+        "region": "강원특별자치도 태백시",
+        "source": {
+            "title": "공지사항 상세 - 태백시청",
+            "url": "https://www.taebaek.go.kr/www/selectBbsNttView.do?key=351&bbsNo=24&nttNo=1373&searchCtgry=&searchCnd=SJ&searchKrwd=&pageIndex=953&integrDeptCode="
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "수거 전일 야간 ~ 수거일 새벽시간까지"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "매주 화·목요일 (흰색 또는 투명봉투에 넣어 배출)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 고양시 덕양구 배출일자",
+        "region": "경기도 고양시 덕양구",
+        "source": {
+            "title": "고양시 대형폐기물 인터넷신고센터",
+            "url": "https://clean.gys.or.kr/clean/request"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "정보 미기재. (고양시 공통: 수거일 전날 저녁 배출)",
+                    "배출_금지일": "공휴일 전날은 휴무일 (별도 공지 확인 필요)"
+                }
+            },
+            {
+                "residence_type": "대형폐기물",
+                "rules": {
+                    "배출_일자": "신청일로부터 14일 내 선택 가능"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 고양시 일산동구 배출일자",
+        "region": "경기도 고양시 일산동구",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 고양시청 또는 일산동구청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 고양시 일산서구 배출일자",
+        "region": "경기도 고양시 일산서구",
+        "source": {
+            "title": "고양시 일산서구 대화동, 10월1일부터 음식쓰레기 배출방법 변경 - 문화정보",
+            "url": "https://take-info.tistory.com/115"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "음식물 쓰레기 (대화동 일부 지역 예시)",
+                "rules": {
+                    "배출_요일": "일, 화, 목",
+                    "배출_시간": "20:00 ~ 익일 04:00"
+                }
+            },
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "정보_요약": "동별로 배출 요일이 상이하므로, 거주지 행정복지센터 또는 구청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 과천시 배출일자",
+        "region": "경기도 과천시",
+        "source": {
+            "title": "생활쓰레기 배출안내 - 과천시",
+            "url": "https://www.gccity.go.kr/dept/contents.do?mId=0604020000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기",
+                "rules": {
+                    "수거_주기": "매일 수거 (일요일, 공휴일 제외)",
+                    "배출_시간": "일몰 후 배출 (공동주택은 지정 장소)",
+                    "수거_시간_변경": "2024년 1월 1일부터 수거 시작 시간이 오전 6시로 주간 변경됨"
+                }
+            },
+            {
+                "residence_type": "음식물/재활용품",
+                "rules": {
+                    "배출_요일": "매일 수거 (일요일, 공휴일 제외)",
+                    "배출_시간": "일몰 후 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 광명시 배출일자",
+        "region": "경기도 광명시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 광명시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 광주시 배출일자",
+        "region": "경기도 광주시",
+        "source": {
+            "title": "검색 결과 부족 (광주광역시 정보 혼재)",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "검색 결과에 광주광역시 정보가 혼재되어 있어 경기도 광주시에 대한 명확한 배출 요일/시간 정보 추출 불가. 광주시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 구리시 배출일자",
+        "region": "경기도 구리시",
+        "source": {
+            "title": "쓰레기 배출요령 - 구리시청",
+            "url": "https://www.guri.go.kr/www/contents.do?key=763"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기/재활용품",
+                "rules": {
+                    "수거_주기": "주 5일 수거 (월 ~ 금요일)",
+                    "배출_시간": "수거 전일 19:00 ~ 24:00 (일요일 ~ 목요일 일몰 이후)",
+                    "배출_금지일": "금요일, 토요일 저녁 및 공휴일 전날 배출 금지"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_방법": "단독주택/상가는 투명 봉투에 담아 배출일에 내 집 앞 배출 (3종류별 구분)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 군포시 배출일자",
+        "region": "경기도 군포시",
+        "source": {
+            "title": "군포시, 추석 연휴 생활쓰레기 미수거 기간 운영 - 리버럴미디어",
+            "url": "https://liberalmedia.co.kr/news/article.html?no=307341"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "평상시_배출": "지정된 배출일과 올바른 방법 준수 (상세 요일/시간은 동별 확인 필요)",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날은 배출 자제"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 김포시 배출일자",
+        "region": "경기도 김포시",
+        "source": {
+            "title": "김포시 「김장철 쓰레기 집중처리 기간」 운영 - 수도일보",
+            "url": "http://www.soodoilbo.com/news/articleView.html?idxno=517993"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "평상시 일반 쓰레기 및 재활용품 배출 요일/시간에 대한 명확한 정보 부족. 김포시청에 확인 필요."
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기 (김장철 예시)",
+                "rules": {
+                    "배출_방법": "평소 음식물 종량제 봉투(녹색)에 담아 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 남양주시 배출일자",
+        "region": "경기도 남양주시",
+        "source": {
+            "title": "남양주시, 생활쓰레기 문전 배출 중점홍보 기간 운영 - 신아일보",
+            "url": "https://www.shinailbo.co.kr/news/articleView.html?idxno=1940251"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반, 음식물, 재활용품)",
+                "rules": {
+                    "배출_시간": "수거일 전날 오후 6시부터 12시까지",
+                    "배출_장소": "수거차량이 접근 가능한 주택/사업장 앞 부지 내 (문전 배출)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 동두천시 배출일자",
+        "region": "경기도 동두천시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 동두천시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 부천시 배출일자",
+        "region": "경기도 부천시",
+        "source": {
+            "title": "생활쓰레기 | 부천시청",
+            "url": "https://www.bucheon.go.kr/site/homepage/menu/viewMenu?menuid=148006007006001"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "저녁 8시 ~ 다음날 새벽 6시",
+                    "배출_금지일": "토요일 및 공휴일 전날 배출 금지 (일요일, 공휴일 미수거)"
+                }
+            },
+            {
+                "residence_type": "배출_장소",
+                "rules": {
+                    "단독주택": "자기 집 대문 앞 또는 수거 가능한 곳",
+                    "공동주택": "단지 내 지정된 장소"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 성남시 분당구 배출일자",
+        "region": "경기도 성남시 분당구",
+        "source": {
+            "title": "생활 쓰레기 분리배출 안내 - 성남시 자원순환",
+            "url": "https://recycle.seongnam.go.kr/platforminfo/trash"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "수거 전날 일몰 후부터 다음날 오전 5시까지",
+                    "수거_주기": "월요일~금요일 정상수거",
+                    "배출_금지일": "토요일, 일요일 및 공휴일 전날 배출 금지"
+                }
+            },
+            {
+                "residence_type": "특이사항",
+                "rules": {
+                    "정기_휴무일": "매월 2·4번째 수요일은 쓰레기 수거 휴무일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 성남시 수정구 배출일자",
+        "region": "경기도 성남시 수정구",
+        "source": {
+            "title": "대형폐기물 및 폐가전 배출안내 < 수정구청 모바일",
+            "url": "https://www.sujeong-gu.go.kr/mobile/sub/content.asp?cIdx=89"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "일몰 이후 내 집 앞/내 점포 앞에 배출 (성남시 공통: 일몰 후 ~ 다음 날 5시)",
+                    "배출_금지일": "매월 2·4번째 수요일 수거 휴무, 공휴일 전날 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 성남시 중원구 배출일자",
+        "region": "경기도 성남시 중원구",
+        "source": {
+            "title": "쓰레기 배출시간 일몰 후 부터 다음날 5시까지 - 분당구청",
+            "url": "https://www.bundang-gu.go.kr:10009/fboard/common/download.asp?fboard=board_dong8&f_idx=217601"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "일몰 후 ~ 다음 날 5시까지 배출",
+                    "배출_요일": "요일별 수거 일정은 동별 상이하며, 매월 2·4번째 수요일은 수거 휴무"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 수원시 권선구 배출일자",
+        "region": "경기도 수원시 권선구",
+        "source": {
+            "title": "수원시 권선구, 생활폐기물 배출시간 집중 점검 - 중부일보",
+            "url": "https://www.joongboo.com/news/articleView.html?idxno=363647499"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반, 음식물, 재활용품)",
+                "rules": {
+                    "배출_시간": "오후 8시부터 다음 날 오전 5시까지",
+                    "배출_금지일": "주말(토요일 저녁, 일요일) 배출 불가"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 수원시 영통구 배출일자",
+        "region": "경기도 수원시 영통구",
+        "source": {
+            "title": "검색 결과 부족 (수원시 공통 규정 적용 추정)",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반, 음식물, 재활용품)",
+                "rules": {
+                    "배출_시간": "오후 8시부터 다음 날 오전 5시까지 (수원시 공통)",
+                    "배출_금지일": "주말(토요일 저녁, 일요일) 배출 불가 (수원시 공통)",
+                    "배출_요일": "동별 격일제 시행 여부 등은 영통구청 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 수원시 장안구 배출일자",
+        "region": "경기도 수원시 장안구",
+        "source": {
+            "title": "수원시 공통 규정 적용 추정",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반, 음식물, 재활용품)",
+                "rules": {
+                    "배출_시간": "오후 8시부터 다음 날 오전 5시까지 (수원시 공통)",
+                    "배출_금지일": "주말(토요일 저녁, 일요일) 배출 불가 (수원시 공통)",
+                    "배출_요일": "동별 격일제 시행 여부 등은 장안구청 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 수원시 팔달구 배출일자",
+        "region": "경기도 수원시 팔달구",
+        "source": {
+            "title": "수원시 공통 규정 적용 추정",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반, 음식물, 재활용품)",
+                "rules": {
+                    "배출_시간": "오후 8시부터 다음 날 오전 5시까지 (수원시 공통)",
+                    "배출_금지일": "주말(토요일 저녁, 일요일) 배출 불가 (수원시 공통)",
+                    "배출_요일": "동별 격일제 시행 여부 등은 팔달구청 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 시흥시 배출일자",
+        "region": "경기도 시흥시",
+        "source": {
+            "title": "[시흥시 생활쓰레기 배출 가이드] - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/d045da79-5ffc-487a-b951-57020f8851d0"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기",
+                "rules": {
+                    "배출_시간": "저녁 6시부터 다음날 새벽 6시까지 배출",
+                    "배출_금지일": "일요일에는 수거하지 않음"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 안산시 단원구 배출일자",
+        "region": "경기도 안산시 단원구",
+        "source": {
+            "title": "생활폐기물 수거 및 배출안내 - 안산시청",
+            "url": "https://www.ansan.go.kr/www/common/cntnts/selectContents.do?cntnts_id=C0001347"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "저녁 8시 ~ 아침 6시",
+                    "배출_요일": "매일 (일요일 제외)",
+                    "배출_금지일": "토요일 배출 자제"
+                }
+            },
+            {
+                "residence_type": "재활용품 (일반주택)",
+                "rules": {
+                    "배출_요일": "월 저녁 8시~화 아침 6시 / 목 저녁 8시~금 아침 6시",
+                    "수거_요일": "화, 금"
+                }
+            },
+            {
+                "residence_type": "대형폐기물",
+                "rules": {
+                    "배출_요일": "일 저녁 8시~월 아침 6시 / 수 저녁 8시~목 아침 6시",
+                    "수거_요일": "월, 목"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 안산시 상록구 배출일자",
+        "region": "경기도 안산시 상록구",
+        "source": {
+            "title": "생활폐기물 수거 및 배출안내 - 안산시청",
+            "url": "https://www.ansan.go.kr/www/common/cntnts/selectContents.do?cntnts_id=C0001347"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "저녁 8시 ~ 아침 6시",
+                    "배출_요일": "매일 (일요일 제외)",
+                    "배출_금지일": "토요일 배출 자제"
+                }
+            },
+            {
+                "residence_type": "재활용품 (일반주택)",
+                "rules": {
+                    "배출_요일": "월 저녁 8시~화 아침 6시 / 목 저녁 8시~금 아침 6시",
+                    "수거_요일": "화, 금"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 안성시 배출일자",
+        "region": "경기도 안성시",
+        "source": {
+            "title": "생활쓰레기, 이렇게 버리세요! | 경기도 안성시 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/d1a3b7f5-54a3-4bcb-813e-2876701bfac1"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기 (일반/음식물/재활용품)",
+                "rules": {
+                    "배출_시간": "저녁 6시 ~ 새벽 2시 사이 배출",
+                    "배출_금지일": "토요일 저녁 및 공휴일 전날은 배출 자제",
+                    "배출_요일": "평일 주 5일 (상세 요일은 동/읍/면별 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 안양시 동안구 배출일자",
+        "region": "경기도 안양시 동안구",
+        "source": {
+            "title": "폐기물 배출방법 안내 - 안양시청",
+            "url": "https://www.anyang.go.kr/main/selectBbsNttView.do?key=259&bbsNo=62&nttNo=26748"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_요일": "일요일 ~ 목요일 (주 5일)",
+                    "배출_시간": "20시 ~ 24시",
+                    "수거_요일": "월요일 ~ 금요일 새벽 수거"
+                }
+            },
+            {
+                "residence_type": "배출_금지일",
+                "rules": {
+                    "규정": "토요일 및 공휴일 전날은 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 안양시 만안구 배출일자",
+        "region": "경기도 안양시 만안구",
+        "source": {
+            "title": "우리동 소식 목록 - 안양7동 - 만안구청",
+            "url": "https://www.anyang.go.kr/manan/selectBbsNttView.do?key=968&bbsNo=148&nttNo=72856&searchCtgry=&searchKrwd=&pageIndex=155&integrDeptCode="
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_요일": "일요일 ~ 목요일 (주 5일)",
+                    "배출_시간": "20시 ~ 24시",
+                    "배출_금지일": "토요일 및 공휴일 전날 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 양주시 배출일자",
+        "region": "경기도 양주시",
+        "source": {
+            "title": "『2025 추석 연휴 생활폐기물 배출』 안내 | 경기도 양주시 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/905ecda8-a4a6-42ec-90c9-da6def938ed5"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반, 음식물, 재활용품)",
+                "rules": {
+                    "배출_가능일": "수거일 전일 20:00 이후 ~ 수거 당일 06:00 이전",
+                    "배출_요일": "주 5일 수거 (수거일은 동별 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 여주시 배출일자",
+        "region": "경기도 여주시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 여주시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 오산시 배출일자",
+        "region": "경기도 오산시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 오산시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 용인시 기흥구 배출일자",
+        "region": "경기도 용인시 기흥구",
+        "source": {
+            "title": "쓰레기처리 - 기흥구청",
+            "url": "https://www.giheunggu.go.kr/_lmth/04_life/life_0201.asp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반/음식물/재활용품)",
+                "rules": {
+                    "배출_시간_하절기": "20:00 이후",
+                    "배출_시간_동절기": "18:00 이후 (수거일 전날 일몰 후)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 용인시 수지구 배출일자",
+        "region": "경기도 용인시 수지구",
+        "source": {
+            "title": "생활폐기물 배출 - 수지구청",
+            "url": "https://www.sujigu.go.kr/lmth/04life0302.asp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반/음식물/재활용품)",
+                "rules": {
+                    "배출_시간_하절기": "20:00 ~ 24:00 (3월~10월)",
+                    "배출_시간_동절기": "18:00 ~ 24:00 (11월~익년2월)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 용인시 처인구 배출일자",
+        "region": "경기도 용인시 처인구",
+        "source": {
+            "title": "모현읍 생활폐기물 수거 일정 및 배출 요령",
+            "url": "https://www.mediamo.co.kr/news/articleView.html?idxno=46398"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 쓰레기",
+                "rules": {
+                    "배출_방법": "가연성 쓰레기는 흰색 종량제 봉투에 담아 배출"
+                }
+            },
+            {
+                "residence_type": "음식물 쓰레기",
+                "rules": {
+                    "배출_방법": "물기와 이물질 제거 후 황색 전용봉투에 담아 배출"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_요일": "동별 격일제 (모현읍 예시: 화요일과 목요일)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 의왕시 배출일자",
+        "region": "경기도 의왕시",
+        "source": {
+            "title": "올바른 쓰레기 배출 방법 알려드립니다! | 경기도 의왕시 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/267d8f2b-8c61-47c2-a991-106f09ca1b5d"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "수거 전날 저녁 8시 ~ 수거일 오전 6시"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 의정부시 배출일자",
+        "region": "경기도 의정부시",
+        "source": {
+            "title": "[이코노믹포스트] 의정부시, `생활쓰레기 배출시간` 준수 안내",
+            "url": "http://www.economicpost.co.kr/34902"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기 / 재활용품",
+                "rules": {
+                    "배출_요일": "일요일 ~ 목요일",
+                    "배출_시간": "당일 오후 8시부터 ~ 다음날 오전 6시"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기",
+                "rules": {
+                    "배출_요일": "일요일 ~ 금요일",
+                    "배출_시간": "당일 오후 8시부터 ~ 다음날 오전 6시"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 이천시 배출일자",
+        "region": "경기도 이천시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 이천시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 파주시 배출일자",
+        "region": "경기도 파주시",
+        "source": {
+            "title": "생활쓰레기(폐기물) - 파주시청",
+            "url": "https://www.paju.go.kr/www/www_02/environment/environment_05/environment_05_01/environment_05_01_01.jsp"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품 (단독주택 등)",
+                "rules": {
+                    "수거_주기": "월~토 (일, 법정공휴일 휴무)",
+                    "배출_시간": "수거요일 전날 저녁 6시 ~ 새벽 4시 (골목별 수거요일은 별도 문의)",
+                    "배출_금지일": "공휴일 전날 배출 자제"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 평택시 배출일자",
+        "region": "경기도 평택시",
+        "source": {
+            "title": "일반 및 음식 쓰레기 배출 및 재활용 DAY 안내 - 평택시청",
+            "url": "https://pf.kakao.com/_wUFVK/110548515"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물 쓰레기",
+                "rules": {
+                    "배출_시간": "평일 오후 8시부터 다음날 새벽 4시까지",
+                    "배출_금지일": "토요일 오전 4시부터 일요일 오후 8시까지"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "운영_일정": "매월 마지막 주 수요일은 재활용 DAY 운영 (일부 읍·면·동은 별도 지정)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 포천시 배출일자",
+        "region": "경기도 포천시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 포천시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 하남시 배출일자",
+        "region": "경기도 하남시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 하남시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경기도 화성시 배출일자",
+        "region": "경기도 화성시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 화성시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 강릉시 배출일자",
+        "region": "강원특별자치도 강릉시",
+        "source": {
+            "title": "강릉시, 2023년 8월부터 쓰레기 배출방법 변경 시행 - 강원타임즈",
+            "url": "https://www.kwtimes.co.kr/news/view.php?no=30491"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반/음식물/재활용품)",
+                "rules": {
+                    "배출_시간": "일요일 ~ 금요일 (일요일 미수거) 일몰 후부터 밤 12시까지",
+                    "배출_방법_변경": "2023년 8월부터 소각시설 준공에 따라 가연성(흰색 봉투)과 불연성(녹색 매립용 봉투)으로 분리 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 동해시 배출일자",
+        "region": "강원특별자치도 동해시",
+        "source": {
+            "title": "설 명절 연휴기간 생활쓰레기 수거 일정 | 강원특별자치도 동해시 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/754d60c3-e955-45bf-b724-31c72c59111b"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기",
+                "rules": {
+                    "정보_요약": "평소 수거 일정에 따라 배출 (공휴일은 휴무). 상세 요일/시간은 동해시청에 확인 필요."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 속초시 배출일자",
+        "region": "강원특별자치도 속초시",
+        "source": {
+            "title": "재활용 품목 및 배출일시 안내 - 속초시시설관리공단",
+            "url": "https://www.sokchosiseol.or.kr/biz/recycle.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "재활용품 (영랑동, 동명동 등)",
+                "rules": {
+                    "배출_일시": "매주 일요일, 수요일 일몰 후 ~ 다음날 05:00까지",
+                    "수거_일시": "매주 월요일, 목요일"
+                }
+            },
+            {
+                "residence_type": "재활용품 (노학동, 조양동 등)",
+                "rules": {
+                    "배출_일시": "매주 월요일, 목요일 일몰 후 ~ 다음날 05:00까지",
+                    "수거_일시": "매주 화요일, 금요일"
+                }
+            },
+            {
+                "residence_type": "공통",
+                "rules": {
+                    "음식물/일반쓰레기": "재활용품 배출일정과 별도로 속초시청에 확인 필요."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 원주시 배출일자",
+        "region": "강원특별자치도 원주시",
+        "source": {
+            "title": "폐기물 배출요령 - 원주시",
+            "url": "https://www.wonju.go.kr/www/contents.do?key=543&"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "월 ~ 토 (주 6일)",
+                    "배출_시간": "수거일 전날 밤 배출 (낮, 토요일 배출 금지)"
+                }
+            },
+            {
+                "residence_type": "재활용품 (동지역 등)",
+                "rules": {
+                    "월·목요일": "종이류, 스티로폼",
+                    "화·금요일": "투명페트병, 플라스틱, 캔, 유리병, 폐비닐류"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 춘천시 배출일자",
+        "region": "강원특별자치도 춘천시",
+        "source": {
+            "title": "내년부터 재활용품 요일별 배출제 도입 - 시민언론 <춘천사람들>",
+            "url": "https://www.chunsa.kr/news/articleView.html?idxno=52741"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기",
+                "rules": {
+                    "배출_시간": "배출 해당 요일 일몰 후부터 자정(밤 12시)까지",
+                    "배출_금지일": "공휴일 전날 배출 금지"
+                }
+            },
+            {
+                "residence_type": "재활용품 (요일별 배출제)",
+                "rules": {
+                    "월·금요일": "병류, 고철류",
+                    "화·목·일요일": "플라스틱류, 비닐류",
+                    "수요일": "투명페트병, 종이류",
+                    "배출_금지일": "토요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 태백시 배출일자",
+        "region": "강원특별자치도 태백시",
+        "source": {
+            "title": "공지사항 상세 - 태백시청",
+            "url": "https://www.taebaek.go.kr/www/selectBbsNttView.do?key=351&bbsNo=24&nttNo=1373&searchCtgry=&searchCnd=SJ&searchKrwd=&pageIndex=953&integrDeptCode="
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "배출_시간": "수거 전일 야간 ~ 수거일 새벽시간까지",
+                    "배출_요일": "평소 수거일에 배출 (정해진 날짜 준수)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "매주 화·목요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 양구군 배출일자",
+        "region": "강원특별자치도 양구군",
+        "source": {
+            "title": "`양구 추석연휴 기간 쓰레기 배출 일자 확인하세요` - 강원일보",
+            "url": "https://www.kwnews.co.kr/page/view/2025092908150646465"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "평소 배출 일자 및 방법을 준수해야 함. 명절 연휴 기간은 별도 공지 필요."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 양양군 배출일자",
+        "region": "강원특별자치도 양양군",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 양양군청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 영월군 배출일자",
+        "region": "강원특별자치도 영월군",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 영월군청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 정선군 배출일자",
+        "region": "강원특별자치도 정선군",
+        "source": {
+            "title": "쓰레기종량제봉투 - 정선군시설관리공단",
+            "url": "https://m.jsimc.or.kr/layout/basic/page/page2/page05.html"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "정선군 공통의 구체적인 배출 요일/시간 정보는 검색 결과에 부족합니다. 읍·면별 또는 정선군청에 문의하여 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "강원특별자치도 평창군 배출일자",
+        "region": "강원특별자치도 평창군",
+        "source": {
+            "title": "평창군시설관리공단 > 주요사업",
+            "url": "https://www.pcfmc.or.kr/business"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기",
+                "rules": {
+                    "정보_요약": "읍·면별 배출 요일 및 시간이 상이합니다. 평창군청 또는 해당 읍·면사무소에 문의하여 확인이 필요합니다."
+                }
+            },
+            {
+                "residence_type": "재활용품 (수거보상제)",
+                "rules": {
+                    "배출_방법": "고가치 재활용품(폐전지, 종이팩, 투명페트병)을 모아 읍·면사무소에 제출하면 종량제봉투 등으로 보상"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청북도 제천시 배출일자",
+        "region": "충청북도 제천시",
+        "source": {
+            "title": "제천시 생활쓰레기 매일 수거 한다 - 타임뉴스",
+            "url": "https://www.timenews.co.kr/226296"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물쓰레기/연탄재",
+                "rules": {
+                    "수거_주기": "월요일 ~ 토요일까지 매일 수거",
+                    "배출_시간": "당일 저녁 8시부터 다음날 새벽 5시까지",
+                    "배출_금지일": "일요일"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "매일 (월요일 ~ 토요일)",
+                    "배출_시간": "당일 저녁 8시부터 다음날 새벽 5시까지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청북도 청주시 상당구 배출일자",
+        "region": "충청북도 청주시 상당구",
+        "source": {
+            "title": "청주시 설 당일 쓰레기 미수거… 음식물은 30일 전면 처리 - 중부매일",
+            "url": "https://www.jbnews.com/news/articleView.html?idxno=1465092"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "수거일 전날 저녁 6시 이후 (구역별 상이)",
+                    "배출_금지일": "설 당일 등 법정 공휴일은 미수거",
+                    "배출_요일": "재활용품은 격일 처리 (상당구청에 문의하여 동별 지정 요일 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청북도 청주시 서원구 배출일자",
+        "region": "충청북도 청주시 서원구",
+        "source": {
+            "title": "청주시 일부 지역 음식물쓰레기 배출일 변경 - 아이뉴스",
+            "url": "https://www.inews24.com/view/1798815"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "음식물쓰레기 (남이면 예시)",
+                "rules": {
+                    "변경_후_배출_요일": "화요일, 목요일, 일요일 (기존 월·수·금에서 변경)"
+                }
+            },
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "정보_요약": "서원구청에 문의하여 동별 지정 배출 요일/시간 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청북도 청주시 청원구 배출일자",
+        "region": "충청북도 청주시 청원구",
+        "source": {
+            "title": "청주시 일부 지역 음식물쓰레기 배출일 변경 - 아이뉴스",
+            "url": "https://www.inews24.com/view/1798815"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "음식물쓰레기 (율량사천동 예시)",
+                "rules": {
+                    "변경_후_배출_요일": "월요일, 수요일, 금요일 (기존 화·목·일에서 변경)"
+                }
+            },
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "정보_요약": "청원구청에 문의하여 동별 지정 배출 요일/시간 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청북도 청주시 흥덕구 배출일자",
+        "region": "충청북도 청주시 흥덕구",
+        "source": {
+            "title": "청주시 일부 지역 음식물쓰레기 배출일 변경 - 아이뉴스",
+            "url": "https://www.inews24.com/view/1798815"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "음식물쓰레기 (강내면, 가경동 예시)",
+                "rules": {
+                    "변경_후_배출_요일": "강내면: 월·수·금 / 가경동: 화·목·일 (기존과 변경)"
+                }
+            },
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "정보_요약": "흥덕구청에 문의하여 동별 지정 배출 요일/시간 확인 필요"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청북도 충주시 배출일자",
+        "region": "충청북도 충주시",
+        "source": {
+            "title": "[충북]충주 도심 7월부터 음식물쓰레기 분리배출｜퍼가기 - 동아일보",
+            "url": "https://www.donga.com/news/shareiframe?idx=article/all/20040624/8076217/1"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품/음식물쓰레기",
+                "rules": {
+                    "정보_요약": "음식물 쓰레기 분리배출 제도는 시행 중. 충주시청에 문의하여 현재의 동별/성상별 배출 요일 및 시간 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 계룡시 배출일자",
+        "region": "충청남도 계룡시",
+        "source": {
+            "title": "계룡시, 쓰레기 배출방법 준수 당부 - 충청메시지",
+            "url": "https://www.ccmessage.kr/news/articleView.html?idxno=986"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "저녁 8시부터 다음날 오전 5시까지",
+                    "배출_금지일": "토요일 오전 ~ 일요일 오후까지는 배출 자제",
+                    "음식물_쓰레기": "청색 종량제 봉투에 담아 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 공주시 배출일자",
+        "region": "충청남도 공주시",
+        "source": {
+            "title": "음식물쓰레기 배출안내 - 공주시청",
+            "url": "https://www.gongju.go.kr/kr/sub06_08_06_02.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 / 재활용품",
+                "rules": {
+                    "배출_요일": "일요일 ~ 금요일 (토요일 배출 금지)",
+                    "배출_시간": "일몰 후 배출"
+                }
+            },
+            {
+                "residence_type": "음식물쓰레기 (단독주택)",
+                "rules": {
+                    "강남지역": "월, 수, 금요일 19:00 ~ 23:00",
+                    "강북지역": "화, 목, 일요일 19:00 ~ 23:00"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 논산시 배출일자",
+        "region": "충청남도 논산시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 논산시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 당진시 배출일자",
+        "region": "충청남도 당진시",
+        "source": {
+            "title": "가곡환경 (수거업체)",
+            "url": "http://www.gagokhk.com/environment01.html"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 / 음식물쓰레기",
+                "rules": {
+                    "배출_시간": "일몰 후",
+                    "배출_요일": "읍·면별 배출 요일 상이 (예: 당진1·2·3동은 월~금요일 수거)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_요일_변경": "매주 수요일에서 화, 수, 목, 금요일로 변경 (읍·면별 배출 요일 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 보령시 배출일자",
+        "region": "충청남도 보령시",
+        "source": {
+            "title": "생활쓰레기 배출요령 - 보령시",
+            "url": "https://www.brcn.go.kr/kor/sub05_07_02_01.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활폐기물 (일반/재활용)",
+                "rules": {
+                    "배출_일자": "매일 (동지역, 공동주택 제외)",
+                    "배출_시간": "매일 저녁 8시부터 다음날 새벽 4시까지"
+                }
+            },
+            {
+                "residence_type": "음식물류폐기물 (공동주택 제외)",
+                "rules": {
+                    "배출_일자": "월요일 ~ 금요일",
+                    "배출_시간": "매일 저녁 8시부터 다음날 새벽 4시까지"
+                }
+            },
+            {
+                "residence_type": "휴무일",
+                "rules": {
+                    "동지역": "설날·추석, 근로자의 날",
+                    "읍·면지역": "설날·추석, 근로자의 날, 공휴일, 일요일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 서산시 배출일자",
+        "region": "충청남도 서산시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 서산시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 아산시 배출일자",
+        "region": "충청남도 아산시",
+        "source": {
+            "title": "시민 모두가 행복한 아산_추석연휴 쓰레기 수거일정 | 충청남도 아산시 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/ecf2a130-124d-4d01-ad77-02d67c1e66cf"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "추석 연휴 등 특별 수거 기간에 대한 안내만 검색됨. 평상시의 정규 배출 요일/시간은 아산시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 천안시 동남구 배출일자",
+        "region": "충청남도 천안시 동남구",
+        "source": {
+            "title": "생활폐기물 배출방법안내 - 천안시",
+            "url": "https://www.cheonan.go.kr/kor/sub06_13_06.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활 폐기물 (일반/음식물)",
+                "rules": {
+                    "배출_일자": "매일",
+                    "배출_시간": "해가 진 후부터 자정까지",
+                    "공동주택": "자체 지정일 배출"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_일자": "월요일 ~ 금요일"
+                }
+            },
+            {
+                "residence_type": "대형폐가전",
+                "rules": {
+                    "수거_일자": "월, 수, 금"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "충청남도 천안시 서북구 배출일자",
+        "region": "충청남도 천안시 서북구",
+        "source": {
+            "title": "생활폐기물 배출방법안내 - 천안시",
+            "url": "https://www.cheonan.go.kr/kor/sub06_13_06.do"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활 폐기물 (일반/음식물)",
+                "rules": {
+                    "배출_일자": "매일",
+                    "배출_시간": "해가 진 후부터 자정까지",
+                    "공동주택": "자체 지정일 배출"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_일자": "월요일 ~ 금요일"
+                }
+            },
+            {
+                "residence_type": "대형폐가전",
+                "rules": {
+                    "수거_일자": "화, 목, 토"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 경산시 배출일자",
+        "region": "경상북도 경산시",
+        "source": {
+            "title": "경산시민 필독! 쓰레기는 저녁에 배출합시다!♻️ | 경상북도 경산시 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/63379200-0b16-4fac-af20-c557fda0a5f5"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "일몰 후 ~ 다음날 오전 6시까지",
+                    "배출_요일": "일요일 ~ 금요일 (주 6일)",
+                    "배출_금지일": "토요일 배출 절대 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 경주시 배출일자",
+        "region": "경상북도 경주시",
+        "source": {
+            "title": "생활쓰레기배출 | 경주시청",
+            "url": "https://www.gyeongju.go.kr/area/page.do?mnu_uid=749"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "종량제 쓰레기 / 재활용품",
+                "rules": {
+                    "배출_시간": "일요일 ~ 금요일 일몰 후 배출",
+                    "배출_금지일": "일요일 수거 안함",
+                    "배출_장소": "내 집 앞, 내 점포 앞 (문전배출) 또는 지정된 배출장소"
+                }
+            },
+            {
+                "residence_type": "연탄재 / 매립용 마대",
+                "rules": {
+                    "배출_요일": "읍·면·동별 지정일"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 구미시 배출일자",
+        "region": "경상북도 구미시",
+        "source": {
+            "title": "구미시청 대형폐기물 (온라인 배출)",
+            "url": "https://www.gumi.go.kr/life/contents.do?mid=0401040100"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/재활용품",
+                "rules": {
+                    "배출_시간": "수거일 전일 19:00 ~ 24:00",
+                    "배출_금지일": "일요일, 국가지정 공휴일 (수거하지 않는 날)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 김천시 배출일자",
+        "region": "경상북도 김천시",
+        "source": {
+            "title": "생활쓰레기배출요령 | 김천시청",
+            "url": "https://www.gc.go.kr/portal/contents.do?mId=1414030000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 및 재활용품 (동지역)",
+                "rules": {
+                    "배출_요일": "일요일 ~ 목요일",
+                    "배출_금지일": "금요일 ~ 토요일 배출 금지",
+                    "배출_시간": "저녁 6시부터 자정까지"
+                }
+            },
+            {
+                "residence_type": "재활용품 (율곡동)",
+                "rules": {
+                    "배출_요일": "수요일",
+                    "배출_시간": "저녁 6시부터 자정까지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 문경시 배출일자",
+        "region": "경상북도 문경시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 문경시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 상주시 배출일자",
+        "region": "경상북도 상주시",
+        "source": {
+            "title": "검색 결과 부족",
+            "url": ""
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "명확한 배출 요일/시간 정보가 검색 결과에 부족합니다. 상주시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 안동시 배출일자",
+        "region": "경상북도 안동시",
+        "source": {
+            "title": "생활쓰레기배출요령 - 안동시",
+            "url": "https://www.andong.go.kr/portal/contents.do?mId=0607030000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "타는/타지 않는/음식물쓰레기",
+                "rules": {
+                    "배출_요일": "일·월·화·수·목·금 (주 6일)",
+                    "배출_금지일": "토요일 배출 금지",
+                    "배출_시간": "오후 6시부터 밤 12시까지"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_요일": "월, 목",
+                    "배출_시간": "오후 6시부터 밤 12시까지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 영주시 배출일자",
+        "region": "경상북도 영주시",
+        "source": {
+            "title": "(글보기)생활쓰레기 분리배출(배출요일제) 안내 - 영주시 영주2동",
+            "url": "https://www.yeongju.go.kr/open_content/village/yeongju2/page.do?pageNo=20&pagePrvNxt=1&pageRef=0&pageOrder=0&step=258&parm_bod_uid=1061261&srchVoteType=-1&srchEnable=1&srchKeyword=&srchBgpUid=-1&srchSDate=1990-01-01&srchColumn=&srchEDate=2100-01-01&mnu_uid=1083&"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "가연성 쓰레기 (타는 쓰레기)",
+                "rules": {
+                    "배출_일": "화, 수, 금, 일"
+                }
+            },
+            {
+                "residence_type": "불연성 쓰레기 (타지 않는 쓰레기)",
+                "rules": {
+                    "배출_일": "월, 목"
+                }
+            },
+            {
+                "residence_type": "재활용품, 대형폐기물",
+                "rules": {
+                    "배출_일": "일 ~ 금",
+                    "배출_금지일": "토요일은 모든 생활쓰레기 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 영천시 배출일자",
+        "region": "경상북도 영천시",
+        "source": {
+            "title": "생활쓰레기처리 | 영천시청 분야별정보",
+            "url": "https://www.yc.go.kr/depart/contents.do?mId=0505000000"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기/음식물쓰레기/재활용품",
+                "rules": {
+                    "배출_시간": "일몰 후 (20:00) ~ 익일 03:00 이전",
+                    "배출_금지일": "토요일 오후 ~ 일요일 오전 배출 금지",
+                    "배출_요일": "수거노선도에 따라 다름 (시청 홈페이지 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 포항시 남구 배출일자",
+        "region": "경상북도 포항시 남구",
+        "source": {
+            "title": "생활 쓰레기, 어떻게 배출할까? - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/85b9add3-2ea3-4368-ae9c-8c2b1caa9e9b"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 (소각용)",
+                "rules": {
+                    "수거_일자": "월, 화, 목, 금요일",
+                    "배출_시간": "수거일 전날 일몰시부터 수거일 아침 6시까지"
+                }
+            },
+            {
+                "residence_type": "음식물 쓰레기",
+                "rules": {
+                    "배출_요일": "월, 수, 금요일 (송도동 제외)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_일자": "수, 토 (전일 일몰 후 배출)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상북도 포항시 북구 배출일자",
+        "region": "경상북도 포항시 북구",
+        "source": {
+            "title": "생활 쓰레기, 어떻게 배출할까? - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/85b9add3-2ea3-4368-ae9c-8c2b1caa9e9b"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 (소각용)",
+                "rules": {
+                    "수거_일자": "월, 화, 목, 금요일",
+                    "배출_시간": "수거일 전날 일몰시부터 수거일 아침 6시까지"
+                }
+            },
+            {
+                "residence_type": "음식물 쓰레기",
+                "rules": {
+                    "배출_요일": "화, 목, 토요일 (송도동 포함)"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "수거_일자": "수, 토 (전일 일몰 후 배출)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "경상남도 거제시 배출일자",
+        "region": "경상남도 거제시",
+        "source": {
+            "title": "불연성쓰레기 - 거제시청",
+            "url": "https://geoje.go.kr/index.geoje?menuCd=DOM_000008906012001012"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "불연성 쓰레기",
+                "rules": {
+                    "배출_요일": "매주 수요일",
+                    "배출_시간": "일몰 후 ~ 다음날 새벽 4시"
+                }
+            },
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "불연성 쓰레기 외 일반/음식물/재활용품에 대한 구체적인 배출 요일/시간은 거제시청에 문의하여 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전북특별자치도 군산시 배출일자",
+        "region": "전북특별자치도 군산시",
+        "source": {
+            "title": "군산시, 쓰레기 배출요령 홍보 - 전주매일신문",
+            "url": "http://www.jjmaeil.com/news/view.asp?idx=28503"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 / 음식물쓰레기",
+                "rules": {
+                    "배출_요일": "월요일부터 금요일까지",
+                    "배출_금지일": "토요일 및 일요일 배출 금지",
+                    "배출_시간": "정보 미기재 (공지사항 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전북특별자치도 김제시 배출일자",
+        "region": "전북특별자치도 김제시",
+        "source": {
+            "title": "'생활쓰레기 배출요일제'가 5월 1일부터 본격시행됩니다! | 전라북도 김제시 - 웰로",
+            "url": "https://www.welfarehello.com/community/hometownNews/6d44390e-ffc0-4501-8b6e-fc98e0a8b145"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "배출_시간": "저녁 6시부터 밤 12시까지",
+                    "시내권": "매일 배출",
+                    "시외권": "정해진 요일에 배출 (읍·면별 지정 요일 확인 필요)",
+                    "배출_금지일": "토요일에는 모든 지역 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전북특별자치도 남원시 배출일자",
+        "region": "전북특별자치도 남원시",
+        "source": {
+            "title": "남원시 / 생활폐기물, 같은 요일에 배출하세요! - 환경신문",
+            "url": "https://fksm.co.kr/news/63560"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "시내권 단독주택/상가지역 (2023. 8. 1.부터)",
+                "rules": {
+                    "수거_체계": "일반/음식물/재활용 쓰레기를 같은 요일에 수거 (동별 격일제)",
+                    "배출_요일_예시1": "월, 수, 금 수거 (재활용 중 금요일은 투명페트병만)",
+                    "배출_요일_예시2": "화, 목, 토 수거 (재활용 중 토요일은 투명페트병만)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전북특별자치도 익산시 배출일자",
+        "region": "전북특별자치도 익산시",
+        "source": {
+            "title": "일반쓰레기 배출 - 익산시청",
+            "url": "https://www.iksan.go.kr/index.iksan?menuCd=DOM_000002004004001001"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기",
+                "rules": {
+                    "배출_시간": "저녁 7시 ~ 다음날 05시 이전",
+                    "배출_방법": "종량제봉투에 담아 배출"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "배출_시간": "저녁 7시 ~ 다음날 05시 이전",
+                    "배출_방법": "투명봉투에 담아 배출"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전북특별자치도 전주시 덕진구 배출일자",
+        "region": "전북특별자치도 전주시 덕진구",
+        "source": {
+            "title": "'전주를 더 깨끗하게!' 새로운 쓰레기 배출제 홍보 강화(읽기) - 전주시청",
+            "url": "https://www.jeonju.go.kr/planweb/board/view.9is?contentUid=ff8080818990c349018b041a87fe3960&boardUid=ff8080818b5bc5cf018ba8ca7216641f&dataUid=9be517a88f5829690190ba57a0650121"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기 (단독주택 및 상가)",
+                "rules": {
+                    "배출_시간": "수거 전날 18:00 ~ 수거일 06:00 (일몰 후 배출제)",
+                    "일반쓰레기": "토요일 제외 매일 배출",
+                    "음식물쓰레기": "지역별 주 3회 배출"
+                }
+            },
+            {
+                "residence_type": "재활용품 (단독주택 및 상가)",
+                "rules": {
+                    "수거_주기": "지역별 주 2회 (일·화 또는 월·수)",
+                    "1회차_품목": "병류, 캔류, 플라스틱",
+                    "2회차_품목": "투명페트병, 비닐류, 종이류"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전북특별자치도 전주시 완산구 배출일자",
+        "region": "전북특별자치도 전주시 완산구",
+        "source": {
+            "title": "전주시 쓰레기 배출 7월부터 바뀐다 - 전라일보",
+            "url": "http://www.jeollailbo.com/news/articleView.html?idxno=723502"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "생활쓰레기 (단독주택 및 상가)",
+                "rules": {
+                    "배출_시간": "오후 6시 이후부터 다음날 오전 6시 사이에 지정된 장소에 배출",
+                    "재활용_쓰레기": "주 2회 지정된 요일에만 배출 (동별 지정 요일 확인 필요)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전북특별자치도 정읍시 배출일자",
+        "region": "전북특별자치도 정읍시",
+        "source": {
+            "title": "정읍시 김장 쓰레기 특별 수거 - 전라일보",
+            "url": "http://www.jeollailbo.com/news/articleView.html?idxno=751233"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "평상시 정규 배출 요일 및 시간에 대한 명확한 정보 부족. 정읍시청에 확인 필요."
+                }
+            },
+            {
+                "residence_type": "음식물 쓰레기",
+                "rules": {
+                    "배출_방법": "음식물 쓰레기 종량제 용기 또는 규격 봉투에 배출 (연중)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전라남도 광양시 배출일자",
+        "region": "전라남도 광양시",
+        "source": {
+            "title": "FAQ - 광양시 대형폐기물 인터넷신고센터 - 광양시청",
+            "url": "https://bwaste.gwangyang.go.kr/bbs/faq.do;jsessionid=8AF043622951547B58C1885D2D752CD0"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "평상시 정규 배출 요일 및 시간에 대한 명확한 정보 부족. 광양시청에 확인 필요."
+                }
+            },
+            {
+                "residence_type": "대형폐기물",
+                "rules": {
+                    "수거_원칙": "신고 접수일 12시 이전 익일 12시 이후 수거 (배출량이 많을 경우 2~3주 지연 가능)"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전라남도 나주시 배출일자",
+        "region": "전라남도 나주시",
+        "source": {
+            "title": "생활폐기물 배출 안내 - 나주시청",
+            "url": "https://www.naju.go.kr/www/field_info/environment/waste_new/waste"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반쓰레기 (종량제봉투)",
+                "rules": {
+                    "주민_배출일": "일, 월, 수, 목요일 18:00 ~ 24:00 (일몰 후)",
+                    "수거일": "월, 화, 목, 금요일"
+                }
+            },
+            {
+                "residence_type": "재활용품",
+                "rules": {
+                    "주민_배출일": "화요일 18:00 ~ 24:00",
+                    "수거일": "수요일"
+                }
+            },
+            {
+                "residence_type": "음식물류 폐기물",
+                "rules": {
+                    "수거_체계": "지역별 격일제 수거 (월, 수, 금 그룹과 화, 목, 토 그룹)",
+                    "배출_시간": "18:00 ~ 24:00"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전라남도 목포시 배출일자",
+        "region": "전라남도 목포시",
+        "source": {
+            "title": "목포시 7월부터 음식물쓰레기 수거시간 변경 - 목포타임즈",
+            "url": "https://www.mokpotimes.com/news/articleView.html?idxno=16413"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "음식물쓰레기 (단독주택/소형음식점)",
+                "rules": {
+                    "수거_시간": "주간 (06:00 ~ 16:00)",
+                    "배출_시간": "수거 당일 오전 5시까지 배출",
+                    "배출_금지일": "일요일 휴무"
+                }
+            },
+            {
+                "residence_type": "일반쓰레기/재활용품",
+                "rules": {
+                    "정보_요약": "음식물쓰레기와 별도로 배출되며, 일반 쓰레기/재활용품의 상세 배출 요일 및 시간은 목포시청에 확인 필요."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전라남도 순천시 배출일자",
+        "region": "전라남도 순천시",
+        "source": {
+            "title": "일반 생활폐기물 배출방법 - 순천시청",
+            "url": "https://www.suncheon.go.kr/kr/life/0002"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반 생활폐기물",
+                "rules": {
+                    "배출_시간": "일몰 후 배출 (토요일 오후 및 일요일 오전까지는 배출 불가)",
+                    "배출_요일": "순천시청 공지사항에 따라 평소 수거일에 배출 (동별 수거 요일 확인 필요)"
+                }
+            },
+            {
+                "residence_type": "음식물폐기물",
+                "rules": {
+                    "수거_요일": "동천 기준으로 동편: 월, 수, 금 / 서편: 화, 목, 토 (읍·면: 월, 수, 금)",
+                    "배출_방법": "일반 생활폐기물 및 재활용품 등과 혼합하여 배출 금지"
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전라남도 여수시 배출일자",
+        "region": "전라남도 여수시",
+        "source": {
+            "title": "검색 결과 부족 (전남도 연휴 수거일 정보만 확인됨)",
+            "url": "http://kjb.kr/6533"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "평상시 정규 배출 요일/시간 정보가 검색 결과에 부족합니다. 여수시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "전라남도 여수시 배출일자",
+        "region": "전라남도 여수시",
+        "source": {
+            "title": "검색 결과 부족 (중복 항목, 여수시청 확인 필요)",
+            "url": "http://kjb.kr/6533"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반",
+                "rules": {
+                    "정보_요약": "평상시 정규 배출 요일/시간 정보가 검색 결과에 부족합니다. 여수시청 홈페이지에서 확인이 필요합니다."
+                }
+            }
+        ]
+    },
+    {
+        "search_keyword": "세종특별자치시 배출일자",
+        "region": "세종특별자치시",
+        "source": {
+            "title": "세종시 대형폐기물 배출일",
+            "url": "https://todaysejong.tistory.com/8"
+        },
+        "waste_collection_rules": [
+            {
+                "residence_type": "일반/음식물/재활용품",
+                "rules": {
+                    "정보_요약": "대형폐기물을 제외한 일반 쓰레기 등의 배출 요일/시간은 세종시청 환경자원과에 문의하여 확인이 필요합니다."
+                }
+            },
+            {
+                "residence_type": "대형폐기물",
+                "rules": {
+                    "수거_요일_월/목 그룹": "아름동, 고운동, 종촌동, 도담동 등 (화/목요일 수거)",
+                    "수거_요일_수 그룹": "조치원읍, 연기면, 연동면 등 (수요일 수거)",
+                    "수거_요일_월~토 그룹": "금남면, 장군면 (월~토요일 수거)"
+                }
+            }
+        ]
+    }
+]

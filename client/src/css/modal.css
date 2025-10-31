@@ -1,0 +1,74 @@
+/* 모달 뒷배경 */
+.modal-wrap {
+    /* 화면 전체를 덮도록 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* 반투명한 검은색 배경 */
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /* 자식 요소(모달창)를 중앙에 위치시키기 위한 flex 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 다른 요소들보다 위에 오도록 z-index 설정 */
+    z-index: 1000;
+}
+
+/* 실제 모달 콘텐츠가 담길 흰색 박스 */
+.modal-content {
+    /* 모달창이 닫힐 때 클릭 이벤트가 뒷배경으로 전파되는 것을 막기 위함 */
+    position: relative;
+
+    /* 디자인 */
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* 크기 */
+    min-width: 320px;
+    max-width: 90%;
+
+    /* 부드러운 등장 애니메이션 */
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* 모달 닫기 버튼 */
+.modal-close-btn {
+    /* modal-content 박스 기준으로 오른쪽 상단에 위치 */
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    /* 기본 버튼 스타일 제거 */
+    background: none;
+    border: none;
+
+    /* 디자인 */
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-close-button:hover {
+    color: #000;
+}
+
+
+/* 모달 등장 애니메이션 효과 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

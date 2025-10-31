@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사건 파일: Redis 캐싱과 JPA 영속성 충돌 해결</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .timeline-item {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .timeline-item.active {
+            background-color: #3b82f6; /* Blue */
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .timeline-item.active .timeline-phase {
+            color: white;
+        }
+        .timeline-item:not(.active):hover {
+            background-color: #dbeafe;
+            transform: translateY(-2px);
+        }
+        .content-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .code-block {
+            background-color: #1e293b;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <main class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">사건 파일: Redis 캐싱과 JPA 영속성 충돌</h1>
+            <p class="mt-2 text-lg text-slate-600">성능 최적화 과정에서 발생한 직렬화 및 영속성 전이 오류 해결 기록.</p>
+        </header>
+
+        <nav id="timeline-nav" class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 mb-12">
+            </nav>
+
+        <div id="content-area">
+            </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineNav = document.getElementById('timeline-nav');
+            const contentArea = document.getElementById('content-area');
+            let currentPhaseIndex = 0;
+
+            const caseFiles = [
+                {
+                    phase: "1단계",
+                    title: "인덱스 구축과 타입 충돌",
+                    icon: "💥",
+                    content: {
+                        symptom: "성능 최적화를 위해 Redis에 키워드 역인덱스(Reverse Index)를 구축하는 과정에서, `Long` 타입 ID가 `Integer`로 역직렬화되어 <code class='code-block'>java.lang.ClassCastException</code>이 발생.",
+                        hypothesis: "RedisTemplate이 사용하는 Jackson2JsonRedisSerializer의 기본 설정 문제.",
+                        investigation: [
+                            "Redis에 저장된 숫자는 JSON에서 타입 정보가 사라지므로, Jackson이 임의로 작은 숫자는 `Integer`로 읽고 있었음을 확인.",
+                            "잘못된 Redis 자료구조(`opsForSet` 저장, `opsForValue` 조회) 접근 충돌 문제 해결.",
+                            "Redis에 저장된 키를 JVM 메모리(`Set/List`)로 로딩하여 반복하는 **긴 문자열 우선 매칭 로직**을 구현."
+                        ],
+                        breakthrough: "<code>RedisTemplate</code>에 <code>Jackson2JsonRedisSerializer</code>를 적용하고, <code>ObjectMapper</code>에 <code>ToStringSerializer</code> 모듈을 등록하여 **<code>Long</code> 타입을 문자열로 강제 변환**함으로써 타입 불일치 문제를 근본적으로 해결."
+                    }
+                },
+                {
+                    phase: "2단계",
+                    title: "프록시와 세션의 충돌",
+                    icon: "👻",
+                    content: {
+                        symptom: "<code>Long</code> 타입 문제가 해결된 후, 엔티티 저장/조회 시 <code class='code-block'>failed to lazily initialize a collection: no Session</code> 오류가 발생.",
+                        hypothesis: "Redis에서 로드된 엔티티가 JPA 세션 밖(Detached) 상태이고, Jackson이 엔티티 내부의 <code>@LAZY</code> 프록시 필드에 접근하여 발생하는 직렬화 오류.",
+                        investigation: [
+                            "<code>ItemToKeyword</code> 내 <code>materials</code> 필드(`@ManyToMany(EAGER)`)가 프록시 객체를 잔존시키고 있음을 확인.",
+                            "<code>RedisConfig</code>의 <code>ObjectMapper</code>에 <code>Hibernate6Module</code>을 등록하여, Jackson이 직렬화 시 Hibernate 프록시 필드를 자동으로 무시하도록 설정."
+                        ],
+                        breakthrough: "<code>Hibernate6Module</code> 설정과 <code>@JsonIdentityInfo</code> (순환 참조 방지)를 조합하여 직렬화 시 프록시 객체를 안전하게 우회. 그러나 이 설정만으로는 데이터 유실 가능성이 잔존하여 **DTO 변환 전략**으로 전환 결정."
+                    }
+                },
+                {
+                    phase: "3단계",
+                    title: "영속성 전이 오류 해결",
+                    icon: "🔗",
+                    content: {
+                        symptom: "엔티티 저장 로직에서 <code class='code-block'>TransientObjectException</code> (unsaved transient instance) 오류가 연쇄적으로 발생.",
+                        hypothesis: "자식 엔티티를 저장할 때, 부모 엔티티(또는 연관 엔티티)가 아직 DB에 저장되지 않은 <code>Transient</code> 상태이기 때문에 JPA가 오류를 발생시킴.",
+                        investigation: [
+                            "<code>RecycleMatchItem</code>, <code>MatchItemComposition</code> 등 모든 자식 엔티티가 참조하는 부모 엔티티의 <code>@ManyToOne</code> 필드 확인.",
+                            "부모 엔티티가 새 객체일 가능성이 있는 모든 <code>@ManyToOne</code> 관계 필드에 <code>cascade = CascadeType.PERSIST</code>를 추가.",
+                            "부모 엔티티의 <code>@OneToMany</code> 필드에 <code>cascade = CascadeType.ALL</code> 및 <code>orphanRemoval = true</code>를 적용하여 생명주기 관리 통일."
+                        ],
+                        breakthrough: "<code>CascadeType.PERSIST</code> 설정을 통해 자식 엔티티 저장 시 부모 엔티티도 자동으로 영속화되도록 전파하여 <code>TransientObjectException</code> 오류를 완전히 해결."
+                    }
+                },
+                {
+                    phase: "4단계",
+                    title: "최종 아키텍처 확립",
+                    icon: "📐",
+                    content: {
+                        symptom: "모든 문제 해결 후에도 **성능 및 안정성** 문제를 야기하는 Detached Entity 문제 지속.",
+                        hypothesis: "캐시 계층이 Entity를 반환하여 Detached Entity 문제를 유발하며, 이는 역할 분리 원칙에 위배됨.",
+                        investigation: [
+                            "캐시 <code>RedisTemplate</code>의 타입을 <code>ItemToKeywordDto</code>로 변경.",
+                            "<code>ItemCacheService</code>에 <code>@Transactional</code> 환경 내에서 Entity를 <code>DTO</code>로 변환하는 로직 구현.",
+                            "최종 저장 서비스에서 <code>DTO</code>를 다시 <code>Entity</code>로 변환한 후, <code>entityManager.merge(detachedEntity)</code>를 통해 JPA 세션에 **재연결**하는 플로우 확립."
+                        ],
+                        breakthrough: "DTO 캐싱 구조를 확립하여 **직렬화 문제와 Detached Entity 문제를 완벽히 분리**하고, <code>merge()</code>를 통한 영속성 재연결 로직으로 DB 저장의 안전성을 극대화."
+                    }
+                }
+            ];
+
+            function render() {
+                // 타임라인 렌더링
+                timelineNav.innerHTML = '';
+                caseFiles.forEach((file, index) => {
+                    const item = document.createElement('div');
+                    item.className = `timeline-item flex-1 p-3 md:p-4 rounded-lg shadow-md bg-white border border-slate-200 text-center ${index === currentPhaseIndex ? 'active' : ''}`;
+                    item.dataset.index = index;
+                    item.innerHTML = `
+                        <div class="text-3xl mb-1">${file.icon}</div>
+                        <div class="font-bold text-sm md:text-base">${file.title}</div>
+                        <div class="timeline-phase text-xs text-slate-500">${file.phase}</div>
+                    `;
+                    timelineNav.appendChild(item);
+                });
+
+                // 콘텐츠 렌더링
+                const file = caseFiles[currentPhaseIndex];
+                contentArea.innerHTML = '';
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'content-fade-in bg-white p-6 md:p-8 rounded-lg shadow-lg border border-slate-200';
+                
+                let investigationItems = file.content.investigation
+                    .map(item => `<li class="flex items-start"><span class="mr-2 text-blue-500">•</span><span>${item}</span></li>`)
+                    .join('');
+
+                contentDiv.innerHTML = `
+                    <h2 class="text-2xl font-bold mb-4 text-slate-900">${file.icon} ${file.title}</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-semibold text-lg text-red-600 mb-2">증상</h3>
+                            <p class="text-slate-700">${file.content.symptom}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-yellow-600 mb-2">초기 가설</h3>
+                            <p class="text-slate-700">${file.content.hypothesis}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-blue-600 mb-2">수사 및 단서 (디버깅 과정)</h3>
+                            <ul class="space-y-2 text-slate-700">${investigationItems}</ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-green-600 mb-2">결정적 돌파구 / 최종 해결책</h3>
+                            <p class="text-slate-700 font-medium">${file.content.breakthrough}</p>
+                        </div>
+                    </div>
+                `;
+                contentArea.appendChild(contentDiv);
+            }
+            
+            timelineNav.addEventListener('click', (e) => {
+                const target = e.target.closest('.timeline-item');
+                if (target && target.dataset.index) {
+                    currentPhaseIndex = parseInt(target.dataset.index, 10);
+                    render();
+                }
+            });
+
+            // 초기 렌더링
+            render();
+        });
+    </script>
+
+</body>
+</html>

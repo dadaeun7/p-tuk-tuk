@@ -1,0 +1,66 @@
+.my-order-table-list th {
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: rgba(102, 119, 143, 0.3);
+  color: rgba(81, 97, 121, 1);
+  padding: 3px 0;
+  font-weight: 400;
+}
+
+.my-order-table-list tbody {
+  border-spacing: 0;
+}
+
+.my-order-table-list tbody>tr:hover {
+  transform: translateY(-0.21rem);
+  transition: transform .2s;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: 2px solid rgba(102, 119, 143, .5);
+}
+
+input[type="checkbox"]:checked {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 2px;
+  border: none;
+  background-color: #66778fff;
+  background-image: url("/check-white-line-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.my-order-table-filter .delete-btn {
+  background-color: #ebebeb;
+  /* 붉은 계열 */
+  color: #424242;
+  /* 텍스트는 흰색으로 가독성 확보 */
+  border: 1px solid rgba(73, 73, 73, 0.35);
+  /* 테두리도 같은 색 */
+  padding: 0 0.9rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  /* 부드러운 전환 효과 */
+
+  /* 필터 버튼과의 구분을 위해 아이콘을 추가하면 좋습니다. */
+  display: inline-flex;
+  align-items: center;
+  height: 1.95rem;
+}
+
+.my-order-table-filter .delete-btn:hover {
+  color: #fff;
+  background-color: #424242;
+  /* 더 진한 빨간색 */
+  box-shadow: 0 4px 8px rgba(180, 98, 106, 0.3);
+  /* 은은한 그림자 추가 */
+}

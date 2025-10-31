@@ -1,0 +1,84 @@
+/* 팝업 배경: 화면 전체를 덮는 반투명 레이어 */
+.popup-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* 팝업 본문: 흰색 박스 */
+.popup-content {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* 아이콘과 텍스트 사이 간격 */
+    min-width: 250px;
+    max-width: 90%;
+}
+
+.popup-content p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* 로딩 스피너 애니메이션 */
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #f3f3f3;
+    /* Light grey */
+    border-top: 5px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* 성공/에러 아이콘 공통 스타일 */
+.icon {
+    width: 48px;
+    height: 48px;
+}
+
+.icon.success {
+    fill: #27ae60;
+    /* Green */
+}
+
+.icon.error {
+    fill: #c0392b;
+    /* Red */
+}
+
+/* Keyframes 애니메이션 */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

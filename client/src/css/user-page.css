@@ -1,0 +1,7 @@
+body {
+    background: linear-gradient(160deg, rgba(168, 223, 255, 0.7) 5%, rgba(255, 253, 228, 0.6) 50%, rgba(96, 213, 87, 0.7) 95%);
+}
+
+.tbody-hidden {
+    visibility: collapse;
+}
