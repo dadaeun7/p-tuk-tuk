@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 @RequiredArgsConstructor
 public class KeywordMaterialCacheComponent {
+
     private final KeywordSpecificRepository keywordSpecificRepository;
     private final MaterialRepository materialRepository;
 
@@ -34,7 +35,8 @@ public class KeywordMaterialCacheComponent {
                 Comparator.comparingInt((KeywordSpecific c) -> c.getSpecificKeyword().trim().length()).reversed());
 
         return dbKeyword.stream()
-                .map(entity -> new KeywordSpecificDto(entity.getSpecificKeyword(), entity.getItemToKeyword().getId()))
+                .map(entity -> new KeywordSpecificDto(entity.getSpecificKeyword().trim(),
+                        entity.getItemToKeyword().getId()))
                 .collect(Collectors.toList());
     }
 

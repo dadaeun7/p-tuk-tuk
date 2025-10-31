@@ -6,8 +6,6 @@ import { useBringOrder } from "../../contexts/BringOrder";
 import LoadingDots from "./LoadingDots";
 import { useMyModal } from "../../contexts/MyModal";
 import { useLocation } from "react-router-dom";
-import { useQueryClient } from "@tanstack/react-query";
-
 interface NotiProp {
     id: number;
     message: string;
@@ -32,7 +30,9 @@ function NotificationListener() {
         tuktukDB.notifications.add(eventData)
             .then(() => {
                 console.log("알림이 DB에 저장되었습니다:", eventData);
-                window.location.reload();
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000)
             })
             .catch((error) => {
                 console.error("알림 저장 중 오류 발생:", error);

@@ -231,7 +231,7 @@ const orderListStyle: { [key: string]: React.CSSProperties } = {
   },
   wrap: {
     width: "140vh",
-    marginTop: "0.5rem"
+    marginTop: "0.5rem",
   },
   table: {
     width: "100%",
@@ -243,6 +243,7 @@ const orderListStyle: { [key: string]: React.CSSProperties } = {
   tr: {
     background: "rgba(255, 255, 255, 0.3)",
     boxShadow: "0 2px 3px rgba(0, 0, 0, 0.1)",
+    zIndex: "-1"
   },
   td: {
     borderStyle: "none",
@@ -254,9 +255,8 @@ const orderListStyle: { [key: string]: React.CSSProperties } = {
     marginRight: "0.3rem",
     padding: "0.2rem 1rem",
     borderRadius: "15px",
-    backdropFilter: "blur(30px)" /* 배경 블러 */,
     color: "#4d4d4dff",
-    margin: "0.3rem 0"
+    margin: "0.3rem 0",
   },
   loadingWrap: {
     position: "absolute",

@@ -11,11 +11,6 @@
   border-spacing: 0;
 }
 
-.my-order-table-list tbody>tr:hover {
-  transform: translateY(-0.21rem);
-  transition: transform .2s;
-}
-
 input[type="checkbox"] {
   appearance: none;
   width: 13px;

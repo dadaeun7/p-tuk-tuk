@@ -76,7 +76,7 @@ function OrderFilterInOrder(
                     <tbody className={orderEdit === true ? "" : "tbody-hidden"}>
                         <motion.tr
                             initial={{ opacity: 0, }}
-                            animate={{ opacity: 1, }}
+                            animate={{ opacity: 1 }}
                             exit={{ opacity: 0, }}
                             style={{
                                 ...filterBlurStyle2,
@@ -143,12 +143,11 @@ const orderFilterStyle: { [key: string]: React.CSSProperties } = {
         gap: "13px",
         flexDirection: "column",
         textAlign: "left",
-        position: "absolute",
+        position: "fixed",
         width: "83%",
         margin: "0.4rem 0rem 0rem 0.2rem",
         padding: "15px 0px 15px 0px",
         borderRadius: "0rem 0rem 0.7rem 0.7rem",
-        zIndex: 10,
         fontWeight: "500",
     },
     td: {

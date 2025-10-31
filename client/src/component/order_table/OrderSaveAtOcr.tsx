@@ -28,21 +28,6 @@ function OrderSaveAtOcr({
         }
     }
 
-    const ocrProcessedApi = async (formData: FormData): Promise<void> => {
-
-        const res = await fetch(`${BACK}${uri}`, {
-            method: "POST",
-            body: formData,
-            credentials: "include"
-        })
-
-        if (!res.ok) {
-            const error = await res.json();
-            openModal(<div>이미지를 ocr 처리 중 에러가 발생했습니다.{error.message}</div>);
-            setReqLoading('');
-        }
-    }
-
     const bringOcr = async () => {
 
         if (!selectFile) {
@@ -65,7 +50,6 @@ function OrderSaveAtOcr({
                 }).catch((err) => {
                     openModal(<div>이미지를 ocr 처리 중 에러가 발생했습니다.{err}</div>);
                     setReqLoading('');
-                    window.location.reload();
                 }).finally(() => {
                     setReqLoading('');
                 })
@@ -85,7 +69,7 @@ function OrderSaveAtOcr({
     return (<>
         <div
             className="order-save-at-ocr"
-            style={{ ...wrapStyle, height: "16.8rem" }}
+            style={{ ...wrapStyle, height: "19.5rem" }}
         >
             <div
                 style={{
@@ -104,8 +88,10 @@ function OrderSaveAtOcr({
                 }}
 
             >등록할 이미지 캡쳐 가이드</div>
-            <div className="order-save-at-ocr-title" style={{ ...title, paddingBottom: "1.5rem" }}>📃이미지로 등록하기</div>
-            <div className="order-save-at-ocr-title" style={description}>이미지 파일만 가능합니다. (지원 포맷:jpeg, png)</div>
+            <div className="order-save-at-ocr-title" style={{ ...title, paddingBottom: "1.2rem" }}>📃이미지로 등록하기</div>
+            <div className="order-save-at-ocr-desc" style={{ ...description, marginTop: "0.2rem" }}>이미지 파일만 가능합니다. (지원 포맷: jpeg, png)</div>
+            <div className="order-save-at-ocr-desc" style={{ paddingTop: "0.5rem", color: "rgb(86, 86, 86)", fontSize: "0.98rem", }}>이미지에
+                <strong style={{ border: "1px solid rgba(86, 86, 86, 0.4)", padding: "0.2rem 0.8rem", margin: "0 0.4rem", borderRadius: "0.8rem", fontSize: "0.89rem", backgroundColor: "rgba(86, 86, 86, .15)" }}>상품명 | 수량 | 가격</strong>이 포함되어있어합니다.</div>
             <input style={{ marginTop: "2rem" }} type="file" onChange={seletFileHandle} accept="image/jpeg,image/png"></input>
             <div
                 className="order-save-at-ocr-submit"

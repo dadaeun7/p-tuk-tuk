@@ -54,7 +54,7 @@ public class ProcessedOcrToOrderSave {
             for (OcrProduct ocrProduct : ocrProducts) {
 
                 FinalMatchSubmitDto convertMatchItem = recycleMatchingService
-                        .findNextSaveRecycleInfo(ocrProduct.getProductName());
+                        .findNextSaveRecycleInfo(ocrProduct.getProductName().replaceAll(" ", "").trim());
 
                 if (convertMatchItem == null) {
                     log.error("OCR에서 convertMatchItem null 발생");

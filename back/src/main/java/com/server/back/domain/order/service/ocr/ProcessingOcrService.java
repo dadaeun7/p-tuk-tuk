@@ -33,11 +33,11 @@ public class ProcessingOcrService {
         try {
             List<String> extractLines = ocrService.detecTextFromJpg(file.getBytes());
 
-            log.info("extractLines 이 추출되었나요?" + extractLines);
+            log.info("extractLines 추출: " + extractLines);
 
             List<String> productList = ocrToProductService.extractProductName(extractLines);
 
-            log.info("productList 가 나왔나요?" + productList);
+            log.info("productList 추출: " + productList);
 
             String imgUrl = gcsService.uploadImage(file);
 

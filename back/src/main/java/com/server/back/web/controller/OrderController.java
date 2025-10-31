@@ -24,6 +24,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderController {
 
     private final OrderService orderService;
+    private final com.server.back.domain.order.service.cache.KeywordMaterialCacheComponent KeywordMaterialCacheComponent;
 
     @GetMapping("/bring/order")
     public ResponseEntity<List<SendOrderDto>> bringOrder(@AuthenticationPrincipal TukUserDetails userDetails) {
@@ -32,6 +33,13 @@ public class OrderController {
 
         List<SendOrderDto> sendOrders = orderService.bringOrderList(userId);
         return ResponseEntity.ok(sendOrders);
+    }
+
+    @PostMapping("/keyword/delete")
+    public ResponseEntity<?> deleteCache(@AuthenticationPrincipal TukUserDetails userDetails) {
+        KeywordMaterialCacheComponent.deleteKeywordSpecifics();
+
+        return ResponseEntity.ok(Map.of("message", "캐시 삭제되었습니다"));
     }
 
     @PostMapping("/delete/order")

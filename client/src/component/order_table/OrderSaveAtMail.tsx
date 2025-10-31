@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BACK, localUser } from "../../config";
 import MUIDatePickerForm from "../util/MUIDatePickerForm";
 import { usePopup } from "../../contexts/AsyncPopup";
 import { useNavigate } from "react-router-dom";
+import { useMyModal } from "../../contexts/MyModal";
 
 
 function OrderSaveAtMail(
@@ -14,6 +15,7 @@ function OrderSaveAtMail(
             setReqLoading: React.Dispatch<React.SetStateAction<string>>
         }) {
 
+    const { openModal } = useMyModal();
     const past = new Date();
     past.setDate(past.getDate() - 7);
 
@@ -35,12 +37,34 @@ function OrderSaveAtMail(
         return `${year}-${month}-${day}`;
     }
 
+    const sameDate = (startDate: Date, endDate: Date) => {
+        if (!startDate || !endDate) {
+            return;
+        }
+
+        if (startDate > endDate) {
+            return true;
+        }
+
+        const year = startDate.getFullYear() === endDate.getFullYear();
+        const month = startDate.getMonth() === endDate.getMonth();
+        const day = startDate.getDate() === endDate.getDate();
+
+        return year && month && day;
+    }
+
+
     const submitBringMail = async () => {
+
+        if (sameDate(start, end)) {
+            openModal(<div>같은 날짜 및 날짜형식이 올바르지 않습니다!</div>);
+            return;
+        }
 
         if (localUser().email === "") {
             popupSet('error', '현재 구글과 연동되어있지 않습니다');
+            return;
         }
-
         popupSet('loading', '메일 불러오기 요청중에 있습니다.')
         const uri = '/bring/gmail';
 
@@ -111,10 +135,10 @@ function OrderSaveAtMail(
             <div className="order-save-at-mail-select">
                 <div className="order-save-at-mail-select-cal" style={{ display: "flex" }}>
                     <div className="order-save-at-mail-select-cal-start">
-                        <MUIDatePickerForm setData={setStart} />
+                        <MUIDatePickerForm date={start} setData={setStart} />
                     </div>
                     <div className="order-save-at-mail-select-cal-end">
-                        <MUIDatePickerForm setData={setEnd} />
+                        <MUIDatePickerForm date={end} setData={setEnd} />
                     </div>
                 </div>
                 <div className="order-save-at-mail-select-description"
@@ -179,6 +203,7 @@ export const wrapStyle = {
     height: "20.7rem",
     padding: "1rem 4rem",
     textAlign: "left",
+    zIndex: "999",
 }
 
 const infoEmailStyle = {

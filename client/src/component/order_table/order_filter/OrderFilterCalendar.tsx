@@ -14,8 +14,16 @@ function OrderFilterCalendar({
     handleDateChange: handleFilterChange
 }) {
 
-    const [start, setStart] = useState<Date | null>(null);
-    const [end, setEnd] = useState<Date | null>(null);
+    const past = new Date();
+    past.setDate(past.getDate() - 7);
+
+    const current = new Date();
+
+    const tomorrow = new Date(current);
+    tomorrow.setDate(current.getDate() + 1)
+
+    const [start, setStart] = useState<Date>(past);
+    const [end, setEnd] = useState<Date>(tomorrow);
 
     useEffect(() => {
 
@@ -52,8 +60,8 @@ function OrderFilterCalendar({
                     display: "flex"
                 }}
             >
-                <div className="my-order-table-filter-calendar-start"><MUIDatePickerForm setData={setStart} /></div>
-                <div className="my-order-table-filter-calendar-end"> <MUIDatePickerForm setData={setEnd} /></div>
+                <div className="my-order-table-filter-calendar-start"><MUIDatePickerForm date={start} setData={setStart} /></div>
+                <div className="my-order-table-filter-calendar-end"> <MUIDatePickerForm date={end} setData={setEnd} /></div>
             </div>
         </div>
     )
