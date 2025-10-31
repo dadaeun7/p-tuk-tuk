@@ -30,12 +30,6 @@ function UserPage() {
       <NotificationList />
       <SideBar />
       <main className="user-page-right" style={myPageRight}>
-        <div onClick={async () => {
-          await fetch(`${BACK}/keyword/delete`, {
-            method: "POST",
-            credentials: "include"
-          })
-        }}>캐시 삭제하기</div>
         <Outlet />
       </main>
     </div>
