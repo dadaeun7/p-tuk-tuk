@@ -1,13 +1,10 @@
 # 편리하게 추천하여, 깨끗한 지구를 향한 한걸음 가는 TUKTUK
 ---
 ### 🌏목적 및 동기
-환경 문제와 온라인 쇼핑 주문이 많아지면서 다양한 쓰레기들이 발생하고 있습니다.
+현재 온라인 쇼핑의 증가로 다양한 폐기물이 발생하는 상황에서, 분리배출이 번거로워서가 아니라 정확한 배출 기준을 알지 못해 잘못 배출하는 경우가 의외로 많습니다.
 
-번거로워서 쓰레기들을 분리배출 하지 않는 경우 보다 의외로 배출 기준과 다른 방법으로 배출하는 분들도 있습니다.
+본 프로젝트는 **'내 손을 거쳐가는 물건들'**에 대해 정확한 분리배출 가이드를 제공함으로써, 사용자에게 올바른 배출 습관을 형성시키고 궁극적으로 환경 문제 해결에 기여하는 실용적인 서비스를 개발하는 데 목표를 두었습니다. 특히 기술을 통해 복잡한 규정을 단순화하고, 사용자의 환경 기여를 독려하는 데 초점을 맞추었습니다.
 
-내 손을 거쳐가는 물건들에 정확한 분리배출 방법을 추천하여 사용자 또한 올바른 배출 방법을 통해 배출하고,
-
-환경에 도움이 될 수 있는 서비스를 만들고자 개발하게 되었습니다.
 
 ### 🔑핵심 기능 요약
 1. Google 연동으로 Gmail 중 주문(**`배민 장보기`**, **`컬리`**, **`쿠팡`**)을 파싱하여 주문한 상품의 분리배출 방법 추천
@@ -47,26 +44,56 @@
 ![프로젝트 ERD](docs/image//tuktuk_ERD.png)
 
 ## 5. 트러블 슈팅과 기술 결정 과정
-* [React_UI_Spring_Security_외부_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/React_UI_Spring_Security_external_connect.html)
-* [이메일_인증_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/email_confirm.html)
-* [docker_mysql_한글깨짐_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/docker_mysql_ko_error.html)
-* [google_외부서비스_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/google_connect.html)
-* [Redis_캐싱_JPA_영속성_충돌_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/Redis_caching_JPA_error.html)
-* [캐싱_전략_최적화_Hybrid_Model_도입_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/Hybrid_Model.html)
-* [JPA_영속성_동시성_Transactional_교착까지_이해와_해결_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/JPA_Transactional_error.html)
-* [OAuth2_콜백_URL_매칭_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/ouath2_callback_url_error.html)
-* [React_Dexie_동기화_관련_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleShooting/React_Dexie_sync.html)
+* [React_UI_Spring_Security_외부_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/react_ui_spring_security_external_connect.html)
+* [이메일_인증_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/email_confirm.html)
+* [docker_mysql_한글깨짐_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/docker_mysql_ko_error.html)
+* [google_외부서비스_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/google_connect.html)
+* [Redis_캐싱_JPA_영속성_충돌_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/redis_caching_jpa_error.html)
+* [캐싱_전략_최적화_Hybrid_Model_도입_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/hybrid_model.html)
+* [JPA_영속성_동시성_Transactional_교착까지_이해와_해결_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/jpa_transactional_error.html)
+* [OAuth2_콜백_URL_매칭_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/ouath2_callback_url_error.html)
+* [React_Dexie_동기화_관련_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/react_dexie_sync.html)
 
 ## 6. 앞으로의 목표
-✔️ [기능 개선] OCR 로직에 상품명 추출에 안정성 추가
+⚙️ 성능 및 핵심 로직 개선 목표
+✅ OCR 로직 안정화
 
-✔️ [기능 개선] 키워드 매칭 서비스 로직 `contain` 에서 Aho-Corasick 알고리즘 도입
+목표: OCR 결과에서 '상품명'을 추출하는 로직의 안정성을 확보합니다.
 
-✔️ [기능 개선] AI 매칭 순서까지 가지 않도록 item-keyword, keyword-specific 데이터 지속적으로 확보
+효과: 정확도 높은 품목 정보를 획득하고 서비스 신뢰도를 높입니다.
 
-✔️ [MSA 전환] 매칭 서비스, 이 외 서비스를 Spring 서버 분리하여 Docker container 추가 증설, 분리 운영 
+✅ 키워드 매칭 서비스 고도화
 
-✔️ [신규 기능 추가] 분리수거 물품 데이터 기반 다양한 컨텐츠 제작(미션, 분리수거 물품 배출수에 따른 포인트 제도 등)
+목표: 현재의 단순 contain 방식에서 벗어나 Aho-Corasick 알고리즘을 도입합니다.
 
-✔️ [신규 추가] 모바일 App 출시
+효과: 대규모 키워드 매칭 검색 성능을 획기적으로 향상시키고 백엔드 부하를 최소화합니다.
 
+✅ AI 의존성 감소
+
+목표: Item-Keyword 및 Keyword-Specific 데이터를 지속적으로 확보/정제합니다.
+
+효과: AI 매칭 단계까지 가지 않도록 빠르고 비용 효율적인 1차 데이터 매칭 성공률을 극대화합니다.
+
+---
+
+2. 🏗️ 아키텍처 및 확장성 강화
+✅ 마이크로서비스(MSA) 전환 검토
+
+목표: 서비스 규모 확장 시, 키워드/품목 매칭 서비스와 인증/이력 관리 서비스를 독립적인 Spring 서버로 분리하고 Docker Container를 증설하여 운영합니다.
+
+효과: 서비스별 독립적인 확장 및 배포를 가능하게 하여 시스템 안정성을 높입니다.
+
+3. ✨ 서비스 가치 확장
+✅ 신규 컨텐츠 및 사용자 참여 유도
+
+목표: 분리수거 물품 데이터 및 사용자 배출 기록을 기반으로 **'환경 미션'**이나 '포인트 제도' 등의 게임화(Gamification) 요소를 도입합니다.
+
+효과: 사용자 참여율과 서비스 지속성을 높입니다.
+
+✅ 모바일 App 출시
+
+목표: 웹 서비스 외에 모바일 전용 App을 출시합니다.
+
+효과: 사용자의 접근성을 극대화하고, 푸시 알림 등을 통해 배출 습관 형성을 돕습니다.
+
+---
