@@ -52,7 +52,6 @@
 ![프로젝트 ERD](docs/image//tuktuk_ERD.png)
 
 ## 5. 트러블 슈팅과 기술 결정 과정
-* [React_UI_Spring_Security_외부_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/react_ui_spring_security_external_connect.html)
 * [이메일_인증_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/email_confirm.html)
 * [docker_mysql_한글깨짐_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/docker_mysql_ko_error.html)
 * [google_외부서비스_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/google_connect.html)
