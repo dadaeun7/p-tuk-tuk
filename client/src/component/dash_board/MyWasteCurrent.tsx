@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { type Orders } from "../../data/db";
 import { matchTitle, materials } from "../../config";
 import "../../css/dashboard-body.css";
@@ -182,7 +182,7 @@ function MyWasteCurrent(
                 <div style={{ display: "flex", gap: "1rem" }}>
                     <div style={{ ...cardWrap, maxWidth: "17.9rem" }}>
                         <div style={cardTitle}>🌳현재 배출율</div>
-                        <div style={cardDiscription}>{recommnad(percent())}</div>
+                        <div style={cardDiscription}>{recommnad(Number(percent()))}</div>
                         <div style={{ ...cardPer }}>{percent()}<span style={{ fontSize: "1.8rem" }}>%</span></div>
                         <div style={cardTitle}>🌏절감된 CO2량</div>
                         <div style={cardDiscription}>분리수거로 절감한 CO2량이에요!</div>
@@ -221,18 +221,18 @@ function MyWasteCurrent(
     )
 }
 
-const cardTitle = {
+const cardTitle: CSSProperties = {
     fontSize: "1.2rem", fontWeight: "bold", marginBottom: "0.3rem"
 }
 
-const cardDiscription = {
+const cardDiscription: CSSProperties = {
     marginBottom: "0.3rem"
 }
 
-const cardPer = {
+const cardPer: CSSProperties = {
     fontSize: "2rem", fontWeight: "bold", textAlign: "right"
 }
-const cardWrap = {
+const cardWrap: CSSProperties = {
     padding: "1.5rem 2rem",
     background: "rgba(255, 255, 255, 0.45)" /* 반투명 흰색 */,
     backdropFilter: " blur(20px)" /* 배경 블러 */,

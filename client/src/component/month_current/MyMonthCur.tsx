@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { useCallback, useState } from "react";
-import { tuktukDB, type Orders } from "../../data/db";
+import { useState } from "react";
+import { tuktukDB } from "../../data/db";
 import MonthCurSel from "./MonthCurSel";
 import MonthSum from "./MonthSum";
 import MonthTable from "./MonthTable";
@@ -44,8 +44,6 @@ function MyMonthCur() {
 
   const {
     data: orders,
-    isLoading,
-    error,
     refetch
   } = useQuery({
     queryKey: ["dayMaterials", year, month],

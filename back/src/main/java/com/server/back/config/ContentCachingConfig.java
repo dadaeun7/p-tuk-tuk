@@ -24,14 +24,4 @@ public class ContentCachingConfig {
                 userDetailService, redis);
     }
 
-    // @Bean
-    // public FilterRegistrationBean<JwtAuthenticationFilter> jwtFilterRegistration(
-    // JwtAuthenticationFilter jwtAuthenticationFilter) {
-    // FilterRegistrationBean<JwtAuthenticationFilter> registration = new
-    // FilterRegistrationBean<>();
-    // registration.setFilter(jwtAuthenticationFilter);
-    // registration.addUrlPatterns("/local/auth", "/local/auto");
-    // return registration;
-
-    // }
 }

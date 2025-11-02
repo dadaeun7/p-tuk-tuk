@@ -102,10 +102,6 @@ export const codeSubmitPreven = (inEmail: string, reqState: boolean) => {
     );
     localStorage.setItem("state", "true");
 
-    const timeSet = timeDiffValue(localStorage.getItem("time")!, nowTime);
-    localStorage.setItem("code-set-min", timeSet["diff-minute"].toString());
-    localStorage.setItem("code-set-sec", timeSet["diff-second"].toString());
-
     return false;
   }
 

@@ -6,6 +6,7 @@ import { BACK, findVendor } from "../../config";
 import { useMyModal } from "../../contexts/MyModal";
 import { useAuth } from "../../contexts/Auth";
 import { useBringOrder } from "../../contexts/BringOrder";
+import { useQuery } from "@tanstack/react-query";
 
 export interface FilterCriteria {
   startDate: number,
@@ -16,7 +17,7 @@ export interface FilterCriteria {
 
 function MyOrderTable() {
 
-  const { load } = useBringOrder();
+  const { loading } = useBringOrder();
 
   /** order 삭제 관련 시작*/
   const [menu, setMenu] = useState(false);
@@ -67,28 +68,39 @@ function MyOrderTable() {
     material: []
   })
 
-  const [loading, setLoading] = useState<boolean>(false);
-  const [err, setError] = useState<Error | null>(null);
-  const [originOrder, setOriginOrder] = useState<Orders[]>([]);
+  const { user } = useAuth();
+  const userMyId = user?.myId;
 
-  useEffect(() => {
-    const loadOrder = async () => {
+  const loadOrder = async () => {
+    const userMyId = user?.myId !== undefined ? user?.myId : "";
 
-      const userMyId = user?.myId !== undefined ? user?.myId : "";
-      try {
-        setLoading(true);
-        const orderFromDexie = await tuktukDB.orders.where('userId').equals(userMyId).toArray();
-        setOriginOrder(orderFromDexie);
-      } catch (err) {
-        setError(err as Error);
-      } finally {
-        setLoading(false);
-      }
+    if (!userMyId) {
+      return [];
     }
-    loadOrder();
-  }, [load])
 
-  const handleFilterChange = useCallback((key: keyof FilterCriteria, value: string | number | null) => {
+    try {
+      const orderFromDexie = await tuktukDB.orders.where('userId').equals(userMyId).toArray();
+      return orderFromDexie;
+    } catch (err) {
+      console.error("orderFromDexie err : ", err);
+    }
+  }
+
+  const {
+    data: orders,
+  } = useQuery({
+    queryKey: ["orders", userMyId],
+    queryFn: () => loadOrder(),
+    enabled: !!userMyId
+  });
+
+  const originOrder = orders || [];
+
+  console.log('originOrder', originOrder);
+  console.log('userMyId', userMyId);
+
+
+  const handleFilterChange = useCallback((key: keyof FilterCriteria, value: string | number | string[]) => {
     setFilters(prev => ({
       ...prev,
       [key]: value,
@@ -128,7 +140,7 @@ function MyOrderTable() {
         searchKeyword === '장보기'
       ) {
         const findKey = findVendor(searchKeyword) || '';
-        return list = list.filter(order => order.vendor.includes(findKey));
+        list = list.filter(order => order.vendor.includes(findKey));
       }
 
       list = list.filter(order => order.orderitems.some(oi => oi.product.includes(searchKeyword)));
@@ -137,8 +149,8 @@ function MyOrderTable() {
     if (material && material.length > 0) {
       list = list.filter(order => order.orderitems.some(oi => oi.materials.some(m => material.includes(m.key))));
     }
-
     return list;
+
   }, [originOrder, filters]);
 
 
@@ -147,7 +159,6 @@ function MyOrderTable() {
   /** title, filter css width 설정 시작 */
   const titleRef = useRef<HTMLDivElement>(null);
   const [tWidth, setTwidth] = useState(0);
-  const { user } = useAuth();
 
   useEffect(() => {
     if (titleRef.current) {

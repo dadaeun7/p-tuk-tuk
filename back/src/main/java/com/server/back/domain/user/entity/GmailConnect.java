@@ -13,7 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "gmail-connect")
+@Table(name = "gmail_connect")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class GmailConnect {

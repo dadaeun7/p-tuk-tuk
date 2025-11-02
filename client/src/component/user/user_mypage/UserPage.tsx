@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { BACK, myPageRight } from "../../../config";
+import { myPageRight } from "../../../config";
 import SideBar from "../../side_bar/SideBar";
 import { useAuth } from "../../../contexts/Auth";
 import "../../../css/user-page.css";

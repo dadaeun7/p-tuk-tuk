@@ -1,31 +1,39 @@
 package com.server.back.application.service;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 
+import com.sendgrid.Method;
+import com.sendgrid.Request;
+import com.sendgrid.Response;
+import com.sendgrid.SendGrid;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
+import com.sendgrid.helpers.mail.objects.Personalization;
 import com.server.back.domain.user.event.EmailConfirmEvent;
 import com.server.back.domain.user.exception.PasswordToJoinError;
 import com.server.back.domain.verification.exception.CodeNotEquals;
 import com.server.back.domain.verification.generator.EmailAuth6Generator;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class EmailVerificationService {
 
-    private final JavaMailSender javaMailSender;
+    private final SendGrid sendGrid;
+    // private final JavaMailSender javaMailSender;
 
     @Qualifier("stringRedisTemplate")
     private final StringRedisTemplate redis;
@@ -40,14 +48,16 @@ public class EmailVerificationService {
         return "email:tries:" + email;
     }
 
+    private final String senderEmail = "dadaeun7@gmail.com";
+
     @Async
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public CompletableFuture<Void> sendCode(EmailConfirmEvent event) {
 
         try {
 
-            MimeMessage message = javaMailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+            // MimeMessage message = javaMailSender.createMimeMessage();
+            // MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
             String code = emailAuth6Generator.generate();
             Duration validTime = emailAuth6Generator.ttl();
@@ -94,16 +104,42 @@ public class EmailVerificationService {
                     """
                     .formatted(code);
 
-            helper.setFrom("dadaeun7@gmail.com");
-            helper.setTo(event.email());
-            helper.setSubject("[툭툭] 이메일 인증 코드입니다.");
-            helper.setText(emailForm, true);
+            // helper.setFrom("dadaeun7@gmail.com");
+            // helper.setTo(event.email());
+            // helper.setSubject("[툭툭] 이메일 인증 코드입니다.");
+            // helper.setText(emailForm, true);
 
-            javaMailSender.send(message);
+            // javaMailSender.send(message);
+
+            Email from = new Email(senderEmail);
+            Email to = new Email(event.email());
+            Content content = new Content("text/html", emailForm);
+
+            Mail mail = new Mail();
+            mail.setFrom(from);
+            mail.setSubject("[툭툭] 이메일 인증 코드입니다.");
+            mail.addContent(content);
+
+            Personalization personalization = new Personalization();
+            personalization.addTo(to);
+
+            mail.addPersonalization(personalization);
+
+            Request request = new Request();
+            request.setMethod(Method.POST);
+            request.setEndpoint("mail/send");
+            request.setBody(mail.build());
+
+            Response response = sendGrid.api(request);
+
+            if (response.getStatusCode() < 200 || response.getStatusCode() >= 300) {
+                log.info("SendGrid 발송실패, Code: " + response.getStatusCode());
+                throw new RuntimeException("SendGrid API 발송 실패");
+            }
 
             return CompletableFuture.completedFuture(null);
 
-        } catch (MessagingException e) {
+        } catch (IOException | RuntimeException e) {
             // throw new IllegalStateException("메일 발송 실패", e);
             return CompletableFuture.failedFuture(e);
         }

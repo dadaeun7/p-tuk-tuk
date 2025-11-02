@@ -38,7 +38,7 @@ public class GoogleAuthController {
         String state = UUID.randomUUID().toString();
 
         String url = googleAuthorizationCodeFlow.newAuthorizationUrl()
-                .setRedirectUri("http://localhost:5173/my-page/google/auth/callback")
+                .setRedirectUri("https://beneficial-love-production.up.railway.app/my-page/google/auth/callback")
                 .setState(state)
                 .setAccessType("offline")
                 .setApprovalPrompt("force")

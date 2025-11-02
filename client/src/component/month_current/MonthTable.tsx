@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { BACK, matchKeyName, recycleGraColor } from "../../config";
 import { tuktukDB, type Orders } from "../../data/db";
-import type { GroupedMaterials, MaterialIndex } from "./MyMonthCur";
+import type { GroupedMaterials } from "./MyMonthCur";
 import type { QueryObserverResult, RefetchOptions } from "@tanstack/react-query";
 import { useMyModal } from "../../contexts/MyModal";
 

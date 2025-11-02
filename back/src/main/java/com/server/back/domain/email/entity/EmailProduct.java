@@ -15,7 +15,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "email-product")
+@Table(name = "email_product")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class EmailProduct {

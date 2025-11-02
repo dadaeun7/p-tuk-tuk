@@ -7,11 +7,11 @@ function GmailUnConnect() {
 
   const { popupSet } = usePopup();
 
-  const [submitType, setSubmitType] = useState(
+  const [submitType, _setSubmitType] = useState(
     localUser().email === "" ? "connect" : "unConnect"
   );
 
-  const [showMsg, setShowMsg] = useState(
+  const [showMsg, _setShowMsg] = useState(
     localUser().email === "" ? "Gmail 연동하기" : "Gmail 연동해제하기"
   );
 
@@ -32,9 +32,10 @@ function GmailUnConnect() {
       return res.json();
     }).then((data) => {
       return data;
-    }).catch((err) => {
-      popupSet('error', `연동에 실패했습니다. ${err}`);
     })
+    // .catch((err) => {
+    //   popupSet('error', `연동에 실패했습니다. ${err}`);
+    // })
 
     const url = response.url;
     window.location.href = url;

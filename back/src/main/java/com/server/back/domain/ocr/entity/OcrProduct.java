@@ -14,7 +14,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "ocr-product")
+@Table(name = "ocr_product")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OcrProduct {

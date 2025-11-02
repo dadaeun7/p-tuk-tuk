@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Table(name = "rec-match-item")
+@Table(name = "rec_match_item")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class RecycleMatchItem {
 

@@ -24,7 +24,7 @@ import lombok.ToString;
 @Entity
 @ToString
 @Getter
-@Table(name = "item-keyword")
+@Table(name = "item_keyword")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ItemToKeyword {

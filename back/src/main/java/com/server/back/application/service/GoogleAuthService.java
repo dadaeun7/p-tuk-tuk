@@ -40,7 +40,7 @@ public class GoogleAuthService {
                 try {
                         GoogleTokenResponse tokenResponse = googleAuthorizationCodeFlow
                                         .newTokenRequest(code)
-                                        .setRedirectUri("http://localhost:5173/my-page/google/auth/callback")
+                                        .setRedirectUri("https://beneficial-love-production.up.railway.app/my-page/google/auth/callback")
                                         .execute();
 
                         String refreshToken = tokenResponse.getRefreshToken();

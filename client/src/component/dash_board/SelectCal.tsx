@@ -8,15 +8,14 @@ import { filterBlurStyle2 } from "../../config";
 
 function SelectCal({
     pickDate,
-    setPickDate,
     setDhYear,
     setDhMonth
 }: {
     pickDate: Date,
-    setPickDate: React.Dispatch<React.SetStateAction<Date>>,
     setDhYear: React.Dispatch<React.SetStateAction<number>>,
     setDhMonth: React.Dispatch<React.SetStateAction<number>>
 }) {
+
 
     const [selectDate, setSelectDate] = useState(new Date());
     const [isOpen, setIsOpen] = useState(false);

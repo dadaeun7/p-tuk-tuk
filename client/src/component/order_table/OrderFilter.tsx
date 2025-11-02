@@ -86,7 +86,6 @@ const OrderFilter = forwardRef<HTMLDivElement, OrderFilterProps>((props, ref) =>
       />
       {/**order table */}
       <OrderFilterInOrder
-        imgStyle={imgStyle}
         setShowInMail={setShowInMail}
         setShowInRecipe={setShowInRecipe}
         reqLoading={reqLoading} />

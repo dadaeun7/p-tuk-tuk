@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { localUser } from '../config';
+import { BACK, localUser } from '../config';
+import { useMyModal } from '../contexts/MyModal';
 
 // ------------------------------------
 // 1. 타입 정의 (Typescript Interface)
@@ -14,27 +14,25 @@ interface TableRow {
     isChecked: boolean;
 }
 
-interface RequestItem {
-    id: number;
-    originalName: string;
-    matchedItem: string;
-}
+// interface RequestItem {
+//     id: number;
+//     originalName: string;
+//     matchedItem: string;
+// }
 
 // ------------------------------------
 // 2. 초기 데이터 및 상수
 // ------------------------------------
 const initialData: TableRow[] = [
     { id: 1, originalName: '사과.jpg', item: '과일', material: '레드', description: '싱싱한 사과', isChecked: false },
-    { id: 2, originalName: '바나나.png', item: '과일', material: '옐로우', description: '길쭉한 바나나', isChecked: false },
-    { id: 3, originalName: '차.pdf', item: '음료', material: '다크', description: '고급스러운 찻잔', isChecked: false },
-    { id: 4, originalName: '물병.doc', item: '용품', material: '블루', description: '휴대용 물병', isChecked: false },
+
 ];
 
 function AdminTable() {
-    // 제네릭으로 TableRow[] 타입을 명시하여 타입 안정성 확보
     const [tableData, setTableData] = useState<TableRow[]>(initialData);
     const [hover, setHover] = useState<boolean>(false);
 
+    const { openModal } = useMyModal();
     // ------------------------------------
     // 3. 이벤트 핸들러
     // ------------------------------------
@@ -48,43 +46,22 @@ function AdminTable() {
         );
     };
 
-    // 요청 버튼 핸들러
-    const handleSubmit = async (): Promise<void> => {
-        // 1. 선택된 항목 필터링 및 RequestItem 타입으로 변환
-        const selectedItems: RequestItem[] = tableData
-            .filter(row => row.isChecked)
-            .map(row => ({
-                id: row.id,
-                originalName: row.originalName,
-                matchedItem: row.item, // 백엔드 DTO 필드명(`matchedItem`)에 맞춰 전송
-            }));
+    const cacheReset = async () => {
+        const uri = "/keyword/delete";
+        const res = await fetch(`${BACK}${uri}`, {
+            method: "POST",
+            credentials: "include"
+        })
 
-        if (selectedItems.length === 0) {
-            alert('⚠️ 요청할 항목을 하나 이상 체크해주세요.');
+        if (!res.ok) {
+            openModal(<div>캐시가 삭제에 문제가 생겼습니다. 로그를 확인해주세요.</div>);
             return;
         }
 
-        console.log("선택된 항목:", selectedItems);
-
-        try {
-            // 2. Spring Boot 백엔드로 POST 요청
-            const response = await axios.post<string>('/api/admin/process', selectedItems);
-
-            alert(`✅ 요청 성공! 응답: ${response.data}`);
-
-            // 요청 성공 후 체크박스 상태 초기화
-            setTableData(prevData =>
-                prevData.map(row => ({ ...row, isChecked: false }))
-            );
-
-        } catch (error) {
-            console.error("요청 실패:", error);
-            alert('❌ 요청 처리 중 오류가 발생했습니다.');
-        }
-    };
-
+        openModal(<div>캐시가 정상적으로 삭제 되었습니다.</div>);
+    }
     // ------------------------------------
-    // 4. 렌더링 (세련된 디자인 적용)
+    // 4. 렌더링
     // ------------------------------------
     return (
         <>
@@ -99,9 +76,17 @@ function AdminTable() {
                     </div>
                     <h1 style={styles.header}>👮‍♂️관리자 페이지</h1>
                     <span style={styles.topBtn}>AI 추천 내용</span>
+                    <div
+                        style={{
+                            backgroundColor: "#292929ff",
+                            color: "#fff",
+                            padding: "0.8rem 1.3rem",
+                            marginTop: "1rem",
+                        }}
+                        onClick={() => {
+                            cacheReset();
+                        }}>keyword 캐시 초기화</div>
                 </div>
-
-
 
                 {/* Table 영역 */}
                 <div style={styles.tableContainer}>
@@ -137,14 +122,14 @@ function AdminTable() {
                 </div>
 
                 {/* 버튼 영역 */}
-                <div style={styles.buttonContainer}>
+                {/* <div style={styles.buttonContainer}>
                     <button
                         onClick={handleSubmit}
                         style={styles.button}
                     >
                         매칭 키워드로 추가 ({tableData.filter(row => row.isChecked).length})
                     </button>
-                </div>
+                </div> */}
             </div>
         </>
 

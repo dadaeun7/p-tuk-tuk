@@ -25,7 +25,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "processed-email")
+@Table(name = "processed_email")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ProcessedEmail {

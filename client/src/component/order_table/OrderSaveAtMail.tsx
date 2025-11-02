@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { BACK, localUser } from "../../config";
 import MUIDatePickerForm from "../util/MUIDatePickerForm";
 import { usePopup } from "../../contexts/AsyncPopup";
@@ -165,22 +165,22 @@ function OrderSaveAtMail(
     )
 }
 
-export const title = {
+export const title: CSSProperties = {
     fontWeight: "800", fontSize: "1.7rem", marginTop: "4rem", color: 'rgb(86, 86, 86)'
 }
-export const submit = {
+export const submit: CSSProperties = {
     display: "flex",
     justifyContent: "flex-end",
     marginTop: "1.2rem",
     marginRight: "-2rem"
 }
-export const description = {
+export const description: CSSProperties = {
     marginTop: "-1rem",
     borderTop: "solid 0.08rem #929191ff",
     paddingTop: "0.3rem",
     color: "rgb(86, 86, 86)"
 }
-export const help = {
+export const help: CSSProperties = {
     position: "absolute",
     right: "1rem",
     top: "0.7rem",
@@ -192,7 +192,7 @@ export const help = {
     border: "1px solid rgba(64, 78, 64, 0.3)"
 }
 
-export const wrapStyle = {
+export const wrapStyle: CSSProperties = {
     position: "absolute",
     top: "12rem",
     left: "30rem",
@@ -206,20 +206,20 @@ export const wrapStyle = {
     zIndex: "999",
 }
 
-const infoEmailStyle = {
+const infoEmailStyle: CSSProperties = {
     display: "flex",
     justifyContent: "space-between",
     color: "rgb(86, 86, 86)",
 }
 
-const infoLastDayStyle = {
+const infoLastDayStyle: CSSProperties = {
     display: "flex",
     justifyContent: "space-between",
     color: "rgb(86, 86, 86)",
     marginTop: "0.7rem"
 }
 
-export const submitBtnStyle = { marginRight: "0.3rem", padding: "0.45rem 1.4rem", backgroundColor: "rgb(86, 86, 86)", borderRadius: "1.3rem", color: "#fff", cursor: "pointer" }
-export const cancleBtnStyle = { padding: "0.45rem 1.4rem", borderRadius: "1.3rem", border: "1px solid rgb(86, 86, 86)", color: "rgb(86, 86, 86)", cursor: "pointer" }
+export const submitBtnStyle: CSSProperties = { marginRight: "0.3rem", padding: "0.45rem 1.4rem", backgroundColor: "rgb(86, 86, 86)", borderRadius: "1.3rem", color: "#fff", cursor: "pointer" }
+export const cancleBtnStyle: CSSProperties = { padding: "0.45rem 1.4rem", borderRadius: "1.3rem", border: "1px solid rgb(86, 86, 86)", color: "rgb(86, 86, 86)", cursor: "pointer" }
 
 export default OrderSaveAtMail;

@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@Table(name = "rec-order-item")
+@Table(name = "rec_order_item")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class RecycleOrderItem {
 

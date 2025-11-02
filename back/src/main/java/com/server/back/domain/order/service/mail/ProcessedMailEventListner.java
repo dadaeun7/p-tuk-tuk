@@ -63,7 +63,7 @@ public class ProcessedMailEventListner {
                 for (EmailProduct product : email.getProductList()) {
 
                     FinalMatchSubmitDto convertMatchItem = recycleMatchingService
-                            .findNextSaveRecycleInfo(product.getProductName().replaceAll(" ", "").trim());
+                            .findNextSaveRecycleInfo(product.getProductName().trim());
 
                     if (convertMatchItem == null) {
 

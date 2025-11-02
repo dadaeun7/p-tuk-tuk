@@ -1,9 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { tuktukDB, type Orders } from "../data/db";
-import { BACK, materials } from "../config";
+import { BACK } from "../config";
 import axios from 'axios';
 import { useAuth } from "./Auth";
-import { useQuery } from "@tanstack/react-query";
 
 export type OrderCtx = {
     loading: boolean;
@@ -37,6 +36,7 @@ export function BringOrderProvider({ children }: { children: React.ReactNode }) 
     const load = async () => {
 
         if (loading) return;
+
         setLoading(true);
 
         const uri = "/bring/order";

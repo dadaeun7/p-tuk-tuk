@@ -10,18 +10,21 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
+
+import lombok.RequiredArgsConstructor;
+
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 
 @Service
+@RequiredArgsConstructor
 public class GcsService {
 
     @Value("${gcp.storage.bucket-name}")
     private String buckName;
 
-    private final Storage storage = StorageOptions.getDefaultInstance().getService();
+    private final Storage storage;
 
     public String uploadImage(MultipartFile file) throws IOException {
 

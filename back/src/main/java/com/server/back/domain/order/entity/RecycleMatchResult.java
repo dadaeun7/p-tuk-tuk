@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Entity
-@Table(name = "rec-match-result")
+@Table(name = "rec_match_result")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 public class RecycleMatchResult {

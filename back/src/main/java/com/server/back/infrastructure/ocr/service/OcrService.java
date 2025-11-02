@@ -29,7 +29,6 @@ public class OcrService {
     public List<String> detecTextFromJpg(byte[] imageBytes) throws IOException {
 
         try {
-            /** */
 
             ByteString imgBytes = ByteString.copyFrom(imageBytes);
             Image img = Image.newBuilder().setContent(imgBytes).build();

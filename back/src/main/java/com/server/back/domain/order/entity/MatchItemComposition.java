@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Entity
 @Getter
-@Table(name = "match-item-composition")
+@Table(name = "match_item_composition")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MatchItemComposition {
 

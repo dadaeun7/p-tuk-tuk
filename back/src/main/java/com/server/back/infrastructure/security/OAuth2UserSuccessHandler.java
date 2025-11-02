@@ -2,12 +2,13 @@ package com.server.back.infrastructure.security;
 
 import java.io.IOException;
 
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -28,14 +29,18 @@ public class OAuth2UserSuccessHandler extends SimpleUrlAuthenticationSuccessHand
 
         String accessToken = jwtTokenProvider.createToken(authentication);
 
-        Cookie cookie = new Cookie("accessToken", accessToken);
-        cookie.setHttpOnly(true);
-        cookie.setPath("/");
-        cookie.setMaxAge(60 * 60);
+        log.info("📦onAuthenticationSuccess가 실행되었습니다.");
+        ResponseCookie cookie = ResponseCookie.from("accessToken", accessToken)
+                .path("/")
+                .httpOnly(true)
+                .secure(true)
+                .sameSite("None")
+                .maxAge(60 * 60)
+                .build();
 
-        String targetUrl = "http://localhost:5173/";
+        String targetUrl = "https://beneficial-love-production.up.railway.app";
 
-        response.addCookie(cookie);
+        response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
 
         /** 바로 session 무효화 */
         if (request.getSession(false) != null) {

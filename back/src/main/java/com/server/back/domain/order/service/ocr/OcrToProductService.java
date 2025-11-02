@@ -13,12 +13,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class OcrToProductService {
 
+    // 3,790 또는 100,900, 1,000원 등 ...
     private static final String PRICE_AND_UNIT_LINE_REGEX = "^\\s*[\\d,.]+\\s*(?:kg|g|ml|L|개|EA|입|원|₩)?\\s*$";
     private static final Pattern PRICE_AND_UNIT_LINE_PATTERN = Pattern.compile(PRICE_AND_UNIT_LINE_REGEX);
 
     // 배민 장보기 상품명 중 (예) 8801117765903
     private static final String LON_NUMBER_REGEX = "\\s*\\d{6,14}\\s*";
     private static final Pattern LON_NUMBER_PATTERN = Pattern.compile(LON_NUMBER_REGEX);
+
+    private static final String BRACKETS_REGEX_PATTERN_TO_REMOVE = "\\[(?!배민이지).*?\\]\\s*";
+    private static final Pattern BRACKETS_REGEX_PATTERN = Pattern.compile(BRACKETS_REGEX_PATTERN_TO_REMOVE);
 
     public List<String> extractProductName(List<String> extractOcrList) {
 
@@ -81,12 +85,17 @@ public class OcrToProductService {
         return line.stream()
                 .map(String::trim)
                 .filter(item -> item.length() > 3 || !item.matches("^[\\d,./]+$"))
-                .filter(itme -> !PRICE_AND_UNIT_LINE_PATTERN.matcher(itme).matches())
+                .filter(item -> !PRICE_AND_UNIT_LINE_PATTERN.matcher(item).matches())
+                .map(item -> removeBrackets(item))
                 .collect(Collectors.toList());
     }
 
     public static String removeLongNumbers(String line) {
         return LON_NUMBER_PATTERN.matcher(line).replaceAll("").trim();
+    }
+
+    public static String removeBrackets(String line) {
+        return BRACKETS_REGEX_PATTERN.matcher(line).replaceAll("").trim();
     }
 
     private String findOverlapCombine(String s1, String s2) {

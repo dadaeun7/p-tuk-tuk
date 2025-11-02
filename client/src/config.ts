@@ -1,4 +1,6 @@
-export const BACK = "http://localhost:8080";
+import type { CSSProperties } from "react";
+
+export const BACK: string = import.meta.env.VITE_API_URL;
 // email 정규식
 export const EMAIL_REG = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -74,7 +76,7 @@ export const boldBlurStyle = {
   /*glass effect - end*/
 };
 
-export const myPageRight = {
+export const myPageRight: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-start",

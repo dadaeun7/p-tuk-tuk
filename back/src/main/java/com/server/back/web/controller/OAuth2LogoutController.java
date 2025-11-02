@@ -1,26 +1,23 @@
 package com.server.back.web.controller;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.reactive.function.client.WebClient;
 
 import com.server.back.infrastructure.security.JwtTokenProvider;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -54,59 +51,25 @@ public class OAuth2LogoutController {
             HttpServletRequest request,
             HttpServletResponse response) {
 
-        jwtAccessTokenLogout(accessToken);
-
-        Map<String, String> responseBody = new HashMap<>();
+        if (accessToken != null) {
+            jwtAccessTokenLogout(accessToken);
+        }
 
         log.info("### Authentication object: {}", authentication);
 
-        if (authentication instanceof OAuth2AuthenticationToken) {
-            OAuth2AuthenticationToken oauth2Token = (OAuth2AuthenticationToken) authentication;
-            String registrationId = oauth2Token.getAuthorizedClientRegistrationId();
-
-            String logoutUrl;
-            switch (registrationId.toLowerCase()) {
-                case "kakao":
-
-                    logoutUrl = "https://kauth.kakao.com/oauth/logout?client_id=" + kakaoClientId
-                            + "&logout_redirect_uri="
-                            + logoutRedirectUri;
-
-                    responseBody.put("socialLogoutUrl", logoutUrl);
-                    break;
-
-                case "naver":
-                    String naverAccessToken = inValiededNaverToken(oauth2Token);
-                    String url = "https://nid.naver.com/oauth2.0/token?grant_type=delete&client_id=" +
-                            naverClientId + "&client_secret=" + naverClientSecret + "&access_token=" +
-                            naverAccessToken;
-
-                    WebClient webClient = WebClient.create();
-
-                    try {
-                        String naverSend = webClient.get().uri(url).retrieve().bodyToMono(String.class).block();
-                        log.info("네이버 토큰 무효화 응답 " + naverSend);
-
-                    } catch (Exception e) {
-                        log.error("네이버 토큰 무효화 실패" + e.getMessage());
-                    }
-
-                    break;
-
-                default:
-                    return ResponseEntity.badRequest().build();
-
-            }
-        }
         // ===================== [ 브라우저 Cookie 초기화 ] =====================
-        Cookie cookie = new Cookie("accessToken", null);
-        cookie.setMaxAge(0);
-        cookie.setHttpOnly(true);
-        cookie.setPath("/");
+        ResponseCookie cookie = ResponseCookie.from("accessToken", "")
+                .path("/")
+                .maxAge(0)
+                .httpOnly(true)
+                .secure(true)
+                .sameSite("None")
+                .domain("beneficial-love-production.up.railway.app")
+                .build();
 
-        response.addCookie(cookie);
+        response.addHeader(HttpHeaders.SET_COOKIE, cookie.toString());
 
-        return ResponseEntity.ok(responseBody);
+        return ResponseEntity.ok(Map.of("message", "로그아웃 완료"));
 
     }
 
@@ -142,19 +105,5 @@ public class OAuth2LogoutController {
             log.error("로그아웃 처리 중 예외 발생", e);
         }
 
-    }
-
-    private String inValiededNaverToken(OAuth2AuthenticationToken oauth2Token) {
-        String registrationId = oauth2Token.getAuthorizedClientRegistrationId();
-        String principalName = oauth2Token.getName();
-
-        OAuth2AuthorizedClient authorizedClient = authorizedClientService.loadAuthorizedClient(registrationId,
-                principalName);
-
-        if (authorizedClient == null || authorizedClient.getAccessToken() == null) {
-            throw new IllegalStateException("Access token 이 없습니다.");
-        }
-
-        return authorizedClient.getAccessToken().getTokenValue();
     }
 }

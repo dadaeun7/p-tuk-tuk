@@ -13,7 +13,7 @@ function MyDashBoard() {
   // ---- 현재 예시로 임의 값 지정 -----
   // @Return : DB에 저장 된 최초 주문 날짜
 
-  const [startDate, setStartDate] = useState(new Date(2023, 0));
+  const [startDate, _] = useState(new Date(2023, 0));
   const [occurNum, setOccurNum] = useState(0);
   const [exhNum, setExhNum] = useState(0);
   const [exhArray, setExhArray] = useState<Orders[]>([]);
@@ -102,7 +102,7 @@ function MyDashBoard() {
       className="my-dash-board"
       style={dashBoardStyle.wrap}
     >
-      <SelectCal pickDate={startDate} setPickDate={setStartDate} setDhYear={setDhYear} setDhMonth={setDhMonth} />
+      <SelectCal pickDate={startDate} setDhYear={setDhYear} setDhMonth={setDhMonth} />
       <div style={{ marginTop: "3.1rem", minWidth: "81rem" }}>
         <ExhaustCur occurNum={occurNum} exhNum={exhNum} />
         <MyWasteCurrent occurNum={occurNum} exhNum={exhNum} exhArray={exhArray} beforeExhArray={beforeExhArray} />

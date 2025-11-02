@@ -17,7 +17,7 @@ import lombok.ToString;
 @Entity
 @ToString
 @Getter
-@Table(name = "keyword-specific")
+@Table(name = "keyword_specific")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class KeywordSpecific {
     @Id

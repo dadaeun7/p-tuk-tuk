@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
 import com.google.cloud.vertexai.generativeai.GenerativeModel;
@@ -44,14 +43,17 @@ public class AIRecommandService {
             **JSON 답변:**
             """;
 
+    @Value("${gcp.credentials.json}")
+    private String gcpServiceAcoountKey;
+
+    @Value("${google.gemini.model-name}")
+    private String aiModel;
+
     @Value("${google.cloud.project.id}")
     private String projectId;
 
     @Value("${google.cloud.location}")
     private String location;
-
-    @Value("${google.gemini.model-name}")
-    private String aiModel;
 
     public Optional<AIRecommandDto> getRecommand(String itemName) {
 

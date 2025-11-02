@@ -9,7 +9,6 @@ import { useMyModal } from "../../../contexts/MyModal";
 function AddressEdit() {
 
   const { user } = useAuth();
-  const [address, setAddress] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const { openModal } = useMyModal();
@@ -22,7 +21,6 @@ function AddressEdit() {
   const selectAddressComplete = (addr: Address) => {
     const selectAddress = `${addr.sido} ${addr.sigungu}`;
 
-    setAddress(selectAddress);
     submitAddress(selectAddress);
     setIsOpen(false);
   }

@@ -13,6 +13,7 @@ import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +21,7 @@ import com.server.back.domain.order.dto.ItemToKeywordDto;
 import com.server.back.domain.order.dto.MaterialDto;
 import com.server.back.domain.order.entity.ItemToKeyword;
 import com.server.back.domain.order.entity.Material;
+import com.server.back.infrastructure.jpa.order.repository.ItemToKeywordRepository;
 import com.server.back.util.KeywordSplitUtil;
 
 import lombok.RequiredArgsConstructor;
@@ -29,6 +31,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @RequiredArgsConstructor
 public class ItemKeywordCacheService {
+
+    private final ItemToKeywordRepository itemToKeywordRepository;
 
     @Qualifier("keyworCacheTemplate")
     private final RedisTemplate<String, ItemToKeywordDto> keyworCacheTemplate;
@@ -44,9 +48,34 @@ public class ItemKeywordCacheService {
     public static final String ITEM_KEYWORD_CACHE = "ITEM_KEYWORD_CACHE::";
     // public static final String KEYWORD_SPLIT_INDEX = "KEYWORD_SPLIT_INDEX::";
 
+    @Async
     @Transactional
-    public void updateAndAddKeyword(ItemToKeyword itemKeyword) {
+    public void initJvmItemKeywordCache() {
 
+        List<ItemToKeyword> lists = itemToKeywordRepository.findAll();
+        lists.forEach(this::updateAndAddKeyword);
+
+        String pattern = "*";
+        this.allSplitKeywords.clear();
+
+        ScanOptions option = ScanOptions.scanOptions().match(pattern).count(1000).build();
+
+        try (Cursor<String> curosr = stringRedisTemplate.scan(option)) {
+
+            while (curosr.hasNext()) {
+                String key = curosr.next();
+                this.allSplitKeywords.add(key);
+            }
+
+        } catch (Exception e) {
+            log.error("####### [ItemKeywordCacheService] 에서 세부 아이템 key들을 JVM에 저장하는 중 오류가 발생했습니다 : " + e.getMessage());
+        }
+
+        log.info("####### [ItemKeywordCacheService] 에서 세부 아이템 key들을 JVM에 저장이 완료 되었습니다. 완료 수 : "
+                + allSplitKeywords.size());
+    }
+
+    public void updateAndAddKeyword(ItemToKeyword itemKeyword) {
         /*
          * 강제 초기화 : LAZY 로딩 유발
          * EAGER 세팅 했으나, 프록시 잔존 여부 제거
@@ -70,29 +99,6 @@ public class ItemKeywordCacheService {
 
     public ItemToKeywordDto getItemKeywordDto(Long itemId) {
         return keyworCacheTemplate.opsForValue().get(ITEM_KEYWORD_CACHE + itemId);
-    }
-
-    public void initJvmItemKeywordCache() {
-
-        String pattern = "*";
-
-        this.allSplitKeywords.clear();
-
-        ScanOptions option = ScanOptions.scanOptions().match(pattern).count(1000).build();
-
-        try (Cursor<String> curosr = stringRedisTemplate.scan(option)) {
-
-            while (curosr.hasNext()) {
-                String key = curosr.next();
-                this.allSplitKeywords.add(key);
-            }
-
-        } catch (Exception e) {
-            log.error("####### [ItemKeywordCacheService] 에서 세부 아이템 key들을 JVM에 저장하는 중 오류가 발생했습니다 : " + e.getMessage());
-        }
-
-        log.info("####### [ItemKeywordCacheService] 에서 세부 아이템 key들을 JVM에 저장이 완료 되었습니다. 완료 수 : "
-                + allSplitKeywords.size());
     }
 
     public Optional<ItemToKeywordDto> findMatchItemToKeyword(String productName) {

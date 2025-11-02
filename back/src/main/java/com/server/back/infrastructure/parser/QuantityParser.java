@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 import org.springframework.stereotype.Component;
 
 import com.server.back.domain.order.dto.ProductToQuantityParser;
-import com.server.back.domain.order.service.ocr.OcrToProductService;
 
 @Component
 public class QuantityParser {
@@ -16,10 +15,6 @@ public class QuantityParser {
 
     public ProductToQuantityParser parser(String subText, int copyQuantity) {
         String tempText = subText;
-
-        String codeRemove = OcrToProductService.removeLongNumbers(subText);
-        String reSetting = OcrToProductService.oneProductName(codeRemove);
-
         int tempQuantity = copyQuantity;
 
         Matcher bundleMatch = BUNDLE_PATEERN.matcher(tempText);
@@ -30,11 +25,12 @@ public class QuantityParser {
         }
 
         Matcher multiplierMatch = MULTIPLIER_PATTERN.matcher(tempText);
+
         while (multiplierMatch.find()) {
             String numberMatch = multiplierMatch.group(1);
             tempQuantity *= Integer.parseInt(numberMatch);
         }
 
-        return new ProductToQuantityParser(reSetting, tempQuantity);
+        return new ProductToQuantityParser(tempText, tempQuantity);
     }
 }

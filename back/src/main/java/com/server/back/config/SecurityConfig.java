@@ -1,13 +1,8 @@
 package com.server.back.config;
 
-import java.util.Properties;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -80,27 +75,7 @@ public class SecurityConfig {
                                                 .userInfoEndpoint(userInfo -> userInfo.userService(oauth2UserService))
                                                 .successHandler(oAuth2UserSuccessHandler));
 
-                // 🚨 등록된 필터 체인의 내용을 강제로 출력 (체크용)
-
-                log.info("security filter chain 확인하기 , " + http);
                 return http.build();
-        }
-
-        // 인증 메일 관련 설정
-        @Bean
-        public JavaMailSender javaMailSender() {
-                JavaMailSenderImpl mailSenderImpl = new JavaMailSenderImpl();
-                mailSenderImpl.setHost("smtp.gmail.com");
-                mailSenderImpl.setPort(587);
-                mailSenderImpl.setUsername("dadaeun7@gmail.com");
-                mailSenderImpl.setPassword("gcrt olkl bdok smwl");
-
-                Properties props = mailSenderImpl.getJavaMailProperties();
-                props.put("mail.transport.protocol", "smtp");
-                props.put("mail.smtp.auth", "true");
-                props.put("mail.smtp.starttls.enable", "true");
-                props.put("debug", "true");
-                return mailSenderImpl;
         }
 
         @Bean

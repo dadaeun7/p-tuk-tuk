@@ -29,7 +29,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "rec-orders")
+@Table(name = "rec_orders")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class RecycleOrder {

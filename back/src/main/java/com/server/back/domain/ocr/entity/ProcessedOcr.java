@@ -26,7 +26,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "processed-ocr")
+@Table(name = "processed_ocr")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ProcessedOcr {

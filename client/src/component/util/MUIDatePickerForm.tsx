@@ -7,7 +7,6 @@ import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { ko } from "date-fns/locale";
 import { ThemeProvider, createTheme, useTheme } from "@mui/material/styles";
-import { useEffect } from "react";
 
 const formSchema = z.object({
     selectDate: z.date({ message: "유효한 날짜를 선택해주세요." }).nullable().refine((date) => date !== null, {
@@ -55,6 +54,10 @@ function MUIDatePickerForm({ date, setData }: {
                             <DatePicker
                                 value={field.value}
                                 onChange={(updateValue) => {
+
+                                    if (updateValue === null) {
+                                        return;
+                                    }
                                     setData(updateValue);
                                     field.onChange(updateValue);
                                 }}

@@ -3,9 +3,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 
 function OrderFilterInOrder(
-    { imgStyle, reqLoading, setShowInMail, setShowInRecipe }:
+    { reqLoading, setShowInMail, setShowInRecipe }:
         {
-            imgStyle: React.CSSProperties,
             reqLoading: string,
             setShowInMail: React.Dispatch<React.SetStateAction<boolean>>,
             setShowInRecipe: React.Dispatch<React.SetStateAction<boolean>>,

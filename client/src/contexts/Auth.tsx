@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BACK, localUser } from "../config";
 import { usePopup } from "./AsyncPopup";
+import { useMyModal } from "./MyModal";
 
 export type User = {
   myId: string;
@@ -35,11 +36,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const OAUTH2_REQUEST_URL = "/local/oauth2/logout";
 
   const popup = usePopup();
+  const { openModal } = useMyModal();
 
   useEffect(() => {
 
     const { pathname } = location;
-
     if (localStorage.getItem('time')) {
       return;
     }
@@ -154,47 +155,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const logout = async () => {
     popup.open("loading", "로그아웃 중입니다");
 
-    // if (localStorage.getItem("provider") === "GOOGLE") {
-    //   const auth2 = window.gapi.auth2.getAuthInstance();
-
-    //   if (auth2) {
-    //     await auth2.signOut();
-
-    //     localStorage.removeItem("user");
-    //     localStorage.removeItem("provider");
-    //     setUser(null);
-
-    //     popup.open("success", "정상적으로 로그아웃 되었습니다.");
-    //     setTimeout(() => {
-    //       popup.close();
-    //     }, 2000);
-    //     console.log("Google seesion logout complete");
-    //     return;
-    //   }
-
-    //   popup.open("error", "로그아웃에 실패했습니다.");
-    //   setTimeout(() => {
-    //     popup.close();
-    //   }, 2000);
-    // }
     if (
       localStorage.getItem("provider") === "KAKAO" ||
       localStorage.getItem("provider") === "NAVER"
     ) {
-      await fetch(`${BACK}${OAUTH2_REQUEST_URL}`, {
+      const response = await fetch(`${BACK}${OAUTH2_REQUEST_URL}`, {
         method: "POST",
         credentials: "include",
       })
-        .then((res) => {
-          return res.body ? res.json() : null;
-        })
-        .then(() => {
-          localStorage.removeItem("user");
-          localStorage.removeItem("provider");
-          setUser(null);
-        }).finally(() => {
-          window.location.href = "/"
-        });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error 발생 : ${response.status}`);
+      }
+
+      localStorage.removeItem("user");
+      localStorage.removeItem("provider");
+      setUser(null);
+
+      openModal(<div>로그아웃 처리되었습니다.</div>);
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 4000)
+
     } else if (localStorage.getItem("provider") === "LOCAL") {
       await fetch(`${BACK}/login/logout`, {
         method: "POST",

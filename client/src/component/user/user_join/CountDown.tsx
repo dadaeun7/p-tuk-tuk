@@ -2,58 +2,71 @@ import { useEffect, useState } from "react";
 import "../../../css/count-down.css";
 import { parseKoStamp } from "./joinCommonConfig";
 
+
+const LOCAL_MIN_KEY = 'code-set-min';
+const LOCAL_SEC_KEY = 'code-set-sec';
+const TIME_END_KEY = 'time';
+
 function CountDown() {
 
-    const localMinNaming = 'code-set-min';
-    const localSecNaming = 'code-set-sec';
-
-    const [countMin, setCountMin] = useState(() => {
-        const v = Number(localStorage.getItem(localMinNaming));
-        return Number.isFinite(v) ? v : 0;
-    });
-
-    const [countSec, setCountSec] = useState(() => {
-        const v = Number(localStorage.getItem(localSecNaming));
-        return Number.isFinite(v) ? v : 0;
-    });
+    const [remainTimeMs, setRemainTimeMs] = useState(0);
 
     useEffect(() => {
 
-        const timeStr = localStorage.getItem('time');
-        if (!timeStr) return;
+        let timeStr = localStorage.getItem(TIME_END_KEY);
 
-        const endAt = parseKoStamp(timeStr).getTime();
+        let endAt: number = 0;
+        if (timeStr) {
+            console.log("localStorage에서 정상적으로 찾았습니다 ");
 
-        const countDown = () => {
+        } else {
+            console.log("localStorage에서 정상적으로 찾지 못했습니다. :");
+            const reqDate = new Date();
+            const newTimeValue = reqDate.toLocaleString("ko-KR", { timeZone: "Asia/Seoul" });
+            timeStr = newTimeValue;
+            localStorage.setItem("time", newTimeValue);
+
+        }
+
+        try {
+            endAt = parseKoStamp(timeStr).getTime();
+        } catch (e) {
+            console.error("parseKoStamp 를 실패했습니다");
+        }
+
+        if (isNaN(endAt)) {
+            console.error("endAt Time failed: Invalid date");
+            return;
+        }
+
+        const tick = () => {
 
             const now = Date.now();
-            const deltaSec = Math.max(0, Math.ceil((endAt - now) / 1000));
-            const mm = Math.floor(deltaSec / 60);
-            const ss = deltaSec % 60;
+            const newRemainMs = Math.max(0, endAt - now);
 
-            setCountMin(mm);
-            setCountSec(ss);
+            setRemainTimeMs(newRemainMs);
 
-            localStorage.setItem(localMinNaming, String(mm));
-            localStorage.setItem(localSecNaming, String(ss));
-
-            if (deltaSec === 0) {
-                localStorage.removeItem(localMinNaming);
-                localStorage.removeItem(localSecNaming);
+            if (newRemainMs === 0) {
+                localStorage.removeItem(TIME_END_KEY);
+                localStorage.removeItem(LOCAL_SEC_KEY);
+                localStorage.removeItem(LOCAL_MIN_KEY);
                 localStorage.removeItem('request');
                 location.reload();
             }
         }
-
-        countDown();
-        const iv = setInterval(countDown, 1000);
+        tick();
+        const iv = setInterval(tick, 1000);
         return () => clearInterval(iv);
 
     }, [])
 
+    const totalSeconds = Math.floor(remainTimeMs / 1000);
+    const countMin = Math.floor(totalSeconds / 60);
+    const countSec = totalSeconds % 60;
+
     return (
         <div className="count-down-wrap">
-            [인증 유효시간]<span className="count-min">{countMin}</span> : <span className="count-sec">{countSec}</span>
+            [인증 유효시간]<span className="count-min">{countMin.toString().padStart(2, '0')}</span> : <span className="count-sec">{countSec.toString().padStart(2, '0')}</span>
         </div>
     )
 }

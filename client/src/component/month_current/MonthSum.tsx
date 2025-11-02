@@ -1,5 +1,5 @@
 import type React from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { blurStyle, matchTitle, materials } from "../../config";
 import type { Orders } from "../../data/db";
 
