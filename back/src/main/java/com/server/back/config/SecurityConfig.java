@@ -63,9 +63,11 @@ public class SecurityConfig {
                                                                 "/google/connect/auth",
                                                                 "/login/oauth2/code/**",
                                                                 "/login/**",
-                                                                "/google/unconnect/auth")
+                                                                "/google/unconnect/auth",
+                                                                "/actuator/health")
                                                 .permitAll()
                                                 .requestMatchers("/error").permitAll()
+                                                .requestMatchers("/admin").hasRole("ADMIN")
                                                 .anyRequest().authenticated())
                                 .addFilterBefore(jwtAuthenticationFilter,
                                                 UsernamePasswordAuthenticationFilter.class)
@@ -75,8 +77,12 @@ public class SecurityConfig {
                                                 .userInfoEndpoint(userInfo -> userInfo.userService(oauth2UserService))
                                                 .successHandler(oAuth2UserSuccessHandler));
 
+                // 🚨 등록된 필터 체인의 내용을 강제로 출력 (체크용)
+
+                log.info("security filter chain 확인하기 , " + http);
                 return http.build();
         }
+
 
         @Bean
         public AuthenticationEntryPoint jwtAuthenticationEntryPoint() {

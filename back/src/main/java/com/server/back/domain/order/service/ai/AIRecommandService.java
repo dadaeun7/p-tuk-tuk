@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.cloud.vertexai.VertexAI;
 import com.google.cloud.vertexai.api.GenerateContentResponse;
+import com.google.cloud.vertexai.api.GenerationConfig;
 import com.google.cloud.vertexai.generativeai.GenerativeModel;
 import com.google.cloud.vertexai.generativeai.ResponseHandler;
 import com.server.back.domain.order.dto.AIRecommandDto;
@@ -55,9 +56,51 @@ public class AIRecommandService {
     @Value("${google.cloud.location}")
     private String location;
 
+    private VertexAI vertexAI;
+    private GenerativeModel model;
+    private volatile boolean initialized = false;
+
+    private synchronized void ensureInitialized() {
+
+        if (initialized) {
+            return;
+        }
+        log.info("===== PostConstruct 진입 =====");
+
+        try {
+            log.info("환경 변수 확인 projectId: {}, location: {}, model: {}",
+                    projectId, location, aiModel);
+
+            this.vertexAI = new VertexAI(projectId, location);
+            log.info("VertexAI 생성 성공");
+
+            GenerationConfig config = GenerationConfig.newBuilder()
+                    .setTemperature(0.2f)
+                    .setTopP(0.9f)
+                    .setTopK(10)
+                    .build();
+
+            this.model = new GenerativeModel.Builder()
+                    .setModelName(aiModel)
+                    .setVertexAi(vertexAI)
+                    .setGenerationConfig(config)
+                    .build();
+
+            initialized = true;
+            log.info("===== Vertext AI 초기화 완료 =====");
+
+        } catch (Exception e) {
+            log.error("===== Vertex AI 초기화 실패 =====", e);
+            log.error("상세 에러: {}", e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
     public Optional<AIRecommandDto> getRecommand(String itemName) {
 
-        try (VertexAI vertextAI = new VertexAI(projectId, location)) {
+        ensureInitialized();
+
+        try {
             /**
              * Item Keyword (Redis Cache)
              * Keyword Specific (Spring cache)
@@ -66,8 +109,6 @@ public class AIRecommandService {
              */
 
             String prompt = String.format(PROMPT_TEMPLATE, itemName);
-
-            GenerativeModel model = new GenerativeModel(aiModel, vertextAI);
             GenerateContentResponse response = model.generateContent(prompt);
 
             String responseText = getResponseJson(ResponseHandler.getText(response).trim());

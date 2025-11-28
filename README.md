@@ -6,7 +6,9 @@
 * **클라우드 인프라 구축 및 DevOps 자동화 (Railway)** : 10월 30일 ~11월 2일
 
 
-## 🌐프로젝트 링크 : https://tuktuk-production.up.railway.app
+#### [[2025.11.29 Update] AI 응답 시간 단축](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/ai_recommendation_performance_report.html)
+
+## 🌐프로젝트 링크 : https://tuktuk-production.up.railway.app (현재 내부 테스트 중으로 잠시 서비스 중단)
 
 ### 🌏목적 및 동기
 현재 온라인 쇼핑의 증가로 다양한 폐기물이 발생하는 상황에서, 분리배출이 번거로워서가 아니라 정확한 배출 기준을 알지 못해 잘못 배출하는 경우가 의외로 많습니다.
@@ -45,8 +47,7 @@
 
 
 ## 3. 아키텍처
-![프로젝트 시스템 아키텍처](docs/image/tuktuk_아키텍처_1.png)
-![프로젝트 시스템 아키텍처](docs/image/tuktuk_아키텍처_2.png)
+[프로젝트 시스템 아키텍처](https://dadaeun7.github.io/p-tuk-tuk/image/tuktuk_architecture_diagram.html)
 
 ## 4. ERD
 ![프로젝트 ERD](docs/image//tuktuk_ERD.png)

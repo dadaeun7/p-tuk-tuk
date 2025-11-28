@@ -11,7 +11,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,6 +59,55 @@ public class OAuth2LogoutController {
 
         log.info("### Authentication object: {}", authentication);
 
+        // Map<String, String> responseBody = new HashMap<>();
+
+        // if (authentication instanceof OAuth2AuthenticationToken) {
+        // OAuth2AuthenticationToken oauth2Token = (OAuth2AuthenticationToken)
+        // authentication;
+        // String registrationId = oauth2Token.getAuthorizedClientRegistrationId();
+
+        // String logoutUrl;
+
+        // log.info("👉registrationId.toLowerCase() 는?", registrationId.toLowerCase());
+        // switch (registrationId.toLowerCase()) {
+        // case "kakao":
+
+        // logoutUrl = "https://kauth.kakao.com/oauth/logout?client_id=" + kakaoClientId
+        // + "&logout_redirect_uri="
+        // + logoutRedirectUri;
+
+        // responseBody.put("socialLogoutUrl", logoutUrl);
+
+        // log.info("socialLogoutUrl은?", logoutUrl);
+        // break;
+
+        // case "naver":
+        // String naverAccessToken = inValiededNaverToken(oauth2Token);
+        // String url =
+        // "https://nid.naver.com/oauth2.0/token?grant_type=delete&client_id=" +
+        // naverClientId + "&client_secret=" + naverClientSecret + "&access_token=" +
+        // naverAccessToken;
+
+        // WebClient webClient = WebClient.create();
+
+        // try {
+        // String naverSend =
+        // webClient.get().uri(url).retrieve().bodyToMono(String.class).block();
+        // log.info("네이버 토큰 무효화 응답 " + naverSend);
+
+        // responseBody.put("socialLogoutUrl", null);
+
+        // } catch (Exception e) {
+        // log.error("네이버 토큰 무효화 실패" + e.getMessage());
+        // }
+
+        // break;
+
+        // default:
+        // return ResponseEntity.badRequest().build();
+
+        // }
+        // }
         // ===================== [ 브라우저 Cookie 초기화 ] =====================
         ResponseCookie cookie = ResponseCookie.from("accessToken", "")
                 .path("/")
@@ -106,4 +157,19 @@ public class OAuth2LogoutController {
         }
 
     }
+
+    // private String inValiededNaverToken(OAuth2AuthenticationToken oauth2Token) {
+    // String registrationId = oauth2Token.getAuthorizedClientRegistrationId();
+    // String principalName = oauth2Token.getName();
+
+    // OAuth2AuthorizedClient authorizedClient =
+    // authorizedClientService.loadAuthorizedClient(registrationId,
+    // principalName);
+
+    // if (authorizedClient == null || authorizedClient.getAccessToken() == null) {
+    // throw new IllegalStateException("Access token 이 없습니다.");
+    // }
+
+    // return authorizedClient.getAccessToken().getTokenValue();
+    // }
 }
