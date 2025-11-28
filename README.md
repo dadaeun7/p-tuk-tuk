@@ -24,7 +24,7 @@
 
 ## 2. 핵심 기술 스택
 ### 📦 Back-end & Database
-* **Spring Boot 3.4.7** : 분리수거 물품 추천 결과에 대한 내용에 대해 대규모 트랜잭션 처리가 가능하고, 배출 규칙을 모듈화하여 관리합니다.
+* **Spring Boot 3.4.7** : 분리수거 물품 추천 결과에 대한 내용에 대해 비동기 트랜잭션으로 처리가 가능하고, 배출 규칙을 모듈화하여 관리합니다.
 
 * **MySQL 8.0** : 관계형 데이터베이스의 무결성을 통해 **`품목`**<-> **`매칭키워드`** <-> **`분리수거물품`** 을 복잡하게 연결하여 데이터를 일관성 있게 관리합니다.
 
@@ -42,18 +42,17 @@
 ### 📦 Infrastructure & DevOps
 * **Docker** : Mysql, Redis, Spring 으로 구성된 다중 서비스 환경을 Docker-compose로 단일화 하여 실행에 복잡함이 없도록 했습니다.
 
-* **Railway** : Railway를 활용하여 Docker 컨테이너를 효율적으로 배포 및 관리하고, Private Networking을 통해 백엔드, 데이터베이스(DB), 프론트엔드 간 안정적이고 최적화된 통신 환경을 구축 및 운영했습니다.
+* **Railway** : Railway를 활용하여 Docker 컨테이너를 효율적으로 배포 및 관리하고, Private Networking을 통해 백엔드와 데이터베이스(DB) 연결, 프론트엔드 간 안정적이고 최적화된 통신 환경을 구축 및 운영했습니다.
 
 
 
 ## 3. 아키텍처
-[프로젝트 시스템 아키텍처](https://dadaeun7.github.io/p-tuk-tuk/image/tuktuk_architecture_diagram.html)
+![프로젝트 시스템 아키텍처](docs/image/tuktuk_architecture.png)
 
 ## 4. ERD
-![프로젝트 ERD](docs/image//tuktuk_ERD.png)
+![프로젝트 ERD](docs/image/tuktuk_ERD.png)
 
 ## 5. 트러블 슈팅과 기술 결정 과정
-* [React_UI_Spring_Security_외부_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/react_ui_spring_security_external_connect.html)
 * [이메일_인증_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/email_confirm.html)
 * [docker_mysql_한글깨짐_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/docker_mysql_ko_error.html)
 * [google_외부서비스_연동_트러블슈팅](https://dadaeun7.github.io/p-tuk-tuk/troubleshooting/google_connect.html)
@@ -90,7 +89,7 @@
 ### 🏗️ 아키텍처 및 확장성 강화
 ✅ **마이크로서비스(MSA) 전환 검토**
 
-* 목표: 서비스 규모 확장 시, **`키워드/품목 매칭 서비스`** 와 **`인증/이력 관리 서비스`** 를 독립적인 Spring 서버로 분리하고 Docker Container를 증설하여 운영합니다.
+* 목표: 서비스 규모 확장 시, **`키워드/품목 매칭 서비스`** 를 독립적인 Spring 서버로 분리하고 Docker Container를 증설하여 운영합니다.
 * 효과: 서비스별 독립적인 확장 및 배포를 가능하게 하여 시스템 안정성을 높입니다.
 
 ---
